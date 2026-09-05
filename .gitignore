@@ -1,0 +1,18 @@
+# Julia
+julia/Manifest.toml
+julia/.CondaPkg/
+*.jl.cov
+*.jl.*.cov
+*.jl.mem
+
+# C++ build artifacts / fetched deps
+/deps/
+cxx/**/build/
+
+# Python
+__pycache__/
+
+# OS / editor
+.DS_Store
+*~
+.vscode/

@@ -1,0 +1,14 @@
+name: biopert
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - pyarrow
+  - rdkit
+  - scikit-learn
+  - pip
+  - pip:
+      - huggingface_hub==1.29.0
