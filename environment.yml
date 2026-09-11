@@ -1,14 +1,31 @@
 name: biopert
 channels:
   - conda-forge
+  - bioconda
   - nodefaults
 dependencies:
   - python=3.11
   - numpy
   - pandas
   - pyarrow
-  - rdkit
   - scikit-learn
+  - h5py
+  - ipython
+  - adjustText
+  - toml
+  - r-base=4.3
+  - bioconductor-fgsea
+  - r-data.table
+  - r-ggplot2
+  - r-irkernel
   - pip
   - pip:
       - huggingface_hub==1.29.0
+      - torch
+      - chemprop
+      - wandb
+      - datasets
+      - transformers
+      - unimol_tools
+      - selfies
+      - sentencepiece

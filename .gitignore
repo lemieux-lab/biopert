@@ -12,6 +12,9 @@ cxx/**/build/
 # Python
 __pycache__/
 
+# Logs
+logs/
+
 # OS / editor
 .DS_Store
 *~

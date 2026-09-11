@@ -8,12 +8,12 @@
 # (built from environment.yml) instead of letting CondaPkg.jl manage its
 # own separate Python environment.
 #
-# Usage: source scripts/setup_python_env.sh
+# Usage: source scripts/setup/setup_python_env.sh
 # (must be sourced, not executed, so the exports reach your shell)
 # =============================================================================
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    echo "Error: this script must be sourced, e.g. 'source scripts/setup_python_env.sh'" >&2
+    echo "Error: this script must be sourced, e.g. 'source scripts/setup/setup_python_env.sh'" >&2
     exit 1
 fi
 

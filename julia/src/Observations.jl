@@ -1,44 +1,269 @@
 module Observations
 
 export Obs
+export obs_signature
+export average_expr_df, build_delta_df, build_time_one_hot
+export concatenate_inputs, build_obs
 export subset_obs, split_obs, apply_pinned_split
-export concatenate_inputs, average_expr, build_delta_df, build_obs
 
-using DataFrames, Statistics
-using ..Splits
-
-
-const UNTRT_AVG_GROUP_COLS = [:cell_line, :plate, :time]
-const DELTA_AVG_GROUP_COLS = [:cell_line, :drug, :dose, :time]
+using DataFrames, Random, SHA, Statistics
+using ..DoseUtils, ..Splits
 
 
 struct Obs
-    meta_df           :: DataFrame
-    avg_untrt_targets :: Matrix{Float32}                          # (n_genes × n_obs)
-    avg_delta_targets :: Matrix{Float32}                          # (n_genes × n_obs)
-    # Each delta_ref_pools entry holds the reference cell line's delta profiles that share
-    # the (drug, dose, time) of the corresponding meta_df row
-    delta_ref_pools   :: Union{Vector{Matrix{Float32}}, Nothing}  # ((n_genes x n_replicates) x n_obs)
-    molec_embeds      :: Union{Matrix{Float32}, Nothing}          # (n_embed_dims × n_obs)
-    times             :: Union{Matrix{Float32}, Nothing}
-    doses             :: Union{Matrix{Float32}, Nothing}
+    meta_df            :: DataFrame
+
+    # Treatment representations
+    delta_ref_exprs    :: Union{Matrix{Float32}, Nothing}   # (n_genes × n_obs)
+    molec_embeds       :: Union{Matrix{Float32}, Nothing}   # (n_embed_dims × n_obs)
+    time_feats         :: Union{Matrix{Float32}, Nothing}   # (n_time_feats × n_obs)
+    dose_feats         :: Union{Matrix{Float32}, Nothing}   # (n_dose_feats × n_obs)
+
+    # Target cell line representation
+    avg_untrt_target_exprs :: Matrix{Float32}               # (n_genes × n_obs)
+
+    # Ground-truth
+    avg_delta_target_exprs :: Matrix{Float32}               # (n_genes × n_obs)
 end
 
-Obs(meta_df, avg_untrt_targets, avg_delta_targets;
-    delta_ref_pools=nothing, molec_embeds=nothing, times=nothing, doses=nothing) =
-    Obs(meta_df, avg_untrt_targets, avg_delta_targets, delta_ref_pools, molec_embeds, times, doses)
 
+function obs_signature(obs::Obs)
+    cols = intersect([:cell_line, :drug, :smiles, :dose, :time], Symbol.(names(obs.meta_df)))
+    rows = [join((string(row[c]) for c in cols), "|") for row in eachrow(obs.meta_df)]
+    return bytes2hex(sha256(join(sort(rows), "\n")))
+end
+
+
+# ── Data prep ─────────────────────────────────────────────────────────────────
+
+function average_expr_df(df::DataFrame, group_cols::Vector{Symbol})
+    groups = groupby(df, group_cols)
+
+    # Holds the per-group mean, but stays named :expr so downstream code can
+    # treat it like any other expr column.
+    col_specs = Pair{Symbol, AbstractVector}[
+        c => [first(g[!, c]) for g in groups] for c in group_cols
+    ]
+    push!(col_specs, :expr => [vec(mean(reduce(hcat, g.expr), dims=2)) for g in groups])
+
+    return DataFrame(col_specs...)
+end
+
+
+function build_delta_df(untrt_df::DataFrame, trt_df::DataFrame)
+    # DMSO profiles are averaged per (cell line, plate, time) before subtracting
+    # from each matching treated profile
+    avg_untrt_df = average_expr_df(untrt_df, [:cell_line, :plate, :time])
+    # Indexed by (cell_line, plate, time) for quick look up
+    untrt_index = Dict(
+        (row.cell_line, row.plate, row.time) => row.expr
+        for row in eachrow(avg_untrt_df)
+    )
+
+    # Tracks (cell_line, plate, time) keys already warned about, so a missing
+    # DMSO match warns once per key rather than once per treated row.
+    warned_keys = Set{Tuple{Symbol,Symbol,Symbol}}()
+
+    matched_idxs = Int[]
+    delta = Vector{Float32}[]
+
+    for (i, row) in enumerate(eachrow(trt_df))
+        key = (row.cell_line, row.plate, row.time)
+        avg_untrt_expr = get(untrt_index, key, nothing)
+        if isnothing(avg_untrt_expr)
+            if key ∉ warned_keys
+                @warn "No DMSO match found for cell_line=$(row.cell_line), plate=$(row.plate), " *
+                    "time=$(row.time) — skipping"
+                push!(warned_keys, key)
+            end
+            continue
+        end
+        push!(matched_idxs, i)
+        push!(delta, row.expr .- avg_untrt_expr)
+    end
+
+    meta_df = select(trt_df[matched_idxs, :], Not(:expr))
+    return hcat(meta_df, DataFrame(expr = delta))
+end
+
+
+# Returns nothing when there's only one time level (Tahoe has a single timepoint).
+function build_time_one_hot(time_list::Vector{Symbol})::Union{Matrix{Float32}, Nothing}
+    time_levels = unique(time_list)
+    length(time_levels) <= 1 && return nothing
+
+    T = zeros(Float32, length(time_levels), length(time_list))
+    for (col, t) in zip(eachcol(T), time_list)
+        col[findfirst(==(t), time_levels)] = 1f0
+    end
+    return T
+end
+
+
+# ── Build Obs ─────────────────────────────────────────────────────────────────
+
+function lookup_or_nan(xform, index::AbstractDict, key, fallback_size::Tuple)
+    val = get(index, key, nothing)
+    return isnothing(val) ? fill(NaN32, fallback_size) : xform(val)
+end
+
+
+function drop_unmatched(
+    keep_idxs::Vector{Int}, total::Int, reason::String,
+    meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool,
+)
+    length(keep_idxs) == total &&
+        return meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool
+
+    @warn "Dropping $(total - length(keep_idxs)) observation(s) with no matching $reason."
+    meta_df                = meta_df[keep_idxs, :]
+    avg_delta_target_exprs = avg_delta_target_exprs[:, keep_idxs]
+    avg_untrt_target_exprs = avg_untrt_target_exprs[:, keep_idxs]
+    delta_ref_exprs        = delta_ref_exprs === nothing ? nothing : delta_ref_exprs[:, keep_idxs]
+    ref_pool               = isempty(ref_pool) ? ref_pool : ref_pool[keep_idxs]
+    return meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool
+end
+
+
+function concatenate_inputs(obs::Obs)::Matrix{Float32}
+    parts = filter(!isnothing, [obs.delta_ref_exprs, obs.molec_embeds,
+                                obs.time_feats, obs.dose_feats,
+                                obs.avg_untrt_target_exprs])
+    return vcat(parts...)
+end
+
+
+function build_obs(
+    ref_cl::Symbol,
+    untrt_df::DataFrame,
+    trt_df::DataFrame;
+    use_delta_ref::Bool = true,
+    return_ref_pool::Bool = true,
+    average_delta_ref::Bool = false,
+    smiles_to_embeds::Union{Dict{String, Vector{Float32}}, Nothing} = nothing,
+    dose_encoding::String = "gate",
+    seed::Int = 42,
+)
+    if return_ref_pool
+        use_delta_ref || error("return_ref_pool=true requires use_delta_ref=true.")
+        average_delta_ref &&
+            error("return_ref_pool=true is incompatible with average_delta_ref=true.")
+    end
+
+    untrt_ref_df = filter(row -> row.cell_line == ref_cl, untrt_df)
+    trt_ref_df   = filter(row -> row.cell_line == ref_cl, trt_df)
+    delta_ref_df = build_delta_df(untrt_ref_df, trt_ref_df)
+
+    untrt_target_df = filter(row -> row.cell_line != ref_cl, untrt_df)
+    trt_target_df   = filter(row -> row.cell_line != ref_cl, trt_df)
+    delta_target_df = build_delta_df(untrt_target_df, trt_target_df)
+
+    # Untreated target profiles are averaged per cell line across the entire dataset
+    avg_untrt_target_df = average_expr_df(untrt_target_df, [:cell_line])
+    untrt_index         = Dict(row.cell_line => row.expr for row in eachrow(avg_untrt_target_df))
+
+    # Delta target profiles are averaged per (cell line, treatment) across the entire
+    # dataset; this is the ground truth.
+    avg_delta_target_df = average_expr_df(
+        delta_target_df, [:cell_line, :drug, :smiles, :dose, :time])
+    nrow(avg_delta_target_df) == 0 &&
+        error("No observations could be built — delta_target_df is empty.")
+
+    meta_df                = select(avg_delta_target_df, Not(:expr))
+    avg_delta_target_exprs = reduce(hcat, avg_delta_target_df.expr) |> Matrix{Float32}
+    n_genes                = size(avg_delta_target_exprs, 1)
+
+    if average_delta_ref
+        delta_ref_df = average_expr_df(delta_ref_df, [:cell_line, :drug, :smiles, :dose, :time])
+    end
+
+    # Untreated target profiles, aligned to meta_df by cell_line.
+    avg_untrt_target_exprs = reduce(
+        hcat, [lookup_or_nan(identity, untrt_index, cl, (n_genes,)) for cl in meta_df.cell_line],
+    ) |> Matrix{Float32}
+
+    # Pre-index delta_ref_df by (drug, dose, time) to avoid O(N) DataFrame scans
+    # inside the per-observation loop. Several replicate rows can share a key
+    # (unless average_delta_ref=true), which is what makes a resamplable ref_pool.
+    delta_ref_exprs = nothing
+    ref_pool        = Vector{Vector{Vector{Float32}}}()
+    if use_delta_ref
+        ref_index = Dict{Tuple{Symbol,Symbol,Symbol}, Vector{Vector{Float32}}}()
+        for r in eachrow(delta_ref_df)
+            key = (r.drug, r.dose, r.time)
+            push!(get!(ref_index, key, Vector{Float32}[]), r.expr)
+        end
+
+        ref_pool = [
+            get(ref_index, (row.drug, row.dose, row.time), Vector{Float32}[])
+            for row in eachrow(meta_df)
+        ]
+
+        # Drop observations whose (drug, dose, time) was never applied to the
+        # reference cell line.
+        keep_idxs = findall(!isempty, ref_pool)
+        meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool =
+            drop_unmatched(
+                keep_idxs, length(ref_pool), "reference-cell-line (drug, dose, time) profile",
+                meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool,
+            )
+
+        rng = MersenneTwister(seed)
+        delta_ref_exprs = reduce(
+            hcat, [p[rand(rng, 1:length(p))] for p in ref_pool],
+        ) |> Matrix{Float32}
+    end
+
+    molec_embeds = nothing
+    time_feats   = nothing
+    dose_feats   = nothing
+    if smiles_to_embeds !== nothing
+        has_embed = [haskey(smiles_to_embeds, strip(String(s))) for s in meta_df.smiles]
+
+        # Drop observations whose compound has no molecular embedding.
+        keep_idxs = findall(has_embed)
+        meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool =
+            drop_unmatched(
+                keep_idxs, length(has_embed), "molecular embedding",
+                meta_df, avg_delta_target_exprs, avg_untrt_target_exprs, delta_ref_exprs, ref_pool,
+            )
+
+        molec_embeds = reduce(
+            hcat,
+            [smiles_to_embeds[strip(String(s))] for s in meta_df.smiles],
+        ) |> Matrix{Float32}
+
+        # Time and dose encoding
+        time_feats = build_time_one_hot(meta_df.time)
+        dose_feats = build_dose_feats(meta_df.dose; encoding = dose_encoding)
+    end
+
+    obs = Obs(
+        meta_df,
+        delta_ref_exprs,
+        molec_embeds,
+        time_feats,
+        dose_feats,
+        avg_untrt_target_exprs,
+        avg_delta_target_exprs,
+    )
+
+    return return_ref_pool ? (obs, ref_pool) : obs
+end
+
+
+# ── Split obs ─────────────────────────────────────────────────────────────────
 
 function subset_obs(obs::Obs, idxs::AbstractVector{Int})
-    slice(m) = isnothing(m) ? nothing : m[:, idxs]
+    slice(m) = m !== nothing ? m[:, idxs] : nothing
     return Obs(
         obs.meta_df[idxs, :],
-        obs.avg_untrt_targets[:, idxs],
-        obs.avg_delta_targets[:, idxs],
-        isnothing(obs.delta_ref_pools) ? nothing : obs.delta_ref_pools[idxs],
+        slice(obs.delta_ref_exprs),
         slice(obs.molec_embeds),
-        slice(obs.times),
-        slice(obs.doses),
+        slice(obs.time_feats),
+        slice(obs.dose_feats),
+        slice(obs.avg_untrt_target_exprs),
+        obs.avg_delta_target_exprs[:, idxs],
     )
 end
 
@@ -58,11 +283,13 @@ function split_obs(
         seed         = split_seed,
     )
 
-    train_idx = findall(row -> row.smiles in train_smiles, eachrow(obs.meta_df))
-    val_idx   = findall(row -> row.smiles in val_smiles,   eachrow(obs.meta_df))
-    test_idx  = findall(row -> row.smiles in test_smiles,  eachrow(obs.meta_df))
+    train_idxs = findall(row -> row.smiles in train_smiles, eachrow(obs.meta_df))
+    val_idxs   = findall(row -> row.smiles in val_smiles,   eachrow(obs.meta_df))
+    test_idxs  = findall(row -> row.smiles in test_smiles,  eachrow(obs.meta_df))
 
-    return subset_obs(obs, train_idx), subset_obs(obs, val_idx), subset_obs(obs, test_idx)
+    @info "Split sizes — train: $(length(train_idxs)), val: $(length(val_idxs)), " *
+        "test: $(length(test_idxs))"
+    return subset_obs(obs, train_idxs), subset_obs(obs, val_idxs), subset_obs(obs, test_idxs)
 end
 
 
@@ -77,169 +304,23 @@ function apply_pinned_split(
     cell_lines = Symbol.(obs.meta_df.cell_line)
     n          = length(smiles)
 
-    train_idx = Int[]
-    val_idx   = Int[]
-    test_idx  = Int[]
+    train_idxs = Int[]
+    val_idxs   = Int[]
+    test_idxs  = Int[]
 
     for i in 1:n
         if cell_lines[i] in test_cl || smiles[i] in test_smiles
-            push!(test_idx, i)
+            push!(test_idxs, i)
         elseif cell_lines[i] in val_cl || smiles[i] in val_smiles
-            push!(val_idx, i)
+            push!(val_idxs, i)
         else
-            push!(train_idx, i)
+            push!(train_idxs, i)
         end
     end
 
-    @info "Split sizes (pinned) — train: $(length(train_idx)), val: $(length(val_idx)), test: $(length(test_idx))"
-    return subset_obs(obs, train_idx), subset_obs(obs, val_idx), subset_obs(obs, test_idx)
-end
-
-
-function concatenate_inputs(obs::Obs)::Matrix{Float32}
-    # Pick one random reference cell line delta profile per pool.
-    # Placed first so callers that resample delta_ref_pools per epoch can
-    # overwrite these rows in-place via X[1:delta_ref_n_genes, :]
-    delta_ref = isnothing(obs.delta_ref_pools) ? nothing :
-        reduce(hcat, [P[:, rand(1:size(P, 2))] for P in obs.delta_ref_pools])
-    parts = filter(!isnothing, [delta_ref, obs.avg_untrt_targets, obs.molec_embeds,
-                                obs.times, obs.doses])
-    return vcat(parts...)
-end
-
-
-function average_expr(df::DataFrame, group_cols::Vector{Symbol})
-    groups = groupby(df, group_cols)
-
-    # Holds the per-group mean, but stays named :expr so downstream code can
-    # treat it like any other expr column
-    col_specs = Pair{Symbol, AbstractVector}[
-        c => [first(g[!, c]) for g in groups] for c in group_cols
-    ]
-    push!(col_specs, :expr => [vec(mean(reduce(hcat, g.expr), dims=2)) for g in groups])
-
-    return DataFrame(col_specs...)
-end
-
-
-function build_delta_df(untrt_df::DataFrame, trt_df::DataFrame)
-    # DMSO profiles are averaged per (cell line, plate, time) before subtracting from each matching treated profile
-    avg_untrt_df = average_expr(untrt_df, UNTRT_AVG_GROUP_COLS)
-    # Indexed by (cell_line, plate, time) for quick look up
-    untrt_index = Dict(
-        (row.cell_line, row.plate, row.time) => row.expr
-        for row in eachrow(avg_untrt_df)
-    )
-
-    # Tracks (cell_line, plate, time) keys already warned about, so a missing
-    # DMSO match warns once per key rather than once per treated row
-    warned_keys = Set{Tuple{Symbol,Symbol,Symbol}}()
-
-    matched_idxs = Int[]
-    delta = Vector{Float32}[]
-
-    for (i, row) in enumerate(eachrow(trt_df))
-        key = (row.cell_line, row.plate, row.time)
-        avg_untrt_expr = get(untrt_index, key, nothing)
-        if isnothing(avg_untrt_expr)
-            if key ∉ warned_keys
-                @warn "No DMSO match found for cell_line=$(row.cell_line), plate=$(row.plate), time=$(row.time) — skipping"
-                push!(warned_keys, key)
-            end
-            continue
-        end
-        push!(matched_idxs, i)
-        push!(delta, row.expr .- avg_untrt_expr)
-    end
-
-    meta_df = select(trt_df[matched_idxs, :], Not(:expr))
-    return hcat(meta_df, DataFrame(expr = delta))
-end
-
-
-# Looks up `key` in `index` and applies `xform`; falls back to an NaN-filled
-# array of `fallback_size` on a miss, so one bad lookup degrades a single
-# observation instead of aborting the whole build.
-function lookup_or_nan(xform, index::AbstractDict, key, fallback_size::Tuple)
-    val = get(index, key, nothing)
-    return isnothing(val) ? fill(NaN32, fallback_size) : xform(val)
-end
-
-function build_obs(
-    ref_cl::Symbol,
-    untrt_df::DataFrame,
-    trt_df::DataFrame;
-    use_delta_ref::Bool = true,
-    smiles_to_embeds::Union{Dict{String, Vector{Float32}}, Nothing} = nothing,
-)
-    untrt_target_df = filter(row -> row.cell_line != ref_cl, untrt_df)
-    # Untreated target profiles are averaged per cell line across the entire dataset
-    avg_untrt_target_df = average_expr(untrt_target_df, [:cell_line])
-    # Indexed by cell_line for quick look up
-    untrt_target_index = Dict(row.cell_line => row.expr for row in eachrow(avg_untrt_target_df))
-
-    trt_target_df = filter(row -> row.cell_line != ref_cl, trt_df)
-
-    delta_target_df = build_delta_df(untrt_target_df, trt_target_df)
-    # Delta target profiles are averaged per (cell line, treatment) across the entire dataset
-    avg_delta_target_df = average_expr(delta_target_df, DELTA_AVG_GROUP_COLS)
-    avg_delta_targets = reduce(hcat, avg_delta_target_df.expr)
-
-    meta_df = select(avg_delta_target_df, Not(:expr))
-
-    # One averaged target untreated profile per observation, matched to meta_df's cell_line
-    avg_untrt_targets = reduce(hcat, [untrt_target_index[cl] for cl in meta_df.cell_line])
-
-    delta_ref_pools = nothing
-    if use_delta_ref
-        untrt_ref_df = filter(row -> row.cell_line == ref_cl, untrt_df)
-        trt_ref_df = filter(row -> row.cell_line == ref_cl, trt_df)
-        delta_ref_df = build_delta_df(untrt_ref_df, trt_ref_df)
-
-        # Indexed by (drug, dose, time) for quick look up
-        delta_ref_index = Dict{Tuple{Symbol,Symbol,Symbol}, Vector{Vector{Float32}}}()
-        for row in eachrow(delta_ref_df)
-            key = (row.drug, row.dose, row.time)
-            push!(get!(delta_ref_index, key, Vector{Float32}[]), row.expr)
-        end
-        isempty(delta_ref_index) && error(
-            "No treated profiles found for reference cell line $ref_cl; " *
-            "cannot build delta_ref_pools"
-        )
-
-        # One replicate pool per observation, matched to meta_df's (drug, dose, time)
-        n_genes = length(first(first(values(delta_ref_index))))
-        delta_ref_pools = [
-            lookup_or_nan(v -> reduce(hcat, v), delta_ref_index,
-                          (row.drug, row.dose, row.time), (n_genes, 1))
-            for row in eachrow(meta_df)
-        ]
-    end
-
-    molec_embeds = nothing
-    if !isnothing(smiles_to_embeds)
-        isempty(smiles_to_embeds) && error("smiles_to_embeds is empty; cannot build molec_embeds")
-        n_embed_dims = length(first(values(smiles_to_embeds)))
-        molec_embeds = reduce(hcat, [
-            lookup_or_nan(identity, smiles_to_embeds, s, (n_embed_dims,))
-            for s in meta_df.smiles
-        ])
-    end
-
-    # Drop observations left with missing (NaN-filled) values from a failed
-    # delta_ref_pools or molec_embeds look up
-    valid_idxs = filter(1:nrow(meta_df)) do i
-        (isnothing(molec_embeds)   || !any(isnan, view(molec_embeds, :, i))) &&
-        (isnothing(delta_ref_pools) || !any(isnan, delta_ref_pools[i]))
-    end
-
-    return Obs(
-        meta_df[valid_idxs, :],
-        avg_untrt_targets[:, valid_idxs],
-        avg_delta_targets[:, valid_idxs];
-        delta_ref_pools = isnothing(delta_ref_pools) ? nothing : delta_ref_pools[valid_idxs],
-        molec_embeds    = isnothing(molec_embeds)    ? nothing : molec_embeds[:, valid_idxs],
-    )
+    @info "Split sizes (pinned) — train: $(length(train_idxs)), val: $(length(val_idxs)), " *
+        "test: $(length(test_idxs))"
+    return subset_obs(obs, train_idxs), subset_obs(obs, val_idxs), subset_obs(obs, test_idxs)
 end
 
 

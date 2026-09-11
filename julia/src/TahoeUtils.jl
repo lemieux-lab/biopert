@@ -10,7 +10,7 @@ const LIBARROW_WRAP = normpath(joinpath(BIOPERT_ROOT, "cxx", "ArrowWrap", "build
 
 function __init__()
     if !isfile(LIBARROW_WRAP)
-        error("Shared library not found: $(LIBARROW_WRAP). Run scripts/setup_tahoe_deps.sh first.")
+        error("Shared library not found: $(LIBARROW_WRAP). Run scripts/setup/setup_tahoe_deps.sh first.")
     end
     CxxWrap.@wrapmodule(() -> LIBARROW_WRAP, :define_julia_module)
 end

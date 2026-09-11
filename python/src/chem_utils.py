@@ -1,9 +1,7 @@
-import numpy as np
-import pandas as pd
 import random
+
 from rdkit import Chem
-from rdkit.Chem import DataStructs
-from rdkit.Chem import rdFingerprintGenerator
+from rdkit.Chem import DataStructs, rdFingerprintGenerator
 from rdkit.DataStructs import ExplicitBitVect
 from rdkit.ML.Cluster import Butina
 
@@ -111,13 +109,3 @@ def butina_split(
         f"Test     : {len(test_smiles)}  ({100 * len(test_smiles)  / n:.1f}%)"
     )
     return train_smiles, val_smiles, test_smiles
-
-
-def load_embeddings(path: str) -> dict[str, np.ndarray]:
-    """
-    Load embeddings from a parquet file with 'smiles' and 'embedding' columns.
-    The 'embedding' column contains raw float32 bytes.
-    Returns a dict mapping smiles -> float32 embedding array.
-    """
-    df = pd.read_parquet(path)
-    return {row.smiles: np.frombuffer(row.embedding, dtype=np.float32) for _, row in df.iterrows()}

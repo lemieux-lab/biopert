@@ -50,8 +50,8 @@ function build_pseudobulks(
         smiles_list = fp.df.smiles
         doses       = getindex.(Ref(sample_to_dose), samples)
 
-        # 1 sample = 1 well = 1 treatment (drug x dose x 24 h) on a MOSAIC tumor
-        # Group columns by (cell_line, sample)
+        # 1 sample = 1 well = 1 treatment (drug x dose x 24 h) on a MOSAIC tumor.
+        # Group columns by (cell_line, sample).
         key_to_col_idxs = Dict{Tuple{Symbol, Symbol}, Vector{Int}}()
         @inbounds for j in eachindex(cell_lines)
             key = (cell_lines[j], samples[j])

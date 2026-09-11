@@ -3,19 +3,21 @@ using Biopert
 
 
 function main(tahoe_dir::String, outdir::String; cell_thresh::Int=50, umi_thresh::Int=35_000, α::Int=10000)
-    mkpath(outdir)
+    paths = Biopert.dataset_paths(outdir, "tahoe")
+    preprocessed_dir = dirname(paths.jld2_path)
+    mkpath(preprocessed_dir)
 
     sample_meta = DataFrame(Parquet2.Dataset(tahoe_dir * "/metadata/sample_metadata.parquet"))
     gene_exp_meta = DataFrame(Parquet2.Dataset(tahoe_dir * "/metadata/gene_metadata.parquet"))
 
-    # Get coding gene tokens
-    # Downloaded from https://www.genenames.org/download/statistics-and-files/
+    # Get coding gene tokens.
+    # Downloaded from https://www.genenames.org/download/statistics-and-files/.
     df_coding            = CSV.read("data/protein-coding_gene.txt", DataFrame; delim='\t')
     coding_genes         = Set(df_coding.symbol)
     coding_gene_exp_meta = filter(row -> row.gene_symbol in coding_genes, gene_exp_meta)
-    coding_tokens        = coding_gene_exp_meta.token_id        
+    coding_tokens        = coding_gene_exp_meta.token_id
     coding_tokens        = collect(skipmissing(coding_tokens))
-    CSV.write(joinpath(outdir, "tahoe_coding_tokens.csv"), DataFrame(coding_tokens = coding_tokens))
+    CSV.write(joinpath(preprocessed_dir, "tahoe_coding_tokens.csv"), DataFrame(coding_tokens = coding_tokens))
 
     # Create dict sample to dose 
     sample_to_dose = Biopert.build_sample_to_dose(sample_meta)
@@ -47,7 +49,7 @@ function main(tahoe_dir::String, outdir::String; cell_thresh::Int=50, umi_thresh
     @assert nrow(df) == nrow(unique(df, Not(:expr))) "Sanity check failed: df contains duplicate rows"
 
     @info "Tahoe pseudobulks before filtering: $(nrow(df)) total"
-    outfile = joinpath(outdir, "pseudobulks.jld2")
+    outfile = joinpath(preprocessed_dir, "pseudobulks.jld2")
     @save outfile df
     @info "$outfile saved"
 
@@ -70,7 +72,7 @@ function main(tahoe_dir::String, outdir::String; cell_thresh::Int=50, umi_thresh
     Biopert.log_normalize!(df; α=α)
 
     @info "Tahoe pseudobulks after log-normalization: $(nrow(df)) total"
-    outfile = joinpath(outdir, "pseudobulks_alpha_$(α).jld2")
+    outfile = joinpath(preprocessed_dir, "pseudobulks_alpha_$(α).jld2")
     @save outfile df
     @info "$outfile saved"
 end
@@ -79,21 +81,21 @@ function build_argument_parser()
     s = ArgParseSettings()
     @add_arg_table s begin
         "tahoe_dir"
-            help = "Path to Tahoe-100M directory"
+            help = "Path to Tahoe-100M directory."
             arg_type = String
         "outdir"
-            help = "Path to output directory for tahoe_coding_tokens.csv and Tahoe pseudobulks"
+            help = "BIOPERT_OUTDIR: base directory for all pipeline data (see configs/default_paths.toml)."
             arg_type = String
         "--cell_thresh"
-            help = "Minimum number of cells per pseudobulk"
+            help = "Minimum number of cells per pseudobulk."
             arg_type = Int
             default = 50
         "--umi_thresh"
-            help = "Minimum number of UMIs per pseudobulk"
+            help = "Minimum number of UMIs per pseudobulk."
             arg_type = Int
             default = 35_000
         "--alpha"
-            help = "Alpha value for log-normalization"
+            help = "Alpha value for log-normalization."
             arg_type = Int
             default = 10000
     end

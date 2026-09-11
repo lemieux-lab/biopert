@@ -1,0 +1,20 @@
+# Default output paths for each dataset, relative to BIOPERT_OUTDIR.
+# Read by julia/src/Paths.jl (Julia) and scripts/py_common/dataset_paths.py (Python).
+
+[lincs]
+jld2_path        = "preprocessed_data/filtered_lincs.jld2"
+smiles_csv       = "smiles/smiles_filtered_lincs.csv"
+molec_embeds_dir = "molec_embeds/lincs"
+repro_dir        = "repro"
+sar_dir          = "sar"
+pca_dir          = "pca/lincs"
+predictions_dir  = "target_delta_profiles_predictions"
+
+[tahoe]
+jld2_path        = "preprocessed_data/pseudobulks_alpha_10000.jld2"
+smiles_csv       = "smiles/smiles_pseudobulks_alpha_10000.csv"
+molec_embeds_dir = "molec_embeds/tahoe"
+repro_dir        = "repro"
+sar_dir          = "sar"
+pca_dir          = "pca/tahoe"
+predictions_dir  = "target_delta_profiles_predictions"

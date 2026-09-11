@@ -1,12 +1,18 @@
 module Metrics
 
-export rmse, pearson_corr, spearman_corr, cosine_similarity, l2_dist
+export mse, rmse, pearson_corr, spearman_corr, cosine_similarity, l2_dist
 export average_metrics, metrics_per_obs
 
 using CSV, DataFrames, LinearAlgebra, Statistics, StatsBase
 
 
 # ── Metrics ──────────────────────────────────────────────────────────────────
+
+function mse(
+    y::AbstractVector{T}, ŷ::AbstractVector{T},
+) where {T <: AbstractFloat}
+    mean((ŷ .- y) .^ 2)
+end
 
 function rmse(
     y::AbstractVector{T}, ŷ::AbstractVector{T},
@@ -71,7 +77,8 @@ function average_cosine_similarity(
     average_metric(Y, Ŷ, cosine_similarity)
 end
 
-# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Aggregate metrics ───────────────────────────────────────────────────────
 
 # Average value of metric f computed column-wise between Y and Ŷ
 average_metric(Y::Matrix{T}, Ŷ::Matrix{T}, f::Function) where {T <: AbstractFloat} =
@@ -103,7 +110,6 @@ function metrics_per_obs(
     spearmans = Vector{Float64}(undef, n_obs)
     l2s       = Vector{Float64}(undef, n_obs)
     cosines   = Vector{Float64}(undef, n_obs)
-  
 
     for j in 1:n_obs
         y = @view Y[:, j]

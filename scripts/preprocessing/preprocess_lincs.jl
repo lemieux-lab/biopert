@@ -3,14 +3,15 @@ using Biopert
 
 
 function main(lincs_dir::String, outdir::String)
-    mkpath(outdir)
+    paths = Biopert.dataset_paths(outdir, "lincs")
+    mkpath(dirname(paths.jld2_path))
 
     # Extract LINCS L1000 level 3 expression profiles (landmark genes only)
     lm_file = joinpath(lincs_dir, "lincs_beta_landmark_genes.jld2")
     lm_data = Biopert.Lincs(joinpath(lincs_dir, ""), "level3_beta_all_n3026460x12328.gctx", lm_file)
 
     # Add original index before any filtering, so it can still be used to
-    # match rows of lm_data.inst back to columns of lm_data.expr after filtering
+    # match rows of lm_data.inst back to columns of lm_data.expr after filtering.
     lm_data.inst.orig_idx = 1:nrow(lm_data.inst)
 
     data = filter(row ->
@@ -40,7 +41,7 @@ function main(lincs_dir::String, outdir::String)
     )
 
     # DMSO controls have no meaningful dose; give them a placeholder so they
-    # aren't dropped by the missing/empty-metadata filter below
+    # aren't dropped by the missing/empty-metadata filter below.
     data_with_smiles.pert_idose[data_with_smiles.pert_id .=== :DMSO] .= Symbol("NA")
 
     required_cols = [:cell_iname, :pert_id, :pert_idose, :pert_itime, :det_plate, :sample_id]
@@ -58,9 +59,8 @@ function main(lincs_dir::String, outdir::String)
         expr      = [lm_data.expr[:, i] for i in data_with_smiles.orig_idx]
     )
 
-    outfile = joinpath(outdir, "filtered_lincs.jld2")
-    @save outfile df
-    @info "$outfile saved"
+    @save paths.jld2_path df
+    @info "$(paths.jld2_path) saved"
 end
 
 
@@ -68,10 +68,10 @@ function build_argument_parser()
     s = ArgParseSettings()
     @add_arg_table s begin
         "lincs_dir"
-            help     = "Path to LINCS_beta directory"
+            help     = "Path to LINCS_beta directory."
             arg_type = String
         "outdir"
-            help     = "Path to output directory for filtered LINCS data"
+            help     = "BIOPERT_OUTDIR: base directory for all pipeline data (see configs/default_paths.toml)."
             arg_type = String
     end
     return s

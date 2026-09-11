@@ -48,6 +48,7 @@ function psortperm!(v, data, lo::Int=1, hi::Int=length(v))
     return v
 end
 
+
 psortperm(data) = psortperm!(collect(1:length(data)), data)
 
 
@@ -87,7 +88,7 @@ function parse_lincs(f, prefix::String, out_fn::String)
     inst_df = CSV.File(prefix * "instinfo_beta.txt",
                        delim='\t', types=String, missingstring=nothing, pool=false) |> DataFrame
     @Threads.threads for col in names(inst_df)
-        inst_df[!, col] = Symbol.(inst_df[!, col])
+        inst_df[!, col] = Symbol.(strip.(inst_df[!, col]))
     end
 
     expr_id = Symbol.(f["0/META/COL/id"][:])

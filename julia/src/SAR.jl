@@ -2,7 +2,7 @@ module SAR  # Structure-Activity Relationship
 
 export build_sar_table
 
-using Combinatorics, DataFrames, LinearAlgebra, ProgressMeter
+using Combinatorics, DataFrames, LinearAlgebra, Parquet2, ProgressMeter
 using PythonCall, Random, Statistics
 using ..Metrics
 
@@ -20,11 +20,11 @@ function __init__()
 end
 
 
-function load_embeddings(path::String)
-    py_dict = chem[].load_embeddings(path)
-    smiles_to_embeds = Dict(pyconvert(String, k) => pyconvert(Vector{Float32}, v)
-                             for (k, v) in py_dict.items())
-    return smiles_to_embeds
+function load_embeddings(path::String)::Dict{String, Vector{Float32}}
+    df = DataFrame(Parquet2.readfile(path); copycols=false)
+    return Dict(
+        s => Vector{Float32}(reinterpret(Float32, e)) for (s, e) in zip(df.smiles, df.embedding)
+    )
 end
 
 
@@ -93,12 +93,13 @@ Compounds are paired within the same `(cell_line, dose, time, plate)` group in
 For every pair, the biological side reports Pearson/Spearman correlation, cosine
 similarity, L2 distance, and MSE between the two delta profiles.
 
-Every pair also gets an `ecfp6_tanimoto_dist` column.
-
-`embeddings_dir`, if given, should contain one subdirectory per molecular
-representation, each with a `dataframe.parquet`. One additional chemical-distance
-column is added per representation, using the metric appropriate to its type.
-Larger means more chemically different.
+When `embeddings_dir` is `nothing` (the default), every pair gets a single
+`ecfp6_2048_dist` column (RDKit-computed ECFP6, 2048 bits). When `embeddings_dir`
+is given, it should instead contain one subdirectory per molecular representation,
+each with an `embeds.parquet`; one chemical-distance column is added per
+representation found there, using the metric appropriate to its type, and
+`ecfp6_2048_dist` is not computed (redundant with an `ECFP6_2048` representation,
+if present in `embeddings_dir`). Larger means more chemically different.
 """
 function build_sar_table(
     delta_df::DataFrame;
@@ -108,13 +109,13 @@ function build_sar_table(
     all_embeddings = if isnothing(embeddings_dir)
         Dict{String, Dict{String, Vector{Float32}}}()
     else
-        Dict(name => load_embeddings(joinpath(embeddings_dir, name, "dataframe.parquet"))
+        Dict(name => load_embeddings(joinpath(embeddings_dir, name, "embeds.parquet"))
              for name in readdir(embeddings_dir)
-             if isfile(joinpath(embeddings_dir, name, "dataframe.parquet")))
+             if isfile(joinpath(embeddings_dir, name, "embeds.parquet")))
     end
 
     # Metric choice is a property of the representation, so resolve it once per
-    # representation rather than once per pair
+    # representation rather than once per pair.
     is_binary_emb = Dict(
         name => is_binary(smiles_to_embeds) for (name, smiles_to_embeds) in all_embeddings
     )
@@ -133,7 +134,7 @@ function build_sar_table(
         plate     = gdf.plate[1]
 
         # Deduplicate by SMILES so each compound appears once, keeping a random row
-        # per SMILES
+        # per SMILES.
         gdf_u = unique(gdf[shuffle(1:nrow(gdf)), :], :smiles)
         n     = nrow(gdf_u)
         n < 2 && continue
@@ -144,38 +145,44 @@ function build_sar_table(
             si = gdf_u.smiles[i]
             sj = gdf_u.smiles[j]
 
-            ecfp6_tanimoto_dist = tanimoto_distance(si, sj)
-            ismissing(ecfp6_tanimoto_dist) && continue
+            if isnothing(embeddings_dir)
+                ecfp6_2048_dist = tanimoto_distance(si, sj)
+                ismissing(ecfp6_2048_dist) && continue
+            end
 
             y_i = gdf_u.expr[i]
             y_j = gdf_u.expr[j]
 
             base = (
-                cell_line           = cell_line,
-                dose                = dose,
-                time                = time,
-                plate               = plate,
-                drug_i              = gdf_u.drug[i],
-                drug_j              = gdf_u.drug[j],
-                smiles_i            = si,
-                smiles_j            = sj,
-                delta_norm_i        = norm(y_i),
-                delta_norm_j        = norm(y_j),
-                pearson             = pearson_corr(y_i, y_j),
-                spearman            = spearman_corr(y_i, y_j),
-                cosine              = cosine_similarity(y_i, y_j),
-                l2                  = l2_dist(y_i, y_j),
-                mse                 = mse(y_i, y_j),
-                ecfp6_tanimoto_dist = ecfp6_tanimoto_dist,
+                cell_line    = cell_line,
+                dose         = dose,
+                time         = time,
+                plate        = plate,
+                drug_i       = gdf_u.drug[i],
+                drug_j       = gdf_u.drug[j],
+                smiles_i     = si,
+                smiles_j     = sj,
+                delta_norm_i = norm(y_i),
+                delta_norm_j = norm(y_j),
+                pearson      = pearson_corr(y_i, y_j),
+                spearman     = spearman_corr(y_i, y_j),
+                cosine       = cosine_similarity(y_i, y_j),
+                l2           = l2_dist(y_i, y_j),
+                mse          = mse(y_i, y_j),
             )
 
-            emb_dists = NamedTuple(
-                Symbol(name, "_dist") =>
-                    embedding_dist(smiles_to_embeds, si, sj, is_binary_emb[name])
-                for (name, smiles_to_embeds) in all_embeddings
-            )
+            row = if isnothing(embeddings_dir)
+                merge(base, (ecfp6_2048_dist = ecfp6_2048_dist,))
+            else
+                emb_dists = NamedTuple(
+                    Symbol(name, "_dist") =>
+                        embedding_dist(smiles_to_embeds, si, sj, is_binary_emb[name])
+                    for (name, smiles_to_embeds) in all_embeddings
+                )
+                merge(base, emb_dists)
+            end
 
-            push!(rows, merge(base, emb_dists))
+            push!(rows, row)
         end
     end
     return DataFrame(rows)
