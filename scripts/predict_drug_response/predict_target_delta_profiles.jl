@@ -49,7 +49,7 @@ function main(config_file::String, outdir::String, dataset::String)
     timestamp       = Dates.format(now(), "yyyy-mm-dd_HHMMSS")
     config_basename = splitext(basename(config_file))[1]
     jld2_basename   = splitext(basename(jld2_path))[1]
-    run_dir = joinpath(outdir, "$(jld2_basename)_$(config_basename)_$(timestamp)")
+    run_dir = joinpath(paths.prediction_dir, "$(jld2_basename)_$(config_basename)_$(timestamp)")
     mkpath(run_dir)
 
     # ── Config ──────────────────────────────────────────────────────────────────
@@ -72,18 +72,19 @@ function main(config_file::String, outdir::String, dataset::String)
     # Data filtering
     landmark_genes_only                = get(config, "landmark_genes_only", false)
     # Data split (only Butina/compound-scaffold splitting is currently supported)
-    val_frac                           = Float64(get(config, "val_frac", 0.1))
-    test_frac                          = Float64(get(config, "test_frac", 0.1))
+    val_frac                           = Float64(get(config,     "val_frac",  0.1))
+    test_frac                          = Float64(get(config,     "test_frac", 0.1))
     val_obs_path                       = configured_path(config, "val_obs_path")
     test_obs_path                      = configured_path(config, "test_obs_path")
     # Cell-line holdout (second split axis; disabled by default)
-    holdout_cell_lines                 = get(config, "holdout_cell_lines", false)
+    holdout_cell_lines                 = get(config,             "holdout_cell_lines", false)
     cellline_val_obs_path              = configured_path(config, "cellline_val_obs_path")
     cellline_test_obs_path             = configured_path(config, "cellline_test_obs_path")
     # Train data filtering
-    repro_delta_inter_path             = get(config, "repro_delta_inter_path", nothing)
+    repro_delta_inter_path             = get(config,         "repro_delta_inter_path", nothing)
     repro_delta_inter_threshold        = Float64(get(config, "repro_delta_inter_threshold", 0.1))
     # PCA
+    # TODO: it should be two different parameters for delta_ref_pca_dim and untrt_target_pca_dim.
     n_pca_expr                         = get(config, "n_pca_expr", nothing)
     n_pca_molec                        = get(config, "n_pca_molec", nothing)
     use_pca_cache                      = get(config, "use_pca_cache", false)
@@ -127,18 +128,18 @@ function main(config_file::String, outdir::String, dataset::String)
     wandb.config.update(pydict(Dict("jld2_path" => jld2_path)))
 
     # Override hyperparameters with sweep values (wandb_params merges TOML config + sweep overrides)
-    hidden_layers              = get(wandb_params, "hidden_layers",              hidden_layers)
-    dropout_arr                = get(wandb_params, "dropout_arr",                dropout_arr)
-    batch_size                 = get(wandb_params, "batch_size",                 batch_size)
-    n_epochs                   = get(wandb_params, "n_epochs",                   n_epochs)
-    lr                         = get(wandb_params, "lr",                         lr)
-    weight_decay               = get(wandb_params, "weight_decay",               weight_decay)
-    n_pca_expr  = get(wandb_params, "n_pca_expr",  n_pca_expr)
-    n_pca_molec = get(wandb_params, "n_pca_molec", n_pca_molec)
-    n_pca_expr  = (n_pca_expr == 0) ? nothing : n_pca_expr
-    n_pca_molec = (n_pca_molec == 0) ? nothing : n_pca_molec
-    loss_name                  = get(wandb_params, "loss_name",                  loss_name)
-    resample_ref               = get(wandb_params, "resample_ref",               resample_ref)
+    n_pca_expr    = get(wandb_params, "n_pca_expr",    n_pca_expr)
+    n_pca_molec   = get(wandb_params, "n_pca_molec",   n_pca_molec)
+    n_pca_expr    = (n_pca_expr == 0)  ? nothing :      n_pca_expr
+    n_pca_molec   = (n_pca_molec == 0) ? nothing :     n_pca_molec
+    hidden_layers = get(wandb_params, "hidden_layers", hidden_layers)
+    dropout_arr   = get(wandb_params, "dropout_arr",   dropout_arr)
+    batch_size    = get(wandb_params, "batch_size",    batch_size)
+    n_epochs      = get(wandb_params, "n_epochs",      n_epochs)
+    lr            = get(wandb_params, "lr",            lr)
+    weight_decay  = get(wandb_params, "weight_decay",  weight_decay)
+    loss_name     = get(wandb_params, "loss_name",     loss_name)
+    resample_ref  = get(wandb_params, "resample_ref",  resample_ref)
 
     if isa(hidden_layers, String)
         hidden_layers = parse.(Int, split(strip(hidden_layers, ['[', ']']), ","))
@@ -353,17 +354,7 @@ function main(config_file::String, outdir::String, dataset::String)
     n_test  = nrow(test_obs.meta_df)
 
     # ── PCA ──────────────────────────────────────────────────────────────────
-    #  Two independent PCAs can be applied:
-    #    1. Expression PCA (n_pca_expr): reduces the dimensionality of the
-    #       expression inputs (delta-ref and untreated target profiles).
-    #    2. Molecular embedding PCA (n_pca_molec): reduces the
-    #       dimensionality of the molecular (compound) embedding vectors.
-    #
-    #  Each PCA is fit on the training split and applied to val/test. When
-    #  use_pca_cache=true, transformed matrices are cached under pca_dir using
-    #  keys that include the actual train/val/test rows; otherwise PCA is
-    #  recomputed every run.
-    # ------------------------------------------------------------
+    # Each PCA is fit on the training split and applied to val/test. 
 
     # Per-epoch reference resampling pool, in the final delta_ref feature space
     # (post-PCA if applicable). Built below when resample_ref; nothing otherwise.
@@ -372,6 +363,16 @@ function main(config_file::String, outdir::String, dataset::String)
     # Stack a pool of replicate vectors into a (genes × k) matrix. The `init` keeps
     # reduce from short-circuiting to a bare Vector when k == 1 (single replicate).
     pool_to_matrix(p) = reduce(hcat, p; init = Matrix{Float32}(undef, length(first(p)), 0))
+
+    # Rebuild with one PCA-transformed field, keeping every other field as-is.
+    with_pca_delta_ref(o, delta_ref_exprs) = Obs(
+        o.meta_df, delta_ref_exprs, o.molec_embeds, o.time_feats, o.dose_feats,
+        o.avg_untrt_target_exprs, o.avg_delta_target_exprs,
+    )
+    with_pca_untrt_target(o, avg_untrt_target_exprs) = Obs(
+        o.meta_df, o.delta_ref_exprs, o.molec_embeds, o.time_feats, o.dose_feats,
+        avg_untrt_target_exprs, o.avg_delta_target_exprs,
+    )
 
     if n_pca_expr !== nothing
         train_delta_ref_exprs, val_delta_ref_exprs, test_delta_ref_exprs =
@@ -412,6 +413,18 @@ function main(config_file::String, outdir::String, dataset::String)
                 train_t, val_t, test_t
             end
 
+        train_obs = with_pca_delta_ref(train_obs, train_delta_ref_exprs)
+        val_obs   = with_pca_delta_ref(val_obs,   val_delta_ref_exprs)
+        test_obs  = with_pca_delta_ref(test_obs,  test_delta_ref_exprs)
+    end
+
+    # No delta_ref PCA: the resampling pool stays in raw gene space, matching the
+    # raw delta_ref block of X.
+    if resample_ref && n_pca_expr === nothing
+        train_ref_pool = [pool_to_matrix(p) for p in train_raw_pool]
+    end
+
+    if n_pca_expr !== nothing
         params, train_untrt_target_exprs, val_untrt_target_exprs, test_untrt_target_exprs =
             PCAs.load_or_fit_and_transform(
                 train_obs.avg_untrt_target_exprs, val_obs.avg_untrt_target_exprs,
@@ -426,21 +439,9 @@ function main(config_file::String, outdir::String, dataset::String)
             )
         pca_parameters["avg_untrt_target_exprs"] = params
 
-        # Rebuild with the PCA-transformed delta_ref_exprs/avg_untrt_target_exprs,
-        # keeping every other field as-is.
-        with_pca_expr(o, delta_ref_exprs, avg_untrt_target_exprs) = Obs(
-            o.meta_df, delta_ref_exprs, o.molec_embeds, o.time_feats, o.dose_feats,
-            avg_untrt_target_exprs, o.avg_delta_target_exprs,
-        )
-        train_obs = with_pca_expr(train_obs, train_delta_ref_exprs, train_untrt_target_exprs)
-        val_obs   = with_pca_expr(val_obs,   val_delta_ref_exprs,   val_untrt_target_exprs)
-        test_obs  = with_pca_expr(test_obs,  test_delta_ref_exprs,  test_untrt_target_exprs)
-    end
-
-    # No expression PCA: the resampling pool stays in raw gene space, matching the
-    # raw delta_ref block of X.
-    if resample_ref && n_pca_expr === nothing
-        train_ref_pool = [pool_to_matrix(p) for p in train_raw_pool]
+        train_obs = with_pca_untrt_target(train_obs, train_untrt_target_exprs)
+        val_obs   = with_pca_untrt_target(val_obs,   val_untrt_target_exprs)
+        test_obs  = with_pca_untrt_target(test_obs,  test_untrt_target_exprs)
     end
 
     if n_pca_molec !== nothing && train_obs.molec_embeds !== nothing
@@ -673,9 +674,9 @@ function main(config_file::String, outdir::String, dataset::String)
         "n_train"             => n_train,
         "n_val"               => n_val,
         "n_test"              => n_test,
-        "n_pca_expr"          => isnothing(n_pca_expr) ? "nothing" : n_pca_expr,
+        "n_pca_expr"          => isnothing(n_pca_expr)  ? "nothing" : n_pca_expr,
         "n_pca_molec"         => isnothing(n_pca_molec) ? "nothing" : n_pca_molec,
-        "pca_dir"             => isnothing(pca_dir) ? "nothing" : pca_dir,
+        "pca_dir"             => isnothing(pca_dir)     ? "nothing" : pca_dir,
         "pca_cache_enabled"   => !isnothing(pca_dir),
         "selected_epoch"      => isnothing(best_epoch) ? n_epochs : best_epoch,
         "input_dim"           => input_dim,
@@ -705,6 +706,9 @@ function main(config_file::String, outdir::String, dataset::String)
         TOML.print(io, summary)
     end
     @info "Saved summary to $run_dir"
+
+    cache_script = joinpath("scripts", "predict_drug_response", "build_run_cache.py")
+    run(`$(PythonCall.python_executable_path()) $cache_script $run_dir $outdir`)
 
     wandb.finish()
 end

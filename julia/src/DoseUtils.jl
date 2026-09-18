@@ -28,11 +28,10 @@ end
 Defined from the full range of doses of A549 (the default reference cell line) on
 LINCS (log10 µM from -4.00 to 2.30). Tahoe's doses fall inside this same range, so the
 same edges are reused there.
-
-TODO: fix this dose vocabulary from training data only (not shared across train/val/
-test), and move dose_feats — like time_feats — out of Obs, computing them on demand
-instead of freezing them in at construction time.
 """
+# TODO: fix this dose vocabulary from training data only (not shared across train/val/test),
+# and move dose_feats out of Obs, computing it on demand instead of freezing it in at
+# construction time. Do the same for time_feats.
 const DOSE_LOG10_EDGES = Float32[-3, -2, -1, 0, 1, 2]
 
 

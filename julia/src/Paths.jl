@@ -24,7 +24,7 @@ function dataset_paths(outdir::String, dataset::String)
         repro_dir        = joinpath(outdir, entry["repro_dir"]),
         sar_dir          = joinpath(outdir, entry["sar_dir"]),
         pca_dir          = joinpath(outdir, entry["pca_dir"]),
-        predictions_dir  = joinpath(outdir, entry["predictions_dir"]),
+        prediction_dir   = joinpath(outdir, entry["prediction_dir"]),
     )
 end
 

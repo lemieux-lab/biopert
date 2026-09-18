@@ -1,0 +1,2 @@
+panel,dataset,relation,rho,ci_lo,ci_hi,p,n
+c,Tahoe,test Pearson vs reference–target Δ-profile similarity,0.793196286832729,0.7209564186416908,0.846957516202522,6.31220567144844e-42,188

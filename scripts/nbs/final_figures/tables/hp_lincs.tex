@@ -1,0 +1,32 @@
+\begin{longtable}{lrrrrrrrr}
+\caption{Best-by-validation-Spearman hyperparameters, LINCS.} \label{tab:hp_lincs} \\
+\toprule
+Configuration & LR & BSZ & Weight decay & Hidden layers & Max epochs & $n_\mathrm{PCA}^{\mathrm{expr}}$ & $n_\mathrm{PCA}^{\mathrm{molec}}$ & Epoch \\
+\midrule
+\endfirsthead
+\toprule
+Configuration & LR & BSZ & Weight decay & Hidden layers & Max epochs & $n_\mathrm{PCA}^{\mathrm{expr}}$ & $n_\mathrm{PCA}^{\mathrm{molec}}$ & Epoch \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+ECFP6-512 & 2.29e-04 & 32 & 0.1 & [1024, 1024] & 500 & 32 & — & 180 \\
+ECFP6-1024 & 1.44e-05 & 128 & 0.1 & [1024, 1024] & 200 & 128 & 64 & 180 \\
+ECFP6-2048 & 5.68e-05 & 32 & 0.1 & [1024, 1024] & 500 & 64 & 64 & 30 \\
+BioPert & 7.08e-05 & 32 & 0.1 & [1024, 1024] & 500 & 128 & 128 & 30 \\
+CheMeleon & 1.29e-04 & 256 & 0.0001 & [1024, 1024] & 100 & 256 & — & 20 \\
+ChemBERTa-100M-MLM & 2.61e-05 & 32 & 0.1 & [512, 512, 512] & 500 & 64 & — & 30 \\
+ChemBERTa-5M-MLM & 1.37e-05 & 256 & 0.1 & [1024, 1024] & 200 & 128 & 64 & 180 \\
+ChemBERTa-5M-MTR & 2.01e-05 & 32 & 0.1 & [1024, 1024] & 200 & 64 & 256 & 90 \\
+ChemBERTa-77M-MLM & 2.75e-05 & 64 & 0 & [1024, 1024] & 200 & 256 & 256 & 50 \\
+MoLFormer-XL & 1.38e-04 & 256 & 0.1 & [1024, 1024] & 200 & 256 & 256 & 20 \\
+MolGen-large & 3.25e-05 & 128 & 0 & [1024, 1024] & 200 & 128 & 64 & 40 \\
+Random & 3.58e-05 & 32 & 0.1 & [1024, 1024] & 200 & 256 & 32 & 20 \\
+UniMolv1-84M & 1.80e-05 & 256 & 0.0001 & [1024, 1024] & 500 & 64 & 32 & 60 \\
+UniMolv2-1.1B & 3.37e-04 & 64 & 0.1 & [1024, 128, 1024] & 500 & 64 & — & 160 \\
+UniMolv2-164M & 2.23e-04 & 32 & 0.001 & [512, 256, 512] & 100 & 128 & — & 40 \\
+UniMolv2-310M & 2.94e-04 & 32 & 0.1 & [1024, 128, 1024] & 100 & 256 & — & 80 \\
+UniMolv2-570M & 2.72e-05 & 128 & 0.1 & [1024, 128, 1024] & 500 & 256 & — & 100 \\
+UniMolv2-84M & 3.58e-05 & 64 & 0 & [1024, 128, 1024] & 200 & 256 & — & 80 \\
+bert-base-smiles & 6.53e-05 & 128 & 0.01 & [1024, 1024] & 500 & 256 & 32 & 20 \\
+\end{longtable}

@@ -10,6 +10,7 @@ dependencies:
   - pyarrow
   - scikit-learn
   - h5py
+  - umap-learn
   - ipython
   - adjustText
   - toml
@@ -20,6 +21,7 @@ dependencies:
   - r-irkernel
   - pip
   - pip:
+      - juliacall
       - huggingface_hub==1.29.0
       - torch
       - chemprop

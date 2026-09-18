@@ -1,0 +1,658 @@
+figure,analysis,group,term,estimate,ci_lo,ci_hi,p,p_adj,n,ci_level,seed
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon · test_cosine_sim,0.12328739369684844,0.12147676338169086,0.12526940345172585,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (concat) · test_cosine_sim,0.12172199785709381,0.12001512579396112,0.12342568714593624,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (gate) · test_cosine_sim,0.12328739369684844,0.12147676338169086,0.12526940345172585,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (onehot) · test_cosine_sim,0.11536099761724472,0.11351232666374196,0.11718897228527286,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM · test_cosine_sim,0.1132296148074037,0.11140692221110556,0.1152151575787894,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM + dose (gate) · test_cosine_sim,0.1132296148074037,0.11140692221110556,0.1152151575787894,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM · test_cosine_sim,0.11441820910455229,0.11273107178589294,0.11620954227113557,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM + dose (gate) · test_cosine_sim,0.11441820910455229,0.11273107178589294,0.11620954227113557,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR · test_cosine_sim,0.12262456228114059,0.12082614432216109,0.12449639194597298,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR + dose (gate) · test_cosine_sim,0.12262456228114059,0.12082614432216109,0.12449639194597298,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM · test_cosine_sim,0.123315907953977,0.12150549649824913,0.12516759629814908,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM + dose (gate) · test_cosine_sim,0.123315907953977,0.12150549649824913,0.12516759629814908,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MCF7 · test_cosine_sim,0.1418129950761795,0.1393397992810066,0.14409594068304374,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL · test_cosine_sim,0.11517558779389693,0.11327803901950975,0.11714803026513256,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL + dose (gate) · test_cosine_sim,0.11517558779389693,0.11327803901950975,0.11714803026513256,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large · test_cosine_sim,0.11667708854427214,0.11496094922461231,0.11845574662331165,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large + dose (gate) · test_cosine_sim,0.11667708854427214,0.11496094922461231,0.11845574662331165,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 · test_cosine_sim,0.12102826413206604,0.11923032766383192,0.12293272886443223,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (concat) · test_cosine_sim,0.11486999690532684,0.1132572386365804,0.11653771911419691,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (gate) · test_cosine_sim,0.12102826413206604,0.11923032766383192,0.12293272886443223,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (onehot) · test_cosine_sim,0.11232099682092667,0.11072885154595913,0.11399474507410304,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 · test_cosine_sim,0.12087818909454727,0.11907378064032016,0.12285188219109557,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 + dose (gate) · test_cosine_sim,0.12087818909454727,0.11907378064032016,0.12285188219109557,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 · test_cosine_sim,0.11263406703351678,0.11058968859429717,0.11465702851425714,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 + dose (gate) · test_cosine_sim,0.11263406703351678,0.11058968859429717,0.11465702851425714,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,PC3 · test_cosine_sim,0.13525600731372833,0.1332849049412091,0.13748741019658572,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M · test_cosine_sim,0.11354227113556778,0.11178753751875938,0.11533600550275136,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M + dose (gate) · test_cosine_sim,0.11354227113556778,0.11178753751875938,0.11533600550275136,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B · test_cosine_sim,0.11616908454227115,0.11442095422711354,0.1180718171585793,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (concat) · test_cosine_sim,0.08126600086688995,0.07953909722089764,0.08310525587960402,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (gate) · test_cosine_sim,0.11616908454227115,0.11442095422711354,0.1180718171585793,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (onehot) · test_cosine_sim,0.07634399831295013,0.07441368474259447,0.07815052835371086,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M · test_cosine_sim,0.11383316658329162,0.11205651575787892,0.11573519259629815,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M + dose (gate) · test_cosine_sim,0.11383316658329162,0.11205651575787892,0.11573519259629815,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M · test_cosine_sim,0.12088369184592297,0.11904253376688345,0.12286651450725364,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M + dose (gate) · test_cosine_sim,0.12088369184592297,0.11904253376688345,0.12286651450725364,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M · test_cosine_sim,0.115524012006003,0.11366524512256129,0.11747831415707854,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M + dose (gate) · test_cosine_sim,0.115524012006003,0.11366524512256129,0.11747831415707854,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M · test_cosine_sim,0.11486343171585794,0.11301236243121561,0.11682271760880439,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M + dose (gate) · test_cosine_sim,0.11486343171585794,0.11301236243121561,0.11682271760880439,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,average_ref · test_cosine_sim,0.17805799841880798,0.17563321660830414,0.1803578539269635,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles · test_cosine_sim,0.11231865932966484,0.1104828664332166,0.11411557653826913,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles + dose (gate) · test_cosine_sim,0.11231865932966484,0.1104828664332166,0.11411557653826913,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,cell-line holdout · test_cosine_sim,0.1300790011882782,0.12816782164549972,0.13184221424627274,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,default · test_cosine_sim,0.15158054027013507,0.14926176213106554,0.1540305652826413,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,delta_ref_only · test_cosine_sim,0.102292999625206,0.10002441220610306,0.10442990870435216,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 · test_cosine_sim,0.10916908454227116,0.1075516695847924,0.11090988619309655,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (concat) · test_cosine_sim,0.09927599877119064,0.09784898048715357,0.1007676340435272,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (gate) · test_cosine_sim,0.10916908454227116,0.1075516695847924,0.11090988619309655,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (onehot) · test_cosine_sim,0.09275399893522263,0.09120832300150686,0.09434283861369143,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.0 · test_cosine_sim,0.1353210061788559,0.13300741620810405,0.13756182466233116,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.1 · test_cosine_sim,0.12330000102519989,0.12085556528264133,0.12553129689844922,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.2 · test_cosine_sim,0.11088600009679794,0.10863440470235118,0.11310989869934968,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.3 · test_cosine_sim,0.10229700058698654,0.1000385067533767,0.10454202101050525,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.4 · test_cosine_sim,0.09176599979400635,0.08934509754877439,0.09413337293646823,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.5 · test_cosine_sim,0.08357399702072144,0.0815903951975988,0.08575188219109556,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,resample_ref · test_cosine_sim,0.1558700054883957,0.15368631815907954,0.15816053651825912,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon · test_l2,14.92729539769885,14.867194172086043,14.984325131315657,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (concat) · test_l2,14.844099998474121,14.791623195109391,14.89353163446316,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (gate) · test_l2,14.92729539769885,14.867194172086043,14.984325131315657,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (onehot) · test_l2,14.918573379516602,14.865795630114256,14.968029436168386,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM · test_l2,14.996870685342671,14.935897905202603,15.055983748124062,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM + dose (gate) · test_l2,14.996870685342671,14.935897905202603,15.055983748124062,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM · test_l2,15.009412206103052,14.948694709854927,15.067799624812405,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM + dose (gate) · test_l2,15.009412206103052,14.948694709854927,15.067799624812405,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR · test_l2,15.084234867433716,15.016450468984493,15.149171029264632,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR + dose (gate) · test_l2,15.084234867433716,15.016450468984493,15.149171029264632,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM · test_l2,14.964765382691345,14.903197836418208,15.02290476488244,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM + dose (gate) · test_l2,14.964765382691345,14.903197836418208,15.02290476488244,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MCF7 · test_l2,14.816253662109375,14.76011316080564,14.870356996358945,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL · test_l2,15.039126813406705,14.979339769884943,15.09562240495248,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL + dose (gate) · test_l2,15.039126813406705,14.979339769884943,15.09562240495248,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large · test_l2,15.022397198599299,14.961673986993496,15.081170191345675,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large + dose (gate) · test_l2,15.022397198599299,14.961673986993496,15.081170191345675,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 · test_l2,14.948278139069535,14.888475306403203,15.006458285392698,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (concat) · test_l2,14.853754043579102,14.799909064031892,14.90350412478303,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (gate) · test_l2,14.948278139069535,14.888475306403203,15.006458285392698,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (onehot) · test_l2,14.863956451416016,14.809735060178918,14.915483357811812,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 · test_l2,14.939778889444723,14.88047241745873,14.997525075037519,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 + dose (gate) · test_l2,14.939778889444723,14.88047241745873,14.997525075037519,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 · test_l2,15.020086043021509,14.960031597048523,15.076473092796396,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 + dose (gate) · test_l2,15.020086043021509,14.960031597048523,15.076473092796396,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,PC3 · test_l2,14.952486038208008,14.900408954930816,15.008056163228533,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M · test_l2,15.014518009004501,14.954123330415209,15.07287934592296,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M + dose (gate) · test_l2,15.014518009004501,14.954123330415209,15.07287934592296,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B · test_l2,14.963605802901453,14.9036088981991,15.022469290895447,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (concat) · test_l2,15.053604125976562,15.001006804699868,15.103914109142236,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (gate) · test_l2,14.963605802901453,14.9036088981991,15.022469290895447,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (onehot) · test_l2,15.058762550354004,15.006070788906479,15.108738417227764,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M · test_l2,14.972999749874939,14.91137026638319,15.031350243871938,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M + dose (gate) · test_l2,14.972999749874939,14.91137026638319,15.031350243871938,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M · test_l2,14.920224612306155,14.85970438344172,14.978650087543773,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M + dose (gate) · test_l2,14.920224612306155,14.85970438344172,14.978650087543773,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M · test_l2,15.07309104552276,15.013521079289646,15.130426269384694,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M + dose (gate) · test_l2,15.07309104552276,15.013521079289646,15.130426269384694,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M · test_l2,15.017543271635816,14.957819065782891,15.075945291395698,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M + dose (gate) · test_l2,15.017543271635816,14.957819065782891,15.075945291395698,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,average_ref · test_l2,14.553220748901367,14.495780377688844,14.610778482991494,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles · test_l2,15.047413456728366,14.986362893946973,15.106165839169584,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles + dose (gate) · test_l2,15.047413456728366,14.986362893946973,15.106165839169584,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,cell-line holdout · test_l2,14.942145347595215,14.895119956745813,14.997195849438619,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,default · test_l2,14.648696098049024,14.591597304902454,14.703042152326164,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,delta_ref_only · test_l2,14.902677536010742,14.843167452476237,14.965061530765382,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 · test_l2,14.980252626313156,14.91633688094047,15.04044968734367,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (concat) · test_l2,14.922905921936035,14.868998564670875,14.973944766055657,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (gate) · test_l2,14.980252626313156,14.91633688094047,15.04044968734367,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (onehot) · test_l2,14.958642959594727,14.906011544623954,15.009585490300799,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.0 · test_l2,14.739768028259277,14.681073355427714,14.799325406453226,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.1 · test_l2,15.086919784545898,15.028813694347173,15.14476086168084,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.2 · test_l2,15.730912208557129,15.674941433216608,15.78931086168084,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.3 · test_l2,16.261568069458008,16.208404671085546,16.31716926588294,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.4 · test_l2,17.957311630249023,17.900096010505255,18.01681783391696,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.5 · test_l2,20.179481506347656,20.123215232616307,20.243193234117054,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,resample_ref · test_l2,14.595251083374023,14.537795772886442,14.651680058779393,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon · test_pearson,0.1233526763381691,0.12155470860430213,0.12534263381690847,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (concat) · test_pearson,0.1217930018901825,0.12008538539302269,0.12348422568523852,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (gate) · test_pearson,0.1233526763381691,0.12155470860430213,0.12534263381690847,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (onehot) · test_pearson,0.11558700352907181,0.11375182158048333,0.11741512960878936,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM · test_pearson,0.11326538269134569,0.11143869434717361,0.115205383941971,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM + dose (gate) · test_pearson,0.11326538269134569,0.11143869434717361,0.115205383941971,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM · test_pearson,0.11442646323161582,0.1127534704852426,0.1162127376188094,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM + dose (gate) · test_pearson,0.11442646323161582,0.1127534704852426,0.1162127376188094,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR · test_pearson,0.12258904452226115,0.12077510630315158,0.1245018384192096,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR + dose (gate) · test_pearson,0.12258904452226115,0.12077510630315158,0.1245018384192096,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM · test_pearson,0.12333791895947975,0.12151546398199098,0.12520243871935968,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM + dose (gate) · test_pearson,0.12333791895947975,0.12151546398199098,0.12520243871935968,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MCF7 · test_pearson,0.14170800149440765,0.13924977531455962,0.1439875385998064,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL · test_pearson,0.11526713356678339,0.11336950975487743,0.11722238619309655,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL + dose (gate) · test_pearson,0.11526713356678339,0.11336950975487743,0.11722238619309655,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large · test_pearson,0.11676188094047024,0.1150644572286143,0.11856748999499749,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large + dose (gate) · test_pearson,0.11676188094047024,0.1150644572286143,0.11856748999499749,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 · test_pearson,0.12109604802401201,0.11929588544272138,0.12297157953976989,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (concat) · test_pearson,0.11489599943161011,0.11326703797661511,0.1165363791557785,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (gate) · test_pearson,0.12109604802401201,0.11929588544272138,0.12297157953976989,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (onehot) · test_pearson,0.11236099898815155,0.11078079520094608,0.11405567264958895,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 · test_pearson,0.12095172586293146,0.1191676275637819,0.12290591545772887,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 + dose (gate) · test_pearson,0.12095172586293146,0.1191676275637819,0.12290591545772887,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 · test_pearson,0.11293496748374188,0.1108831728364182,0.11495759754877437,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 + dose (gate) · test_pearson,0.11293496748374188,0.1108831728364182,0.11495759754877437,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,PC3 · test_pearson,0.1351580023765564,0.13319177504677862,0.1373417323107487,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M · test_pearson,0.11366058029014509,0.11194826163081543,0.11544794897448725,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M + dose (gate) · test_pearson,0.11366058029014509,0.11194826163081543,0.11544794897448725,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B · test_pearson,0.11626613306653326,0.11450882316158079,0.11813870060030016,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (concat) · test_pearson,0.08141600340604782,0.07969272512255138,0.0832367148606634,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (gate) · test_pearson,0.11626613306653326,0.11450882316158079,0.11813870060030016,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (onehot) · test_pearson,0.0764480009675026,0.07453356095141815,0.07823987163102983,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M · test_pearson,0.11389969984992496,0.11213880065032517,0.11580395822911456,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M + dose (gate) · test_pearson,0.11389969984992496,0.11213880065032517,0.11580395822911456,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M · test_pearson,0.12094147073536768,0.11908287893946973,0.12293281640820411,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M + dose (gate) · test_pearson,0.12094147073536768,0.11908287893946973,0.12293281640820411,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M · test_pearson,0.11563931965982992,0.11379449099549775,0.11759248374187094,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M + dose (gate) · test_pearson,0.11563931965982992,0.11379449099549775,0.11759248374187094,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M · test_pearson,0.11489669834917458,0.11306956603301652,0.11685097548774387,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M + dose (gate) · test_pearson,0.11489669834917458,0.11306956603301652,0.11685097548774387,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,average_ref · test_pearson,0.17788299918174744,0.17550597173586793,0.18018921335667837,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles · test_pearson,0.11246723361680842,0.11064249624812408,0.11422976488244123,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles + dose (gate) · test_pearson,0.11246723361680842,0.11064249624812408,0.11422976488244123,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,cell-line holdout · test_pearson,0.1298770010471344,0.128000763850543,0.13161288882753544,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,default · test_pearson,0.1514727363681841,0.14919139569784895,0.15390687218609303,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,delta_ref_only · test_pearson,0.10236000269651413,0.10010771010505252,0.10450322661330665,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 · test_pearson,0.10929339669834919,0.10768760630315156,0.11101330665332666,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (concat) · test_pearson,0.0993570014834404,0.09793446601941748,0.10084695862818778,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (gate) · test_pearson,0.10929339669834919,0.10768760630315156,0.11101330665332666,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (onehot) · test_pearson,0.09303800016641617,0.09150998054437598,0.09462952295572892,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.0 · test_pearson,0.1351740062236786,0.13288305402701353,0.1373524699849925,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.1 · test_pearson,0.12325499951839447,0.12085108804402202,0.12548851300650324,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.2 · test_pearson,0.11085300147533417,0.10861239994997499,0.11304439094547274,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.3 · test_pearson,0.10241299867630005,0.10013019634817409,0.10463161580790395,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.4 · test_pearson,0.0918779969215393,0.08949570410205103,0.0942903764382191,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.5 · test_pearson,0.08367300033569336,0.08166039894947474,0.08582342421210605,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,resample_ref · test_pearson,0.15569999814033508,0.15350724737368682,0.15794248999499752,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon · test_spearman,0.12258229114557279,0.12076732741370685,0.12448951975987994,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (concat) · test_spearman,0.12265,0.12088812062486885,0.12437469242947337,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (gate) · test_spearman,0.12258229114557279,0.12076732741370685,0.12448951975987994,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,CheMeleon + dose (onehot) · test_spearman,0.117674,0.1158457617258283,0.11948199877925496,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM · test_spearman,0.11287343671835919,0.11103826913456728,0.11485882316158079,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-100M-MLM + dose (gate) · test_spearman,0.11287343671835919,0.11103826913456728,0.11485882316158079,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM · test_spearman,0.11039444722361182,0.108681471985993,0.11220215107553776,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MLM + dose (gate) · test_spearman,0.11039444722361182,0.108681471985993,0.11220215107553776,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR · test_spearman,0.12490995497748873,0.12310550275137569,0.12683334167083543,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-5M-MTR + dose (gate) · test_spearman,0.12490995497748873,0.12310550275137569,0.12683334167083543,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM · test_spearman,0.12249649824912456,0.12071681465732867,0.12437621935967982,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,ChemBERTa-77M-MLM + dose (gate) · test_spearman,0.12249649824912456,0.12071681465732867,0.12437621935967982,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MCF7 · test_spearman,0.14655,0.14402977370143338,0.14882690003226254,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL · test_spearman,0.11499374687343673,0.11309424712356178,0.11691536393196597,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MoLFormer-XL + dose (gate) · test_spearman,0.11499374687343673,0.11309424712356178,0.11691536393196597,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large · test_spearman,0.11417633816908455,0.11245861680840422,0.11601137443721861,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,MolGen-large + dose (gate) · test_spearman,0.11417633816908455,0.11245861680840422,0.11601137443721861,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 · test_spearman,0.1199629814907454,0.11815537143571785,0.12178860055027514,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (concat) · test_spearman,0.114376,0.11270642989299406,0.11607504720849945,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (gate) · test_spearman,0.1199629814907454,0.11815537143571785,0.12178860055027514,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_1024 + dose (onehot) · test_spearman,0.114506,0.1128906813283232,0.11613456806607281,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 · test_spearman,0.12106378189094548,0.1192777076038019,0.12292505002501251,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_2048 + dose (gate) · test_spearman,0.12106378189094548,0.1192777076038019,0.12292505002501251,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 · test_spearman,0.11443121560780388,0.11236218734367184,0.1165066408204102,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,Morgan_512 + dose (gate) · test_spearman,0.11443121560780388,0.11236218734367184,0.1165066408204102,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,PC3 · test_spearman,0.140908,0.13888731548430314,0.1431288606805424,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M · test_spearman,0.11068834417208603,0.10902981490745373,0.11256159329664833,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv1-84M + dose (gate) · test_spearman,0.11068834417208603,0.10902981490745373,0.11256159329664833,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B · test_spearman,0.11739794897448724,0.11555469609804901,0.11928097173586794,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (concat) · test_spearman,0.079833,0.07801064337078223,0.08170793675014783,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (gate) · test_spearman,0.11739794897448724,0.11555469609804901,0.11928097173586794,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-1.1B + dose (onehot) · test_spearman,0.078039,0.07601464417189614,0.07991544910065425,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M · test_spearman,0.11509404702351175,0.11336316283141572,0.11699837418709355,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-164M + dose (gate) · test_spearman,0.11509404702351175,0.11336316283141572,0.11699837418709355,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M · test_spearman,0.1209087043521761,0.1190121435717859,0.12286318159079539,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-310M + dose (gate) · test_spearman,0.1209087043521761,0.1190121435717859,0.12286318159079539,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M · test_spearman,0.11580090045022512,0.11392686968484242,0.11783618059029516,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-570M + dose (gate) · test_spearman,0.11580090045022512,0.11392686968484242,0.11783618059029516,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M · test_spearman,0.11479989994997498,0.11288309154577289,0.11676175587793897,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,UniMolv2-84M + dose (gate) · test_spearman,0.11479989994997498,0.11288309154577289,0.11676175587793897,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,average_ref · test_spearman,0.182535,0.18019082666333167,0.18489165832916457,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles · test_spearman,0.10699424712356179,0.10519611680840421,0.10887970860430216,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,bert-base-smiles + dose (gate) · test_spearman,0.10699424712356179,0.10519611680840421,0.10887970860430216,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,cell-line holdout · test_spearman,0.130918,0.12901650101233203,0.1326669105466593,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,default · test_spearman,0.15304127063531767,0.15075677838919457,0.15555650950475236,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,delta_ref_only · test_spearman,0.109504,0.10724816783391695,0.11176256878439218,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 · test_spearman,0.10477913956978491,0.10305422711355677,0.10661643946973488,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (concat) · test_spearman,0.100679,0.09919894329257826,0.10227272207068877,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (gate) · test_spearman,0.10477913956978491,0.10305422711355677,0.10661643946973488,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,random_512 + dose (onehot) · test_spearman,0.09043,0.08876812520266275,0.09201580769450854,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.0 · test_spearman,0.137198,0.13482140445222612,0.13940447098549275,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.1 · test_spearman,0.123146,0.12069257128564283,0.12545812281140573,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.2 · test_spearman,0.1097,0.10735538394197099,0.11206450725362681,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.3 · test_spearman,0.093315,0.09098860680340172,0.0955247811405703,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.4 · test_spearman,0.085666,0.08325285142571286,0.088123911955978,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,repro_0.5 · test_spearman,0.073048,0.07093246623311657,0.0752693784392196,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,LINCS,resample_ref · test_spearman,0.159039,0.15697619434717358,0.16129348424212106,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,A-172 (CVCL_0131) · test_cosine_sim,0.7967320084571838,0.7943360692674135,0.799181601647998,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,COLO 205 (CVCL_0218) · test_cosine_sim,0.7852150201797485,0.7829273015257305,0.7875232738557021,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon · test_cosine_sim,0.44689326638341703,0.44274713531608084,0.4508542873696408,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (concat) · test_cosine_sim,0.43500301241874695,0.43081215398480754,0.43924694219132226,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (gate) · test_cosine_sim,0.44689326638341703,0.44274713531608084,0.4508542873696408,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (onehot) · test_cosine_sim,0.43992099165916443,0.4358908201364748,0.4440897386378267,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM · test_cosine_sim,0.44145616067979915,0.4373858632676709,0.4454040491824385,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM + dose (gate) · test_cosine_sim,0.44145616067979915,0.4373858632676709,0.4454040491824385,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM · test_cosine_sim,0.43433114458606925,0.42993691257885924,0.43804673619157974,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM + dose (gate) · test_cosine_sim,0.43433114458606925,0.42993691257885924,0.43804673619157974,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR · test_cosine_sim,0.446396292004635,0.44232232522209347,0.4503611432985709,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR + dose (gate) · test_cosine_sim,0.446396292004635,0.44232232522209347,0.4503611432985709,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM · test_cosine_sim,0.45034762456546934,0.44641425260718426,0.45419981975022533,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM + dose (gate) · test_cosine_sim,0.45034762456546934,0.44641425260718426,0.45419981975022533,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL · test_cosine_sim,0.44812282734646586,0.4441454229432213,0.4521816982103773,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL + dose (gate) · test_cosine_sim,0.44812282734646586,0.4441454229432213,0.4521816982103773,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large · test_cosine_sim,0.4374147032316209,0.4331555619930475,0.4415595468005665,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large + dose (gate) · test_cosine_sim,0.4374147032316209,0.4331555619930475,0.4415595468005665,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 · test_cosine_sim,0.4421578473026909,0.4375178318527102,0.4462499678125402,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (concat) · test_cosine_sim,0.4366700053215027,0.4325280674649157,0.44062572421784474,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (gate) · test_cosine_sim,0.4421578473026909,0.4375178318527102,0.4462499678125402,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (onehot) · test_cosine_sim,0.44982999563217163,0.4458102871121411,0.45365160293549633,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 · test_cosine_sim,0.44065147418565725,0.43634617612977983,0.4446663769795287,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 + dose (gate) · test_cosine_sim,0.44065147418565725,0.43634617612977983,0.4446663769795287,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 · test_cosine_sim,0.4479799150251062,0.44356723960345046,0.451972930346337,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 + dose (gate) · test_cosine_sim,0.4479799150251062,0.44356723960345046,0.451972930346337,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,PANC-1 (CVCL_0480) · test_cosine_sim,0.8098819851875305,0.807538045577443,0.8122178447276941,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M · test_cosine_sim,0.41909875112656114,0.4145790202137247,0.4235610917986352,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M + dose (gate) · test_cosine_sim,0.41909875112656114,0.4145790202137247,0.4235610917986352,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B · test_cosine_sim,0.4052130809836488,0.40068778164027297,0.4094200141624823,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (concat) · test_cosine_sim,0.33333900570869446,0.3294849040813698,0.3372257306553367,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (gate) · test_cosine_sim,0.4052130809836488,0.40068778164027297,0.4094200141624823,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (onehot) · test_cosine_sim,0.37498199939727783,0.37034086519891846,0.3796420754474057,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M · test_cosine_sim,0.431915797605253,0.4276996588129265,0.43604889275138403,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M + dose (gate) · test_cosine_sim,0.431915797605253,0.4276996588129265,0.43604889275138403,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M · test_cosine_sim,0.42195056006179993,0.4175511136861079,0.4261757113428608,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M + dose (gate) · test_cosine_sim,0.42195056006179993,0.4175511136861079,0.4261757113428608,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M · test_cosine_sim,0.4419145101068624,0.4375430346337067,0.4461404016994978,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M + dose (gate) · test_cosine_sim,0.4419145101068624,0.4375430346337067,0.4461404016994978,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M · test_cosine_sim,0.4304145744817819,0.42622682502896875,0.4347181987897515,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M + dose (gate) · test_cosine_sim,0.4304145744817819,0.42622682502896875,0.4347181987897515,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles · test_cosine_sim,0.42715849105188614,0.42282853740182824,0.43164844856443924,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles + dose (gate) · test_cosine_sim,0.42715849105188614,0.42282853740182824,0.43164844856443924,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,cell-line holdout · test_cosine_sim,0.6425729990005493,0.6394465858642802,0.6460069057853569,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,default · test_cosine_sim,0.7908124114844857,0.7883776554654306,0.7930398802626497,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,delta_ref_only · test_cosine_sim,0.6399589776992798,0.6373215205355993,0.6429254538431827,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,landmark_genes · test_cosine_sim,0.7926934466331917,0.790188457576928,0.7949798828376464,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 · test_cosine_sim,0.4381846272692159,0.43395223380970777,0.44209685206643495,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (concat) · test_cosine_sim,0.4169420003890991,0.4129130938586326,0.42101876528904336,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (gate) · test_cosine_sim,0.4381846272692159,0.43395223380970777,0.44209685206643495,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (onehot) · test_cosine_sim,0.4165849983692169,0.4126701107248616,0.42079715462855666,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,A-172 (CVCL_0131) · test_l2,5.204592227935791,5.143695216943478,5.263844148319815,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,COLO 205 (CVCL_0218) · test_l2,5.266054153442383,5.2155444789242305,5.31888363072149,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon · test_l2,7.844904081369898,7.777339255825929,7.915986288142141,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (concat) · test_l2,7.921327114105225,7.850816724604095,7.992928286339642,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (gate) · test_l2,7.844904081369898,7.777339255825929,7.915986288142141,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (onehot) · test_l2,7.88886022567749,7.82007544740569,7.960564632419209,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM · test_l2,7.887490665636668,7.8185342152697315,7.957871121411098,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM + dose (gate) · test_l2,7.887490665636668,7.8185342152697315,7.957871121411098,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM · test_l2,7.935607055491181,7.8681917085103645,8.004735901892621,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM + dose (gate) · test_l2,7.935607055491181,7.8681917085103645,8.004735901892621,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR · test_l2,7.899017638727951,7.833686172267285,7.967299311188362,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR + dose (gate) · test_l2,7.899017638727951,7.833686172267285,7.967299311188362,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM · test_l2,7.845664992918759,7.780450012874985,7.911246234067208,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM + dose (gate) · test_l2,7.845664992918759,7.780450012874985,7.911246234067208,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL · test_l2,7.858587614265482,7.791904177932278,7.927112205484743,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL + dose (gate) · test_l2,7.858587614265482,7.791904177932278,7.927112205484743,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large · test_l2,7.903867645165444,7.838228402214496,7.967786114329857,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large + dose (gate) · test_l2,7.903867645165444,7.838228402214496,7.967786114329857,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 · test_l2,7.8773760782799025,7.808127301403372,7.9475522402472,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (concat) · test_l2,7.92437219619751,7.85318276039655,7.997334588644264,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (gate) · test_l2,7.8773760782799025,7.808127301403372,7.9475522402472,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (onehot) · test_l2,7.836585998535156,7.767411548860564,7.909964175357281,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 · test_l2,7.925197631002961,7.85556041586198,7.992157428865713,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 + dose (gate) · test_l2,7.925197631002961,7.85556041586198,7.992157428865713,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 · test_l2,7.836104029869962,7.76755082399897,7.9073569267413415,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 + dose (gate) · test_l2,7.836104029869962,7.76755082399897,7.9073569267413415,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,PANC-1 (CVCL_0480) · test_l2,5.050970077514648,4.990825447405691,5.110824771469035,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M · test_l2,8.073460795674006,8.005731556585555,8.143875305780869,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M + dose (gate) · test_l2,8.073460795674006,8.005731556585555,8.143875305780869,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B · test_l2,8.160302562121798,8.091452426934467,8.231000997811252,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (concat) · test_l2,8.377156257629395,8.305518475601906,8.456682438521952,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (gate) · test_l2,8.160302562121798,8.091452426934467,8.231000997811252,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (onehot) · test_l2,8.393695831298828,8.32030082399897,8.46887244109695,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M · test_l2,7.9999459250675935,7.931158812926484,8.06763998326252,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M + dose (gate) · test_l2,7.9999459250675935,7.931158812926484,8.06763998326252,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M · test_l2,7.98958928801339,7.918220258787177,8.060394553881808,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M + dose (gate) · test_l2,7.98958928801339,7.918220258787177,8.060394553881808,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M · test_l2,7.869003476245655,7.799467780352774,7.940313988670015,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M + dose (gate) · test_l2,7.869003476245655,7.799467780352774,7.940313988670015,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M · test_l2,8.020786661516672,7.952316788979013,8.090793453070685,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M + dose (gate) · test_l2,8.020786661516672,7.952316788979013,8.090793453070685,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles · test_l2,7.992613621732973,7.925130423586971,8.062920786661518,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles + dose (gate) · test_l2,7.992613621732973,7.925130423586971,8.062920786661518,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,cell-line holdout · test_l2,7.058465003967285,6.991110615883306,7.12911815587344,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,default · test_l2,5.29209475988155,5.2341430088837395,5.352024398094502,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,delta_ref_only · test_l2,6.6983442306518555,6.6334761812797725,6.770563859920176,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,landmark_genes · test_l2,1.613548345564568,1.5956297476503156,1.6318365198918503,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 · test_l2,7.889656237929702,7.819996040942449,7.959624147032317,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (concat) · test_l2,7.969974040985107,7.894954197244753,8.046579148963565,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (gate) · test_l2,7.889656237929702,7.819996040942449,7.959624147032317,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (onehot) · test_l2,7.977582931518555,7.903665153856057,8.053789751512811,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,A-172 (CVCL_0131) · test_pearson,0.7966269850730896,0.7942481331273334,0.7991093086133643,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,COLO 205 (CVCL_0218) · test_pearson,0.7851020097732544,0.7827784781484355,0.7873865722782519,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon · test_pearson,0.4471430410711987,0.4430254924681345,0.45111185142268573,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (concat) · test_pearson,0.4352859854698181,0.43105948242564696,0.4395072421784473,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (gate) · test_pearson,0.4471430410711987,0.4430254924681345,0.45111185142268573,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (onehot) · test_pearson,0.4401629865169525,0.436092989571263,0.44432432084459894,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM · test_pearson,0.4416685979142526,0.4375626046092443,0.44560341830822714,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM + dose (gate) · test_pearson,0.4416685979142526,0.4375626046092443,0.44560341830822714,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM · test_pearson,0.4345860692674134,0.4302043903695121,0.438282831208961,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM + dose (gate) · test_pearson,0.4345860692674134,0.4302043903695121,0.438282831208961,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR · test_pearson,0.4468997038753702,0.4427833462083172,0.4508498776876529,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR + dose (gate) · test_pearson,0.4468997038753702,0.4427833462083172,0.4508498776876529,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM · test_pearson,0.4506051242435947,0.44664963950045067,0.4544592828633965,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM + dose (gate) · test_pearson,0.4506051242435947,0.44664963950045067,0.4544592828633965,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL · test_pearson,0.4484807518990601,0.44452645809192737,0.4525402665121669,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL + dose (gate) · test_pearson,0.4484807518990601,0.44452645809192737,0.4525402665121669,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large · test_pearson,0.4377932277584653,0.43354535213080986,0.4418834492081885,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large + dose (gate) · test_pearson,0.4377932277584653,0.43354535213080986,0.4418834492081885,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 · test_pearson,0.4424552594309257,0.43779802368997034,0.44649246813441484,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (concat) · test_pearson,0.4370169937610626,0.4329713209733488,0.4410166731041586,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (gate) · test_pearson,0.4424552594309257,0.43779802368997034,0.44649246813441484,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (onehot) · test_pearson,0.45017099380493164,0.4462119544225569,0.45405893523883095,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 · test_pearson,0.44088579889275137,0.4366081820522725,0.4448996395004506,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 + dose (gate) · test_pearson,0.44088579889275137,0.4366081820522725,0.4448996395004506,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 · test_pearson,0.44825672717909104,0.44385232393459506,0.45218919788850265,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 + dose (gate) · test_pearson,0.44825672717909104,0.44385232393459506,0.45218919788850265,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,PANC-1 (CVCL_0480) · test_pearson,0.8097950220108032,0.8074519763100296,0.8121381163898546,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M · test_pearson,0.4195017381228273,0.4149655916055105,0.42395010943736317,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M + dose (gate) · test_pearson,0.4195017381228273,0.4149655916055105,0.42395010943736317,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B · test_pearson,0.4057293678382902,0.40119631131711087,0.4099550984936269,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (concat) · test_pearson,0.33366501331329346,0.32981460023174974,0.33761577829277717,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (gate) · test_pearson,0.4057293678382902,0.40119631131711087,0.4099550984936269,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (onehot) · test_pearson,0.3754439949989319,0.3708289558388052,0.3801122054847431,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M · test_pearson,0.43216814728981584,0.42795777005278746,0.4362857924552595,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M + dose (gate) · test_pearson,0.43216814728981584,0.42795777005278746,0.4362857924552595,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M · test_pearson,0.4222106347367066,0.4177941933822583,0.426430764774044,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M + dose (gate) · test_pearson,0.4222106347367066,0.4177941933822583,0.426430764774044,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M · test_pearson,0.4422518346852066,0.43792481009398737,0.44647396034504955,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M + dose (gate) · test_pearson,0.4422518346852066,0.43792481009398737,0.44647396034504955,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M · test_pearson,0.4307106991116261,0.4265184434144457,0.4350042809321488,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M + dose (gate) · test_pearson,0.4307106991116261,0.4265184434144457,0.4350042809321488,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles · test_pearson,0.4274584781769023,0.42309337582078027,0.4319546156817304,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles + dose (gate) · test_pearson,0.4274584781769023,0.42309337582078027,0.4319546156817304,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,cell-line holdout · test_pearson,0.6424570083618164,0.6393403213304206,0.6458735289972518,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,default · test_pearson,0.7907055491180636,0.7883077764902794,0.7929535534955582,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,delta_ref_only · test_pearson,0.6398119926452637,0.6371840800823998,0.6427442384447021,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,landmark_genes · test_pearson,0.7921629972962533,0.7896365713917857,0.7944692609759237,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 · test_pearson,0.43851422685721647,0.4343056843053946,0.4424072679284151,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (concat) · test_pearson,0.4173260033130646,0.4133608214239733,0.42140044418694483,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (gate) · test_pearson,0.43851422685721647,0.4343056843053946,0.4424072679284151,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (onehot) · test_pearson,0.4169360101222992,0.4129916312604609,0.421068816788979,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,A-172 (CVCL_0131) · test_spearman,0.636679,0.6345766705291619,0.6390847495815629,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,COLO 205 (CVCL_0218) · test_spearman,0.625091,0.6230753814326351,0.627229764675459,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon · test_spearman,0.33333848332689586,0.33042345822067715,0.33617519634350457,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (concat) · test_spearman,0.321889,0.31882184241019695,0.3248953585683018,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (gate) · test_spearman,0.33333848332689586,0.33042345822067715,0.33617519634350457,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,CheMeleon + dose (onehot) · test_spearman,0.323385,0.32030735805330246,0.32641309385863265,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM · test_spearman,0.32748551564310546,0.3244782734646582,0.33038673232908455,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-100M-MLM + dose (gate) · test_spearman,0.32748551564310546,0.3244782734646582,0.33038673232908455,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM · test_spearman,0.32273850907686363,0.3196315179606026,0.32551882966396295,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MLM + dose (gate) · test_spearman,0.32273850907686363,0.3196315179606026,0.32551882966396295,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR · test_spearman,0.3328775589030514,0.3298023689970388,0.3359469872537659,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-5M-MTR + dose (gate) · test_spearman,0.3328775589030514,0.3298023689970388,0.3359469872537659,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM · test_spearman,0.34133771082786146,0.33842120509849366,0.344179251963435,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,ChemBERTa-77M-MLM + dose (gate) · test_spearman,0.34133771082786146,0.33842120509849366,0.344179251963435,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL · test_spearman,0.33215784730269093,0.32915060512424354,0.3351837582078022,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MoLFormer-XL + dose (gate) · test_spearman,0.33215784730269093,0.32915060512424354,0.3351837582078022,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large · test_spearman,0.32448950688811645,0.3214177932277585,0.3274340478949401,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,MolGen-large + dose (gate) · test_spearman,0.32448950688811645,0.3214177932277585,0.3274340478949401,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 · test_spearman,0.3306038367452041,0.32735354705806613,0.33350386249517183,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (concat) · test_spearman,0.322136,0.3194033732457835,0.32498963563795547,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (gate) · test_spearman,0.3306038367452041,0.32735354705806613,0.33350386249517183,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_1024 + dose (onehot) · test_spearman,0.334802,0.3319755375305781,0.3376929638212952,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 · test_spearman,0.33013261233423463,0.3269608278614652,0.3329168919788851,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_2048 + dose (gate) · test_spearman,0.33013261233423463,0.3269608278614652,0.3329168919788851,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 · test_spearman,0.33594438006952493,0.3327796446504442,0.3389278679026651,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,Morgan_512 + dose (gate) · test_spearman,0.33594438006952493,0.3327796446504442,0.3389278679026651,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,PANC-1 (CVCL_0480) · test_spearman,0.653673,0.6515212759109053,0.6557525749967814,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M · test_spearman,0.3092790009012489,0.3060236577829278,0.312427063216171,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv1-84M + dose (gate) · test_spearman,0.3092790009012489,0.3060236577829278,0.312427063216171,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B · test_spearman,0.2954177932277584,0.2921517638727951,0.29852803527745597,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (concat) · test_spearman,0.239435,0.23652835715205356,0.24233442770696537,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (gate) · test_spearman,0.2954177932277584,0.2921517638727951,0.29852803527745597,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-1.1B + dose (onehot) · test_spearman,0.271824,0.2683952298184627,0.2753614973606283,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M · test_spearman,0.3223561220548474,0.3191642526071843,0.3251960216299729,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-164M + dose (gate) · test_spearman,0.3223561220548474,0.3191642526071843,0.3251960216299729,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M · test_spearman,0.3107094116132355,0.3075767992790009,0.3135655980430025,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-310M + dose (gate) · test_spearman,0.3107094116132355,0.3075767992790009,0.3135655980430025,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M · test_spearman,0.33187717265353417,0.3287361593923007,0.33503901120123597,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-570M + dose (gate) · test_spearman,0.33187717265353417,0.3287361593923007,0.33503901120123597,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M · test_spearman,0.32351487060641176,0.3204972640659199,0.3264223638470452,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,UniMolv2-84M + dose (gate) · test_spearman,0.32351487060641176,0.3204972640659199,0.3264223638470452,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles · test_spearman,0.31748551564310545,0.3143516801853998,0.3205641817947728,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,bert-base-smiles + dose (gate) · test_spearman,0.31748551564310545,0.3143516801853998,0.3205641817947728,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,cell-line holdout · test_spearman,0.485191,0.482174459164259,0.48832379677260235,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,default · test_spearman,0.628236127204841,0.6259958156302305,0.6303450817561479,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,delta_ref_only · test_spearman,0.479116,0.4768479464400669,0.4817411162611047,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,landmark_genes · test_spearman,0.7132367709540361,0.7107684756019055,0.7155285502768122,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 · test_spearman,0.32609244238444707,0.32300160937298833,0.32889954293807133,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (concat) · test_spearman,0.29853,0.29574980687524144,0.30130516930603846,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (gate) · test_spearman,0.32609244238444707,0.32300160937298833,0.32889954293807133,,,,95.0,0
+fig3/figS,bootstrap CI of mean test metric,Tahoe,random_512 + dose (onehot) · test_spearman,0.29744,0.2945603192996009,0.30023957126303596,,,,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,default,0.04217933966983491,0.040316439469734865,0.04420149449724861,0.0,0.0,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,CheMeleon,0.014059279639819908,0.012966433216608307,0.015291158079039519,4.784382676654581e-77,1.722377763595649e-76,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,ChemBERTa-77M-MLM,0.014044522261130565,0.013031246873436719,0.015061787143571788,6.20620434711629e-157,5.585583912404661e-156,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,ChemBERTa-5M-MTR,0.013295647823911957,0.012138856928464234,0.01446457603801901,1.7566975435096927e-117,1.0540185261058156e-116,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,Morgan_1024,0.01180265132566283,0.010756597048524262,0.01278917583791896,8.703729497329554e-100,3.916678273798299e-99,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,Morgan_2048,0.011658329164582293,0.010606709604802401,0.012794528514257128,3.1853497790071683e-62,9.556049337021505e-62,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,UniMolv2-310M,0.011648074037018511,0.010356578289144571,0.012976769634817408,4.734375225867839e-57,1.2174107723660158e-56,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,MolGen-large,0.00746848424212106,0.006572998999499749,0.008338206603301652,1.735137533001669e-33,3.904059449253756e-33,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,UniMolv2-1.1B,0.006972736368184092,0.005752570035017508,0.008227213606803402,1.0035791952147443e-25,2.0071583904294886e-25,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,UniMolv2-570M,0.00634592296148074,0.005105746623311655,0.0076191908454227115,3.3370001716055924e-18,5.460545735354606e-18,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,MoLFormer-XL,0.005973736868434216,0.004725193846923462,0.007220116308154078,7.346602700817833e-11,9.445632043908643e-11,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,UniMolv2-84M,0.005603301650825412,0.004401169334667334,0.006904614807403703,3.037838647901934e-14,4.556757971852901e-14,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,ChemBERTa-5M-MLM,0.005133066533266634,0.0043046773386693354,0.005942577538769384,1.3011732950294404e-23,2.3421119310529927e-23,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,UniMolv2-164M,0.0046063031515757875,0.00362498124062031,0.005659867433716859,9.494662108071918e-05,0.00011393594529686303,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,UniMolv1-84M,0.004367183591795899,0.0035762318659329664,0.005199068284142071,1.068071227957587e-11,1.4788678540951206e-11,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,ChemBERTa-100M-MLM,0.003971985992996498,0.003012837668834417,0.004979677338669335,0.0023215423395838925,0.0024581036536770627,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,Morgan_512,0.0036415707853926973,0.002034379689844922,0.005296210605302651,0.0008098998068096765,0.000911137282660886,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,LINCS,bert-base-smiles,0.0031738369184592294,0.0023513569284642323,0.0039956290645322655,0.11291777945705021,0.11291777945705023,39980.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,default,0.3521913222608472,0.3481969228788464,0.35616962791296514,0.0,0.0,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,ChemBERTa-77M-MLM,0.012090897386378268,0.010001995622505474,0.014293903695120383,7.935471603835599e-26,4.76128296230136e-25,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,MoLFormer-XL,0.009966525041843697,0.008105574868031415,0.011993272820908975,7.301151136939588e-07,1.0951726705409382e-06,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,Morgan_512,0.0097425003218746,0.007320136474829406,0.012061574610531737,2.1345895058069716e-19,5.488944443503641e-19,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,CheMeleon,0.008628814213982232,0.007028228402214497,0.01024098751126561,4.109757474932819e-10,6.725057686253703e-10,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,ChemBERTa-5M-MTR,0.008385477018153729,0.0063111561735547834,0.010549922750096563,7.612704108475016e-13,1.5225408216950033e-12,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,Morgan_1024,0.003941032573709282,0.0013885026393717008,0.006383545770567787,6.56060262315146e-06,9.083911324363559e-06,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,UniMolv2-570M,0.003737607827990215,0.0009783378395777011,0.006497489378138277,2.2170575631214416e-15,4.988379517023244e-15,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,ChemBERTa-100M-MLM,0.0031543710570361783,0.0014235547830565205,0.004973606282992144,0.044303378621959086,0.044303378621959086,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,Morgan_2048,0.0023715720355349562,-0.00021526973091283544,0.004763872795159006,0.0002670772503427671,0.00034338503615498626,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,MolGen-large,-0.0007209990987511265,-0.0031247907815115236,0.0016897450753186557,0.007754748032069534,0.008724091536078227,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,ChemBERTa-5M-MLM,-0.003928157589803013,-0.005855800180249775,-0.002101165186043517,3.086079848196312e-11,5.5549437267533626e-11,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,UniMolv2-164M,-0.006346079567400541,-0.009237285953392555,-0.0034598622376722024,0.029649922092413527,0.03139403515667315,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,UniMolv2-84M,-0.007803527745590317,-0.010401506373117033,-0.005182116647354189,0.005736889754599776,0.006884267705519731,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,bert-base-smiles,-0.01105574868031415,-0.013364522981846273,-0.008723992532509335,1.383331770800092e-24,4.9799943748803314e-24,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,UniMolv2-310M,-0.016303592120509847,-0.018894199819750226,-0.013826413029483713,4.574967468619237e-25,2.0587353608786564e-24,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,UniMolv1-84M,-0.019012488734389082,-0.021667535728080337,-0.016550373374533283,1.9142649922647943e-22,5.742794976794383e-22,7767.0,95.0,0
+fig3,paired Δ mean test Pearson vs random_512,Tahoe,UniMolv2-1.1B,-0.03278485901892622,-0.03581736835328955,-0.02982744302819621,1.2184545433163981e-83,1.0966090889847583e-82,7767.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),LINCS,default_vs_best_embedding,0.028120060030015007,0.026207441220610306,0.030111386943471735,6.635793708368876e-215,,39980.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),LINCS,default_vs_delta_ref,0.09027413706853427,0.0883150387693847,0.09232042896448224,0.0,,39980.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),LINCS,default_vs_mean_delta,0.09302251125562781,0.0906625187593797,0.09546277513756879,0.0,,39980.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),LINCS,default_vs_runner_up,0.028120060030015007,0.026207441220610306,0.030111386943471735,6.635793708368876e-215,,39980.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),Tahoe,default_vs_best_embedding,0.34010042487446895,0.33622817690227885,0.34397083816145224,0.0,,7767.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),Tahoe,default_vs_delta_ref,0.28930603836745206,0.2865388502639372,0.2917485515643105,0.0,,7767.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),Tahoe,default_vs_mean_delta,0.4368533539333076,0.43342210634736705,0.44009418050727434,0.0,,7767.0,95.0,0
+fig3,paired Δ mean test Pearson (default − other),Tahoe,default_vs_runner_up,0.34010042487446895,0.33622817690227885,0.34397083816145224,0.0,,7767.0,95.0,0
+fig2f,compound-cluster bootstrap CI,Pearson r,Standard BioPert,0.7907273919217201,0.7727328472705964,0.8056226715092525,,,7767.0,95.0,0
+fig2f,compound-cluster bootstrap CI,Pearson r,Cell-line centroid,0.7334689107344986,0.7148111133480904,0.7516533787861179,,,7767.0,95.0,0
+fig2f,compound-cluster bootstrap CI,Pearson r,Cell-line + dose,0.7263491381853301,0.7084387437131576,0.7432626897842276,,,7767.0,95.0,0
+fig2f,compound-cluster bootstrap CI,Systema centroid accuracy,Perturbed mean,0.5,0.44529639679641453,0.5537271052832876,,,7767.0,95.0,0
+fig2f,compound-cluster bootstrap CI,Systema centroid accuracy,BioPert,0.9612356242047294,0.9470929643185936,0.973122985466654,,,7767.0,95.0,0
+fig2g,cell-line bootstrap CI of macro Pearson gain vs reference Δ,Tahoe,Q2,0.2948510389641621,0.28023907792301495,0.31022263670124933,,,35.0,95.0,0
+fig2g,cell-line bootstrap CI of macro Pearson gain vs reference Δ,Tahoe,Q3,0.07787299116116882,0.06091346218114117,0.09473746607533971,,,7.0,95.0,0
+fig2g,cell-line bootstrap CI of macro Pearson gain vs reference Δ,Tahoe,Q4,0.04198917555545456,0.024365155413668717,0.05758427645791634,,,7.0,95.0,0
+fig2g,cell-line bootstrap CI of macro Pearson gain vs reference Δ,LINCS,Q2,0.11453149854227096,0.09629782989005634,0.13223181905981968,,,167.0,95.0,0
+fig2g,cell-line bootstrap CI of macro Pearson gain vs reference Δ,LINCS,Q3,0.053828185180631746,0.036895540488330734,0.070241777551578,,,20.0,95.0,0
+fig2g,cell-line bootstrap CI of macro Pearson gain vs reference Δ,LINCS,Q4,0.041567616308088626,0.024317767407061965,0.058738836930055015,,,20.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(-0.4, -0.3]",0.08757575757575758,0.028787878787878793,0.14424242424242423,,,33.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(-0.3, -0.2]",0.07840277777777778,0.053192708333333345,0.10438020833333332,,,144.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(-0.2, -0.1]",0.07181438998957247,0.06257377476538062,0.08069056308654848,,,959.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(-0.1, -1.11e-16]",0.062428850446428576,0.05920319475446428,0.06575502232142857,,,7168.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(-1.11e-16, 0.1]",0.09864594983224156,0.09522555520051126,0.10180302364594984,,,12518.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.1, 0.2]",0.17876722090261282,0.17133527315914487,0.18631157957244657,,,4210.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.2, 0.3]",0.2984689265536723,0.28582796610169486,0.3109266949152542,,,1770.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.3, 0.4]",0.4139301310043668,0.39281441048034943,0.4325215611353712,,,916.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.4, 0.5]",0.5187260273972603,0.49983527397260274,0.5372804794520548,,,730.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.5, 0.6]",0.6010282258064517,0.5804732862903226,0.6212777217741935,,,496.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.6, 0.7]",0.6423869346733668,0.6171030150753769,0.6660615577889447,,,398.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.7, 0.8]",0.6974251497005988,0.664428143712575,0.7277934131736526,,,167.0,95.0,0
+fig3a,bootstrap CI of mean test Pearson within reproducibility bin,LINCS,"(0.8, 0.9]",0.7104166666666667,0.61121875,0.7925000000000001,,,24.0,95.0,0
+fig3a,per-condition Spearman ρ (test Pearson vs replicate reproducibility),LINCS,spearman_rho,0.39205863773045946,0.38123648558418266,0.40354073472492497,0.0,,29547.0,95.0,0
+fig3a,R² of the linear fit through the binned means (descriptive),LINCS,binned_r2,0.9238326969472545,,,,,13.0,95.0,0
+fig3a,"regression slope of the binned means, bootstrap CI",LINCS,binned_slope,0.6486576200113512,0.5519222041274898,0.8141605247811841,,,13.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(-0.3, -0.2]",0.04493055555555556,0.015138888888888893,0.07375868055555554,0.0007444563819659228,0.0010236275252031438,144.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(-0.2, -0.1]",0.05478623566214807,0.043877215849843595,0.06568561001042754,4.251129112658453e-28,9.352484047848597e-28,959.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(-0.1, -1.11e-16]",0.04466099330357143,0.04088766043526786,0.04844248744419643,1.8441665727012744e-146,1.0142916149857009e-145,7168.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(-1.11e-16, 0.1]",0.06711535389039783,0.06337601853331204,0.07086986739095702,1.7288065537710885e-301,1.9016872091481975e-300,12518.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.1, 0.2]",0.08628266033254156,0.0784190617577197,0.09415492874109263,4.933512642537721e-126,1.8089546355971642e-125,4210.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.2, 0.3]",0.08373446327683616,0.07109703389830509,0.09645861581920903,1.4508451465141651e-47,3.989824152913954e-47,1770.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.3, 0.4]",0.058318777292576424,0.041143013100436686,0.07451091703056768,8.108443131010491e-26,1.4865479073519233e-25,916.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.4, 0.5]",0.03656164383561644,0.019968835616438356,0.05240308219178082,8.325660727351835e-13,1.3083181142981454e-12,730.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.5, 0.6]",-0.0009274193548387125,-0.016492439516129036,0.014539818548387096,0.07419593972678769,0.09068392633274051,496.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.6, 0.7]",-0.031909547738693464,-0.04666017587939699,-0.01607977386934674,0.09587397919992334,0.10546137711991568,398.0,95.0,0
+fig3c,paired Δ mean test Pearson (no filter − θ=0.5),LINCS,"(0.7, 0.8]",-0.026167664670658678,-0.05227844311377246,-0.0037709580838323387,0.2024369594329818,0.20243695943298182,167.0,95.0,0
+fig3d,Spearman ρ with bootstrap CI,Tahoe,test Pearson vs mean sequencing depth (UMIs),0.9478492136910268,0.8821535644113054,0.9780062373536549,5.6041213371201804e-24,,47.0,95.0,0
+fig3d,best depth→accuracy curve (highest adjusted R²),Tahoe,Michaelis–Menten: y = c + a·x/(k+x),0.9487293602880994,,,,,47.0,95.0,0
+fig4ab,"Friedman test across references, blocked by target cell line",Tahoe,chi2,111.0545454545454,,,6.506976401554734e-24,,44.0,95.0,0
+fig4ab,Kendall's W (effect size),Tahoe,kendall_W,0.8413223140495864,,,,,44.0,95.0,0
+fig4ab,median test-Pearson spread across references,Tahoe,median_spread,0.02827754130293636,,,,,44.0,95.0,0
+fig4ab,"Friedman test across references, blocked by target cell line",LINCS,chi2,61.56363636363664,,,4.2817984507073104e-14,,179.0,95.0,0
+fig4ab,Kendall's W (effect size),LINCS,kendall_W,0.17196546470289564,,,,,179.0,95.0,0
+fig4ab,median test-Pearson spread across references,LINCS,median_spread,0.0198814814814815,,,,,179.0,95.0,0
+fig4c,Spearman ρ with bootstrap CI,Tahoe,test Pearson vs reference–target Δ-profile similarity,0.793196286832729,0.7209564186416908,0.846957516202522,6.31220567144844e-42,,188.0,95.0,0
+fig4d,"best-by-val run, mean test Pearson",LINCS,Average of replicates,0.17787468734367182,0.1670354462255109,0.19788425386211503,,,,95.0,0
+fig4d,"best-by-val run, mean test Pearson",LINCS,Single draw (default),0.1514727363681841,0.14110438303637204,0.17155653082984665,,,,95.0,0
+fig4d,"best-by-val run, mean test Pearson",LINCS,Resample each epoch,0.1556703351675838,0.14513282522250948,0.1769858644214313,,,,95.0,0
+fig4d,paired delta test Pearson (shared test split),LINCS,Average of replicates - Single draw (default),0.02640195097548775,0.024649018259129563,0.028168871935967985,8.947352943888152e-224,,39980.0,95.0,0
+fig4d,paired delta test Pearson (shared test split),LINCS,Resample each epoch - Single draw (default),0.0041975987993997,0.002763162831415708,0.005650081290645322,0.00021698175675955006,,39980.0,95.0,0
+fig4d,paired delta test Pearson (shared test split),LINCS,Average of replicates - Resample each epoch,0.02220435217608805,0.020719666083041523,0.02375278889444722,5.568632817917931e-223,,39980.0,95.0,0
+fig4e,pathway NES Spearman correlation with measured C32,all,BioPert prediction,0.8753856415370749,,,,,1227.0,95.0,0
+fig4e,mean absolute pathway NES error vs measured C32,all,BioPert prediction,0.3518649952764069,,,,,1227.0,95.0,0
+fig4e,pathway NES Spearman correlation with measured C32,all,A549 reference,0.3749778079464837,,,,,1227.0,95.0,0
+fig4e,mean absolute pathway NES error vs measured C32,all,A549 reference,0.8367228213870884,,,,,1227.0,95.0,0
+fig4e,pathway NES Spearman correlation with measured C32,hallmark,BioPert prediction,0.8998319327731091,,,,,50.0,95.0,0
+fig4e,mean absolute pathway NES error vs measured C32,hallmark,BioPert prediction,0.3169004652290273,,,,,50.0,95.0,0
+fig4e,pathway NES Spearman correlation with measured C32,hallmark,A549 reference,0.5181752701080432,,,,,50.0,95.0,0
+fig4e,mean absolute pathway NES error vs measured C32,hallmark,A549 reference,0.8765793984438729,,,,,50.0,95.0,0
+fig4e,pathway NES Spearman correlation with measured C32,reactome,BioPert prediction,0.8738368170032575,,,,,1177.0,95.0,0
+fig4e,mean absolute pathway NES error vs measured C32,reactome,BioPert prediction,0.3533503194075615,,,,,1177.0,95.0,0
+fig4e,pathway NES Spearman correlation with measured C32,reactome,A549 reference,0.36758564628038587,,,,,1177.0,95.0,0
+fig4e,mean absolute pathway NES error vs measured C32,reactome,A549 reference,0.8350296787763499,,,,,1177.0,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,DUSP6 · prediction,-0.9688882999992274,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,DUSP6 · reference,-0.3422824699993426,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,DUSP6 · target,-0.9663840499990736,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV1 · prediction,-0.8326880299993088,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV1 · reference,-0.0311163329994118,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV1 · target,-1.0353618999991712,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV4 · prediction,-0.3801689399993093,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV4 · reference,-0.1673815099994123,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV4 · target,-0.3823312999991717,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV5 · prediction,-0.5796312999993095,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV5 · reference,-0.2588463999994124,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,ETV5 · target,-0.618227199999172,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRY2 · prediction,-0.2381120900009374,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRY2 · reference,-0.0421049260007976,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRY2 · target,-0.3018121000011242,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRY4 · prediction,-0.7446583500009377,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRY4 · reference,-0.1469501600007978,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRY4 · target,-0.8698607700011245,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRED1 · prediction,-0.7979947000009345,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRED1 · reference,-0.4020733800007952,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRED1 · target,-1.020043100001121,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRED2 · prediction,-0.8482016300009348,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRED2 · reference,-0.4494523400007953,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),ERK-output genes,SPRED2 · target,-1.0127252000011209,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,MITF · prediction,0.2860459700000064,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,MITF · reference,0.0780959100000054,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,MITF · target,0.5377371300000078,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,DCT · prediction,0.7207414000008608,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,DCT · reference,0.0014783507007324,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,DCT · target,0.7246163000010323,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,TYR · prediction,0.2384665299987629,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,TYR · reference,0.0037123916989473,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,TYR · target,0.2440897799985164,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,MLANA · prediction,0.2619031400000042,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,MLANA · reference,0.0182131500000036,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,MLANA · target,0.1443428100000051,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,TYRP1 · prediction,0.0228450689987624,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,TYRP1 · reference,-1.0530487238866396e-12,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,TYRP1 · target,0.0632918849985159,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,PPARGC1A · prediction,0.283118869999548,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,PPARGC1A · reference,0.0582050599996154,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,PPARGC1A · target,0.378304329999458,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,GLUD1 · prediction,1.2922901000005118,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,GLUD1 · reference,-0.0022918581995645,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,GLUD1 · target,1.4919289000006135,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,IDH1 · prediction,0.2145152000003434,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,IDH1 · reference,0.1001653100002922,,,,,,95.0,0
+fig4f,signed GSEA ranking score (treated - DMSO),Melanocytic / MITF–PGC-1α,IDH1 · target,0.3157320000004118,,,,,,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Absolute profiles,cell_line,75.2219641879015,64.01674312533419,84.9426149688288,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Absolute profiles,plate,2.44731688786736,1.106775280007085,5.203429863990995,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Absolute profiles,drug,4.17635052283486,2.18629908714289,6.43953026617944,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Absolute profiles,dose,0.05039092829840365,0.00621812495940075,0.152578211291152,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Absolute profiles,residual,14.96139452047065,9.647725548390124,22.62102096409765,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Absolute profiles,cell_line,53.26800940377905,41.70013937914322,65.65064701038253,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Absolute profiles,plate,15.74651486622875,10.921880694667426,21.34458774132735,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Absolute profiles,drug,1.1572070929636151,0.6268126290135829,1.9272305005900225,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Absolute profiles,dose,0.14507389046409752,0.033465802462223325,0.552425130969903,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Absolute profiles,time,5.05074050002961,1.6837461553661601,12.047413213391449,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Absolute profiles,residual,15.79937120562245,9.931493830564694,24.4058615587054,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Δ profiles,cell_line,3.612850512299725,2.5386532001964777,5.3497432500694275,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Δ profiles,plate,5.52066134660073,3.142234190846075,8.934354467716616,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Δ profiles,drug,16.3430178689538,11.177885256145,22.88054412729855,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Δ profiles,dose,0.1970566497480275,6.709267615711494e-07,0.6317568650164209,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),Tahoe · Δ profiles,residual,71.3736880950364,63.0951276574311,79.13993457454292,,,964.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Δ profiles,cell_line,0.7736448893243625,0.20372227844260726,1.351589069484835,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Δ profiles,plate,11.6808966879785,9.373586018103104,14.125734167680525,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Δ profiles,drug,5.5171425296573755,3.12304085446334,8.54224449252404,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Δ profiles,dose,0.1900592988106775,0.036886713744224524,0.754381697535245,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Δ profiles,time,0.398061978389265,0.0,12.555587200105625,,,978.0,95.0,0
+figS_variance_partition_full,median per-gene variance component (IQR),LINCS · Δ profiles,residual,74.19532757441334,63.1717538171416,81.2820550348809,,,978.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),Tahoe,Untreated · Intra-plate,0.994179125,0.9917196375,0.9957271624999999,,,666.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),Tahoe,Untreated · Inter-plate,0.98247935,0.973892765,0.9888627625,,,17304.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),Tahoe,Treated · Intra-plate,0.985012505,0.975393475,0.9906388,,,376.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),Tahoe,Treated · Inter-plate,0.983353,0.9763952725,0.9888434374999999,,,12768.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),LINCS,Untreated · Intra-plate,0.9399157,0.91495854,0.9602693,,,540425.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),LINCS,Untreated · Inter-plate,0.9181376,0.866731855,0.9501873999999999,,,39743.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),LINCS,Treated · Intra-plate,0.9233390100000001,0.8982911175,0.9438316824999999,,,114970.0,95.0,0
+figS_absolute_reproducibility_grid,median absolute-profile replicate Pearson (IQR),LINCS,Treated · Inter-plate,0.9039696,0.8564039,0.93470925,,,1603752.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,Random,-0.05375428177394216,-0.08086005915288426,-0.02771445652951471,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,Random,-0.016945173628133386,-0.02956318908854583,-0.003422031184948568,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,UniMolv2-570M,0.022398148335744966,-0.007274348777088578,0.04881856356274418,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,UniMolv2-570M,-0.027395190867030968,-0.040935584945994564,-0.013455352967616744,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,UniMolv2-1.1B,0.04803865036678559,0.025295384305130515,0.07071854911584163,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,UniMolv2-1.1B,-0.050623347903675765,-0.06498806009014094,-0.037294817674977276,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,UniMolv2-84M,0.016992879941209387,-0.012265919315039677,0.04766975700171512,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,UniMolv2-84M,-0.051555684576858336,-0.06470870114220423,-0.03774124462304025,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,ChemBERTa-100M-MLM,0.11998730945214199,0.0915827728725569,0.14508875985577407,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,ChemBERTa-100M-MLM,-0.05239143850873866,-0.06712608159881293,-0.0363278704360045,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,UniMolv2-310M,0.05263767629287703,0.02927781525127362,0.07620603193151836,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,UniMolv2-310M,-0.05891178065501847,-0.07209941729283101,-0.04354454068113525,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,UniMolv1-84M,0.1888304732393027,0.1612916168918531,0.2151844624737973,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,UniMolv1-84M,-0.06265776899315284,-0.07605870483664198,-0.04828260380220336,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,ChemBERTa-5M-MLM,0.039279396341588994,0.013040140044987155,0.06740434231367158,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,ChemBERTa-5M-MLM,-0.07014076354128607,-0.08442882215409514,-0.054884417453917096,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,UniMolv2-164M,0.00870500214642942,-0.01672970540972948,0.03779570141554886,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,UniMolv2-164M,-0.07713500334264792,-0.0899694314653822,-0.06376778045342604,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,RDKit path,0.10425297060898528,0.07854264072955293,0.13084519536216144,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,RDKit path,-0.13613977491716425,-0.1524820442283605,-0.11990981102162018,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,MACCS,-0.02421281677801334,-0.0508295827269312,0.0034936666891435507,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,MACCS,-0.16044963326604839,-0.17656666003785534,-0.14312685253882187,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,ChemBERTa-77M-MLM,0.01567085993759505,-0.010300435672151005,0.04091963732977546,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,ChemBERTa-77M-MLM,-0.17096679623141992,-0.18548648357626665,-0.15645496671788908,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,MolGen-large,0.047292558559566884,0.01833569042163132,0.07505551563824962,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,MolGen-large,-0.18647655952173556,-0.20006071276235157,-0.17389237178141295,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,MoLFormer-XL,0.14834934316141585,0.12368683606701707,0.1741804673789506,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,MoLFormer-XL,-0.18869125965374509,-0.20346347480146193,-0.1754293326378703,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,Atom pair,0.14288732695217815,0.11325008111941429,0.1707708383899096,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,Atom pair,-0.20002676217795515,-0.21610942374715414,-0.18338276092092978,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,bert-base-smiles,0.10042765275259005,0.07487904081316435,0.12728136790889363,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,bert-base-smiles,-0.20716601670917248,-0.22109275644741566,-0.19279376721241137,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,CheMeleon,0.032404123100785436,0.0053818220394654375,0.057274364320411546,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,CheMeleon,-0.23904504127697168,-0.25338673889002356,-0.22326433087009964,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,ChemBERTa-5M-MTR,0.11134343396290092,0.0845261260829934,0.1376012361606406,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,ChemBERTa-5M-MTR,-0.2593294453077804,-0.27460432821533504,-0.2441418741253538,,,20016.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,Tahoe,ECFP6,0.03225373520907426,-0.0076194993489612775,0.0771983968596072,,,5102.0,95.0,0
+figS_sar_full,Pearson correlation of chemical distance with Δ-profile similarity,LINCS,ECFP6,-0.2760410650338123,-0.28840487386886293,-0.2637412249331576,,,20016.0,95.0,0

@@ -1,0 +1,433 @@
+dataset,category,label,exp_key,metric,estimate,ci_lo,ci_hi
+LINCS,embedding,CheMeleon,lincs_CheMeleon_dose_gate,test_cosine_sim,0.12328739369684844,0.12147676338169086,0.12526940345172585
+LINCS,dose_encoding,CheMeleon + dose (concat),lincs_CheMeleon_dose_concat,test_cosine_sim,0.12172199785709381,0.12001512579396112,0.12342568714593624
+LINCS,dose_encoding,CheMeleon + dose (gate),lincs_CheMeleon_dose_gate,test_cosine_sim,0.12328739369684844,0.12147676338169086,0.12526940345172585
+LINCS,dose_encoding,CheMeleon + dose (onehot),lincs_CheMeleon_dose_onehot,test_cosine_sim,0.11536099761724472,0.11351232666374196,0.11718897228527286
+LINCS,embedding,ChemBERTa-100M-MLM,lincs_ChemBERTa-100M-MLM_dose_gate,test_cosine_sim,0.1132296148074037,0.11140692221110556,0.1152151575787894
+LINCS,dose_encoding,ChemBERTa-100M-MLM + dose (gate),lincs_ChemBERTa-100M-MLM_dose_gate,test_cosine_sim,0.1132296148074037,0.11140692221110556,0.1152151575787894
+LINCS,embedding,ChemBERTa-5M-MLM,lincs_ChemBERTa-5M-MLM_dose_gate,test_cosine_sim,0.11441820910455229,0.11273107178589294,0.11620954227113557
+LINCS,dose_encoding,ChemBERTa-5M-MLM + dose (gate),lincs_ChemBERTa-5M-MLM_dose_gate,test_cosine_sim,0.11441820910455229,0.11273107178589294,0.11620954227113557
+LINCS,embedding,ChemBERTa-5M-MTR,lincs_ChemBERTa-5M-MTR_dose_gate,test_cosine_sim,0.12262456228114059,0.12082614432216109,0.12449639194597298
+LINCS,dose_encoding,ChemBERTa-5M-MTR + dose (gate),lincs_ChemBERTa-5M-MTR_dose_gate,test_cosine_sim,0.12262456228114059,0.12082614432216109,0.12449639194597298
+LINCS,embedding,ChemBERTa-77M-MLM,lincs_ChemBERTa-77M-MLM_dose_gate,test_cosine_sim,0.123315907953977,0.12150549649824913,0.12516759629814908
+LINCS,dose_encoding,ChemBERTa-77M-MLM + dose (gate),lincs_ChemBERTa-77M-MLM_dose_gate,test_cosine_sim,0.123315907953977,0.12150549649824913,0.12516759629814908
+LINCS,ref_cell,MCF7,lincs_MCF7,test_cosine_sim,0.1418129950761795,0.1393397992810066,0.14409594068304374
+LINCS,embedding,MoLFormer-XL,lincs_MoLFormer-XL-both-10pct_dose_gate,test_cosine_sim,0.11517558779389693,0.11327803901950975,0.11714803026513256
+LINCS,dose_encoding,MoLFormer-XL + dose (gate),lincs_MoLFormer-XL-both-10pct_dose_gate,test_cosine_sim,0.11517558779389693,0.11327803901950975,0.11714803026513256
+LINCS,embedding,MolGen-large,lincs_MolGen-large_dose_gate,test_cosine_sim,0.11667708854427214,0.11496094922461231,0.11845574662331165
+LINCS,dose_encoding,MolGen-large + dose (gate),lincs_MolGen-large_dose_gate,test_cosine_sim,0.11667708854427214,0.11496094922461231,0.11845574662331165
+LINCS,embedding,Morgan_1024,lincs_Morgan_1024_dose_gate,test_cosine_sim,0.12102826413206604,0.11923032766383192,0.12293272886443223
+LINCS,dose_encoding,Morgan_1024 + dose (concat),lincs_Morgan_1024_dose_concat,test_cosine_sim,0.11486999690532684,0.1132572386365804,0.11653771911419691
+LINCS,dose_encoding,Morgan_1024 + dose (gate),lincs_Morgan_1024_dose_gate,test_cosine_sim,0.12102826413206604,0.11923032766383192,0.12293272886443223
+LINCS,dose_encoding,Morgan_1024 + dose (onehot),lincs_Morgan_1024_dose_onehot,test_cosine_sim,0.11232099682092667,0.11072885154595913,0.11399474507410304
+LINCS,embedding,Morgan_2048,lincs_Morgan_2048_dose_gate,test_cosine_sim,0.12087818909454727,0.11907378064032016,0.12285188219109557
+LINCS,dose_encoding,Morgan_2048 + dose (gate),lincs_Morgan_2048_dose_gate,test_cosine_sim,0.12087818909454727,0.11907378064032016,0.12285188219109557
+LINCS,embedding,Morgan_512,lincs_Morgan_512_dose_gate,test_cosine_sim,0.11263406703351678,0.11058968859429717,0.11465702851425714
+LINCS,dose_encoding,Morgan_512 + dose (gate),lincs_Morgan_512_dose_gate,test_cosine_sim,0.11263406703351678,0.11058968859429717,0.11465702851425714
+LINCS,ref_cell,PC3,lincs_PC3,test_cosine_sim,0.13525600731372833,0.1332849049412091,0.13748741019658572
+LINCS,embedding,UniMolv1-84M,lincs_unimolv1_84m_dose_gate,test_cosine_sim,0.11354227113556778,0.11178753751875938,0.11533600550275136
+LINCS,dose_encoding,UniMolv1-84M + dose (gate),lincs_unimolv1_84m_dose_gate,test_cosine_sim,0.11354227113556778,0.11178753751875938,0.11533600550275136
+LINCS,embedding,UniMolv2-1.1B,lincs_unimolv2_1.1B_dose_gate,test_cosine_sim,0.11616908454227115,0.11442095422711354,0.1180718171585793
+LINCS,dose_encoding,UniMolv2-1.1B + dose (concat),lincs_unimolv2_1.1B_dose_concat,test_cosine_sim,0.08126600086688995,0.07953909722089764,0.08310525587960402
+LINCS,dose_encoding,UniMolv2-1.1B + dose (gate),lincs_unimolv2_1.1B_dose_gate,test_cosine_sim,0.11616908454227115,0.11442095422711354,0.1180718171585793
+LINCS,dose_encoding,UniMolv2-1.1B + dose (onehot),lincs_unimolv2_1.1B_dose_onehot,test_cosine_sim,0.07634399831295013,0.07441368474259447,0.07815052835371086
+LINCS,embedding,UniMolv2-164M,lincs_unimolv2_164m_dose_gate,test_cosine_sim,0.11383316658329162,0.11205651575787892,0.11573519259629815
+LINCS,dose_encoding,UniMolv2-164M + dose (gate),lincs_unimolv2_164m_dose_gate,test_cosine_sim,0.11383316658329162,0.11205651575787892,0.11573519259629815
+LINCS,embedding,UniMolv2-310M,lincs_unimolv2_310m_dose_gate,test_cosine_sim,0.12088369184592297,0.11904253376688345,0.12286651450725364
+LINCS,dose_encoding,UniMolv2-310M + dose (gate),lincs_unimolv2_310m_dose_gate,test_cosine_sim,0.12088369184592297,0.11904253376688345,0.12286651450725364
+LINCS,embedding,UniMolv2-570M,lincs_unimolv2_570m_dose_gate,test_cosine_sim,0.115524012006003,0.11366524512256129,0.11747831415707854
+LINCS,dose_encoding,UniMolv2-570M + dose (gate),lincs_unimolv2_570m_dose_gate,test_cosine_sim,0.115524012006003,0.11366524512256129,0.11747831415707854
+LINCS,embedding,UniMolv2-84M,lincs_unimolv2_84m_dose_gate,test_cosine_sim,0.11486343171585794,0.11301236243121561,0.11682271760880439
+LINCS,dose_encoding,UniMolv2-84M + dose (gate),lincs_unimolv2_84m_dose_gate,test_cosine_sim,0.11486343171585794,0.11301236243121561,0.11682271760880439
+LINCS,ref_handling,average_ref,lincs_average_ref,test_cosine_sim,0.17805799841880798,0.17563321660830414,0.1803578539269635
+LINCS,embedding,bert-base-smiles,lincs_bert-base-smiles_dose_gate,test_cosine_sim,0.11231865932966484,0.1104828664332166,0.11411557653826913
+LINCS,dose_encoding,bert-base-smiles + dose (gate),lincs_bert-base-smiles_dose_gate,test_cosine_sim,0.11231865932966484,0.1104828664332166,0.11411557653826913
+LINCS,holdout,cell-line holdout,lincs_cellline_holdout,test_cosine_sim,0.1300790011882782,0.12816782164549972,0.13184221424627274
+LINCS,ablation,default,lincs_default_config,test_cosine_sim,0.15158054027013507,0.14926176213106554,0.1540305652826413
+LINCS,ablation,delta_ref_only,lincs_delta_ref_only,test_cosine_sim,0.102292999625206,0.10002441220610306,0.10442990870435216
+LINCS,ablation,random_512,lincs_random_512_dose_gate,test_cosine_sim,0.10916908454227116,0.1075516695847924,0.11090988619309655
+LINCS,dose_encoding,random_512 + dose (concat),lincs_random_512_dose_concat,test_cosine_sim,0.09927599877119064,0.09784898048715357,0.1007676340435272
+LINCS,dose_encoding,random_512 + dose (gate),lincs_random_512_dose_gate,test_cosine_sim,0.10916908454227116,0.1075516695847924,0.11090988619309655
+LINCS,dose_encoding,random_512 + dose (onehot),lincs_random_512_dose_onehot,test_cosine_sim,0.09275399893522263,0.09120832300150686,0.09434283861369143
+LINCS,repro,repro_0.0,lincs_default_repro_0,test_cosine_sim,0.1353210061788559,0.13300741620810405,0.13756182466233116
+LINCS,repro,repro_0.1,lincs_default_repro_0.1,test_cosine_sim,0.12330000102519989,0.12085556528264133,0.12553129689844922
+LINCS,repro,repro_0.2,lincs_default_repro_0.2,test_cosine_sim,0.11088600009679794,0.10863440470235118,0.11310989869934968
+LINCS,repro,repro_0.3,lincs_default_repro_0.3,test_cosine_sim,0.10229700058698654,0.1000385067533767,0.10454202101050525
+LINCS,repro,repro_0.4,lincs_default_repro_0.4,test_cosine_sim,0.09176599979400635,0.08934509754877439,0.09413337293646823
+LINCS,repro,repro_0.5,lincs_default_repro_0.5,test_cosine_sim,0.08357399702072144,0.0815903951975988,0.08575188219109556
+LINCS,ref_handling,resample_ref,lincs_resample_ref,test_cosine_sim,0.1558700054883957,0.15368631815907954,0.15816053651825912
+LINCS,embedding,CheMeleon,lincs_CheMeleon_dose_gate,test_l2,14.92729539769885,14.867194172086043,14.984325131315657
+LINCS,dose_encoding,CheMeleon + dose (concat),lincs_CheMeleon_dose_concat,test_l2,14.844099998474121,14.791623195109391,14.89353163446316
+LINCS,dose_encoding,CheMeleon + dose (gate),lincs_CheMeleon_dose_gate,test_l2,14.92729539769885,14.867194172086043,14.984325131315657
+LINCS,dose_encoding,CheMeleon + dose (onehot),lincs_CheMeleon_dose_onehot,test_l2,14.918573379516602,14.865795630114256,14.968029436168386
+LINCS,embedding,ChemBERTa-100M-MLM,lincs_ChemBERTa-100M-MLM_dose_gate,test_l2,14.996870685342671,14.935897905202603,15.055983748124062
+LINCS,dose_encoding,ChemBERTa-100M-MLM + dose (gate),lincs_ChemBERTa-100M-MLM_dose_gate,test_l2,14.996870685342671,14.935897905202603,15.055983748124062
+LINCS,embedding,ChemBERTa-5M-MLM,lincs_ChemBERTa-5M-MLM_dose_gate,test_l2,15.009412206103052,14.948694709854927,15.067799624812405
+LINCS,dose_encoding,ChemBERTa-5M-MLM + dose (gate),lincs_ChemBERTa-5M-MLM_dose_gate,test_l2,15.009412206103052,14.948694709854927,15.067799624812405
+LINCS,embedding,ChemBERTa-5M-MTR,lincs_ChemBERTa-5M-MTR_dose_gate,test_l2,15.084234867433716,15.016450468984493,15.149171029264632
+LINCS,dose_encoding,ChemBERTa-5M-MTR + dose (gate),lincs_ChemBERTa-5M-MTR_dose_gate,test_l2,15.084234867433716,15.016450468984493,15.149171029264632
+LINCS,embedding,ChemBERTa-77M-MLM,lincs_ChemBERTa-77M-MLM_dose_gate,test_l2,14.964765382691345,14.903197836418208,15.02290476488244
+LINCS,dose_encoding,ChemBERTa-77M-MLM + dose (gate),lincs_ChemBERTa-77M-MLM_dose_gate,test_l2,14.964765382691345,14.903197836418208,15.02290476488244
+LINCS,ref_cell,MCF7,lincs_MCF7,test_l2,14.816253662109375,14.76011316080564,14.870356996358945
+LINCS,embedding,MoLFormer-XL,lincs_MoLFormer-XL-both-10pct_dose_gate,test_l2,15.039126813406705,14.979339769884943,15.09562240495248
+LINCS,dose_encoding,MoLFormer-XL + dose (gate),lincs_MoLFormer-XL-both-10pct_dose_gate,test_l2,15.039126813406705,14.979339769884943,15.09562240495248
+LINCS,embedding,MolGen-large,lincs_MolGen-large_dose_gate,test_l2,15.022397198599299,14.961673986993496,15.081170191345675
+LINCS,dose_encoding,MolGen-large + dose (gate),lincs_MolGen-large_dose_gate,test_l2,15.022397198599299,14.961673986993496,15.081170191345675
+LINCS,embedding,Morgan_1024,lincs_Morgan_1024_dose_gate,test_l2,14.948278139069535,14.888475306403203,15.006458285392698
+LINCS,dose_encoding,Morgan_1024 + dose (concat),lincs_Morgan_1024_dose_concat,test_l2,14.853754043579102,14.799909064031892,14.90350412478303
+LINCS,dose_encoding,Morgan_1024 + dose (gate),lincs_Morgan_1024_dose_gate,test_l2,14.948278139069535,14.888475306403203,15.006458285392698
+LINCS,dose_encoding,Morgan_1024 + dose (onehot),lincs_Morgan_1024_dose_onehot,test_l2,14.863956451416016,14.809735060178918,14.915483357811812
+LINCS,embedding,Morgan_2048,lincs_Morgan_2048_dose_gate,test_l2,14.939778889444723,14.88047241745873,14.997525075037519
+LINCS,dose_encoding,Morgan_2048 + dose (gate),lincs_Morgan_2048_dose_gate,test_l2,14.939778889444723,14.88047241745873,14.997525075037519
+LINCS,embedding,Morgan_512,lincs_Morgan_512_dose_gate,test_l2,15.020086043021509,14.960031597048523,15.076473092796396
+LINCS,dose_encoding,Morgan_512 + dose (gate),lincs_Morgan_512_dose_gate,test_l2,15.020086043021509,14.960031597048523,15.076473092796396
+LINCS,ref_cell,PC3,lincs_PC3,test_l2,14.952486038208008,14.900408954930816,15.008056163228533
+LINCS,embedding,UniMolv1-84M,lincs_unimolv1_84m_dose_gate,test_l2,15.014518009004501,14.954123330415209,15.07287934592296
+LINCS,dose_encoding,UniMolv1-84M + dose (gate),lincs_unimolv1_84m_dose_gate,test_l2,15.014518009004501,14.954123330415209,15.07287934592296
+LINCS,embedding,UniMolv2-1.1B,lincs_unimolv2_1.1B_dose_gate,test_l2,14.963605802901453,14.9036088981991,15.022469290895447
+LINCS,dose_encoding,UniMolv2-1.1B + dose (concat),lincs_unimolv2_1.1B_dose_concat,test_l2,15.053604125976562,15.001006804699868,15.103914109142236
+LINCS,dose_encoding,UniMolv2-1.1B + dose (gate),lincs_unimolv2_1.1B_dose_gate,test_l2,14.963605802901453,14.9036088981991,15.022469290895447
+LINCS,dose_encoding,UniMolv2-1.1B + dose (onehot),lincs_unimolv2_1.1B_dose_onehot,test_l2,15.058762550354004,15.006070788906479,15.108738417227764
+LINCS,embedding,UniMolv2-164M,lincs_unimolv2_164m_dose_gate,test_l2,14.972999749874939,14.91137026638319,15.031350243871938
+LINCS,dose_encoding,UniMolv2-164M + dose (gate),lincs_unimolv2_164m_dose_gate,test_l2,14.972999749874939,14.91137026638319,15.031350243871938
+LINCS,embedding,UniMolv2-310M,lincs_unimolv2_310m_dose_gate,test_l2,14.920224612306155,14.85970438344172,14.978650087543773
+LINCS,dose_encoding,UniMolv2-310M + dose (gate),lincs_unimolv2_310m_dose_gate,test_l2,14.920224612306155,14.85970438344172,14.978650087543773
+LINCS,embedding,UniMolv2-570M,lincs_unimolv2_570m_dose_gate,test_l2,15.07309104552276,15.013521079289646,15.130426269384694
+LINCS,dose_encoding,UniMolv2-570M + dose (gate),lincs_unimolv2_570m_dose_gate,test_l2,15.07309104552276,15.013521079289646,15.130426269384694
+LINCS,embedding,UniMolv2-84M,lincs_unimolv2_84m_dose_gate,test_l2,15.017543271635816,14.957819065782891,15.075945291395698
+LINCS,dose_encoding,UniMolv2-84M + dose (gate),lincs_unimolv2_84m_dose_gate,test_l2,15.017543271635816,14.957819065782891,15.075945291395698
+LINCS,ref_handling,average_ref,lincs_average_ref,test_l2,14.553220748901367,14.495780377688844,14.610778482991494
+LINCS,embedding,bert-base-smiles,lincs_bert-base-smiles_dose_gate,test_l2,15.047413456728366,14.986362893946973,15.106165839169584
+LINCS,dose_encoding,bert-base-smiles + dose (gate),lincs_bert-base-smiles_dose_gate,test_l2,15.047413456728366,14.986362893946973,15.106165839169584
+LINCS,holdout,cell-line holdout,lincs_cellline_holdout,test_l2,14.942145347595215,14.895119956745813,14.997195849438619
+LINCS,ablation,default,lincs_default_config,test_l2,14.648696098049024,14.591597304902454,14.703042152326164
+LINCS,ablation,delta_ref_only,lincs_delta_ref_only,test_l2,14.902677536010742,14.843167452476237,14.965061530765382
+LINCS,ablation,random_512,lincs_random_512_dose_gate,test_l2,14.980252626313156,14.91633688094047,15.04044968734367
+LINCS,dose_encoding,random_512 + dose (concat),lincs_random_512_dose_concat,test_l2,14.922905921936035,14.868998564670875,14.973944766055657
+LINCS,dose_encoding,random_512 + dose (gate),lincs_random_512_dose_gate,test_l2,14.980252626313156,14.91633688094047,15.04044968734367
+LINCS,dose_encoding,random_512 + dose (onehot),lincs_random_512_dose_onehot,test_l2,14.958642959594727,14.906011544623954,15.009585490300799
+LINCS,repro,repro_0.0,lincs_default_repro_0,test_l2,14.739768028259277,14.681073355427714,14.799325406453226
+LINCS,repro,repro_0.1,lincs_default_repro_0.1,test_l2,15.086919784545898,15.028813694347173,15.14476086168084
+LINCS,repro,repro_0.2,lincs_default_repro_0.2,test_l2,15.730912208557129,15.674941433216608,15.78931086168084
+LINCS,repro,repro_0.3,lincs_default_repro_0.3,test_l2,16.261568069458008,16.208404671085546,16.31716926588294
+LINCS,repro,repro_0.4,lincs_default_repro_0.4,test_l2,17.957311630249023,17.900096010505255,18.01681783391696
+LINCS,repro,repro_0.5,lincs_default_repro_0.5,test_l2,20.179481506347656,20.123215232616307,20.243193234117054
+LINCS,ref_handling,resample_ref,lincs_resample_ref,test_l2,14.595251083374023,14.537795772886442,14.651680058779393
+LINCS,embedding,CheMeleon,lincs_CheMeleon_dose_gate,test_pearson,0.1233526763381691,0.12155470860430213,0.12534263381690847
+LINCS,dose_encoding,CheMeleon + dose (concat),lincs_CheMeleon_dose_concat,test_pearson,0.1217930018901825,0.12008538539302269,0.12348422568523852
+LINCS,dose_encoding,CheMeleon + dose (gate),lincs_CheMeleon_dose_gate,test_pearson,0.1233526763381691,0.12155470860430213,0.12534263381690847
+LINCS,dose_encoding,CheMeleon + dose (onehot),lincs_CheMeleon_dose_onehot,test_pearson,0.11558700352907181,0.11375182158048333,0.11741512960878936
+LINCS,embedding,ChemBERTa-100M-MLM,lincs_ChemBERTa-100M-MLM_dose_gate,test_pearson,0.11326538269134569,0.11143869434717361,0.115205383941971
+LINCS,dose_encoding,ChemBERTa-100M-MLM + dose (gate),lincs_ChemBERTa-100M-MLM_dose_gate,test_pearson,0.11326538269134569,0.11143869434717361,0.115205383941971
+LINCS,embedding,ChemBERTa-5M-MLM,lincs_ChemBERTa-5M-MLM_dose_gate,test_pearson,0.11442646323161582,0.1127534704852426,0.1162127376188094
+LINCS,dose_encoding,ChemBERTa-5M-MLM + dose (gate),lincs_ChemBERTa-5M-MLM_dose_gate,test_pearson,0.11442646323161582,0.1127534704852426,0.1162127376188094
+LINCS,embedding,ChemBERTa-5M-MTR,lincs_ChemBERTa-5M-MTR_dose_gate,test_pearson,0.12258904452226115,0.12077510630315158,0.1245018384192096
+LINCS,dose_encoding,ChemBERTa-5M-MTR + dose (gate),lincs_ChemBERTa-5M-MTR_dose_gate,test_pearson,0.12258904452226115,0.12077510630315158,0.1245018384192096
+LINCS,embedding,ChemBERTa-77M-MLM,lincs_ChemBERTa-77M-MLM_dose_gate,test_pearson,0.12333791895947975,0.12151546398199098,0.12520243871935968
+LINCS,dose_encoding,ChemBERTa-77M-MLM + dose (gate),lincs_ChemBERTa-77M-MLM_dose_gate,test_pearson,0.12333791895947975,0.12151546398199098,0.12520243871935968
+LINCS,ref_cell,MCF7,lincs_MCF7,test_pearson,0.14170800149440765,0.13924977531455962,0.1439875385998064
+LINCS,embedding,MoLFormer-XL,lincs_MoLFormer-XL-both-10pct_dose_gate,test_pearson,0.11526713356678339,0.11336950975487743,0.11722238619309655
+LINCS,dose_encoding,MoLFormer-XL + dose (gate),lincs_MoLFormer-XL-both-10pct_dose_gate,test_pearson,0.11526713356678339,0.11336950975487743,0.11722238619309655
+LINCS,embedding,MolGen-large,lincs_MolGen-large_dose_gate,test_pearson,0.11676188094047024,0.1150644572286143,0.11856748999499749
+LINCS,dose_encoding,MolGen-large + dose (gate),lincs_MolGen-large_dose_gate,test_pearson,0.11676188094047024,0.1150644572286143,0.11856748999499749
+LINCS,embedding,Morgan_1024,lincs_Morgan_1024_dose_gate,test_pearson,0.12109604802401201,0.11929588544272138,0.12297157953976989
+LINCS,dose_encoding,Morgan_1024 + dose (concat),lincs_Morgan_1024_dose_concat,test_pearson,0.11489599943161011,0.11326703797661511,0.1165363791557785
+LINCS,dose_encoding,Morgan_1024 + dose (gate),lincs_Morgan_1024_dose_gate,test_pearson,0.12109604802401201,0.11929588544272138,0.12297157953976989
+LINCS,dose_encoding,Morgan_1024 + dose (onehot),lincs_Morgan_1024_dose_onehot,test_pearson,0.11236099898815155,0.11078079520094608,0.11405567264958895
+LINCS,embedding,Morgan_2048,lincs_Morgan_2048_dose_gate,test_pearson,0.12095172586293146,0.1191676275637819,0.12290591545772887
+LINCS,dose_encoding,Morgan_2048 + dose (gate),lincs_Morgan_2048_dose_gate,test_pearson,0.12095172586293146,0.1191676275637819,0.12290591545772887
+LINCS,embedding,Morgan_512,lincs_Morgan_512_dose_gate,test_pearson,0.11293496748374188,0.1108831728364182,0.11495759754877437
+LINCS,dose_encoding,Morgan_512 + dose (gate),lincs_Morgan_512_dose_gate,test_pearson,0.11293496748374188,0.1108831728364182,0.11495759754877437
+LINCS,ref_cell,PC3,lincs_PC3,test_pearson,0.1351580023765564,0.13319177504677862,0.1373417323107487
+LINCS,embedding,UniMolv1-84M,lincs_unimolv1_84m_dose_gate,test_pearson,0.11366058029014509,0.11194826163081543,0.11544794897448725
+LINCS,dose_encoding,UniMolv1-84M + dose (gate),lincs_unimolv1_84m_dose_gate,test_pearson,0.11366058029014509,0.11194826163081543,0.11544794897448725
+LINCS,embedding,UniMolv2-1.1B,lincs_unimolv2_1.1B_dose_gate,test_pearson,0.11626613306653326,0.11450882316158079,0.11813870060030016
+LINCS,dose_encoding,UniMolv2-1.1B + dose (concat),lincs_unimolv2_1.1B_dose_concat,test_pearson,0.08141600340604782,0.07969272512255138,0.0832367148606634
+LINCS,dose_encoding,UniMolv2-1.1B + dose (gate),lincs_unimolv2_1.1B_dose_gate,test_pearson,0.11626613306653326,0.11450882316158079,0.11813870060030016
+LINCS,dose_encoding,UniMolv2-1.1B + dose (onehot),lincs_unimolv2_1.1B_dose_onehot,test_pearson,0.0764480009675026,0.07453356095141815,0.07823987163102983
+LINCS,embedding,UniMolv2-164M,lincs_unimolv2_164m_dose_gate,test_pearson,0.11389969984992496,0.11213880065032517,0.11580395822911456
+LINCS,dose_encoding,UniMolv2-164M + dose (gate),lincs_unimolv2_164m_dose_gate,test_pearson,0.11389969984992496,0.11213880065032517,0.11580395822911456
+LINCS,embedding,UniMolv2-310M,lincs_unimolv2_310m_dose_gate,test_pearson,0.12094147073536768,0.11908287893946973,0.12293281640820411
+LINCS,dose_encoding,UniMolv2-310M + dose (gate),lincs_unimolv2_310m_dose_gate,test_pearson,0.12094147073536768,0.11908287893946973,0.12293281640820411
+LINCS,embedding,UniMolv2-570M,lincs_unimolv2_570m_dose_gate,test_pearson,0.11563931965982992,0.11379449099549775,0.11759248374187094
+LINCS,dose_encoding,UniMolv2-570M + dose (gate),lincs_unimolv2_570m_dose_gate,test_pearson,0.11563931965982992,0.11379449099549775,0.11759248374187094
+LINCS,embedding,UniMolv2-84M,lincs_unimolv2_84m_dose_gate,test_pearson,0.11489669834917458,0.11306956603301652,0.11685097548774387
+LINCS,dose_encoding,UniMolv2-84M + dose (gate),lincs_unimolv2_84m_dose_gate,test_pearson,0.11489669834917458,0.11306956603301652,0.11685097548774387
+LINCS,ref_handling,average_ref,lincs_average_ref,test_pearson,0.17788299918174744,0.17550597173586793,0.18018921335667837
+LINCS,embedding,bert-base-smiles,lincs_bert-base-smiles_dose_gate,test_pearson,0.11246723361680842,0.11064249624812408,0.11422976488244123
+LINCS,dose_encoding,bert-base-smiles + dose (gate),lincs_bert-base-smiles_dose_gate,test_pearson,0.11246723361680842,0.11064249624812408,0.11422976488244123
+LINCS,holdout,cell-line holdout,lincs_cellline_holdout,test_pearson,0.1298770010471344,0.128000763850543,0.13161288882753544
+LINCS,ablation,default,lincs_default_config,test_pearson,0.1514727363681841,0.14919139569784895,0.15390687218609303
+LINCS,ablation,delta_ref_only,lincs_delta_ref_only,test_pearson,0.10236000269651413,0.10010771010505252,0.10450322661330665
+LINCS,ablation,random_512,lincs_random_512_dose_gate,test_pearson,0.10929339669834919,0.10768760630315156,0.11101330665332666
+LINCS,dose_encoding,random_512 + dose (concat),lincs_random_512_dose_concat,test_pearson,0.0993570014834404,0.09793446601941748,0.10084695862818778
+LINCS,dose_encoding,random_512 + dose (gate),lincs_random_512_dose_gate,test_pearson,0.10929339669834919,0.10768760630315156,0.11101330665332666
+LINCS,dose_encoding,random_512 + dose (onehot),lincs_random_512_dose_onehot,test_pearson,0.09303800016641617,0.09150998054437598,0.09462952295572892
+LINCS,repro,repro_0.0,lincs_default_repro_0,test_pearson,0.1351740062236786,0.13288305402701353,0.1373524699849925
+LINCS,repro,repro_0.1,lincs_default_repro_0.1,test_pearson,0.12325499951839447,0.12085108804402202,0.12548851300650324
+LINCS,repro,repro_0.2,lincs_default_repro_0.2,test_pearson,0.11085300147533417,0.10861239994997499,0.11304439094547274
+LINCS,repro,repro_0.3,lincs_default_repro_0.3,test_pearson,0.10241299867630005,0.10013019634817409,0.10463161580790395
+LINCS,repro,repro_0.4,lincs_default_repro_0.4,test_pearson,0.0918779969215393,0.08949570410205103,0.0942903764382191
+LINCS,repro,repro_0.5,lincs_default_repro_0.5,test_pearson,0.08367300033569336,0.08166039894947474,0.08582342421210605
+LINCS,ref_handling,resample_ref,lincs_resample_ref,test_pearson,0.15569999814033508,0.15350724737368682,0.15794248999499752
+LINCS,embedding,CheMeleon,lincs_CheMeleon_dose_gate,test_spearman,0.12258229114557279,0.12076732741370685,0.12448951975987994
+LINCS,dose_encoding,CheMeleon + dose (concat),lincs_CheMeleon_dose_concat,test_spearman,0.12265,0.12088812062486885,0.12437469242947337
+LINCS,dose_encoding,CheMeleon + dose (gate),lincs_CheMeleon_dose_gate,test_spearman,0.12258229114557279,0.12076732741370685,0.12448951975987994
+LINCS,dose_encoding,CheMeleon + dose (onehot),lincs_CheMeleon_dose_onehot,test_spearman,0.117674,0.1158457617258283,0.11948199877925496
+LINCS,embedding,ChemBERTa-100M-MLM,lincs_ChemBERTa-100M-MLM_dose_gate,test_spearman,0.11287343671835919,0.11103826913456728,0.11485882316158079
+LINCS,dose_encoding,ChemBERTa-100M-MLM + dose (gate),lincs_ChemBERTa-100M-MLM_dose_gate,test_spearman,0.11287343671835919,0.11103826913456728,0.11485882316158079
+LINCS,embedding,ChemBERTa-5M-MLM,lincs_ChemBERTa-5M-MLM_dose_gate,test_spearman,0.11039444722361182,0.108681471985993,0.11220215107553776
+LINCS,dose_encoding,ChemBERTa-5M-MLM + dose (gate),lincs_ChemBERTa-5M-MLM_dose_gate,test_spearman,0.11039444722361182,0.108681471985993,0.11220215107553776
+LINCS,embedding,ChemBERTa-5M-MTR,lincs_ChemBERTa-5M-MTR_dose_gate,test_spearman,0.12490995497748873,0.12310550275137569,0.12683334167083543
+LINCS,dose_encoding,ChemBERTa-5M-MTR + dose (gate),lincs_ChemBERTa-5M-MTR_dose_gate,test_spearman,0.12490995497748873,0.12310550275137569,0.12683334167083543
+LINCS,embedding,ChemBERTa-77M-MLM,lincs_ChemBERTa-77M-MLM_dose_gate,test_spearman,0.12249649824912456,0.12071681465732867,0.12437621935967982
+LINCS,dose_encoding,ChemBERTa-77M-MLM + dose (gate),lincs_ChemBERTa-77M-MLM_dose_gate,test_spearman,0.12249649824912456,0.12071681465732867,0.12437621935967982
+LINCS,ref_cell,MCF7,lincs_MCF7,test_spearman,0.14655,0.14402977370143338,0.14882690003226254
+LINCS,embedding,MoLFormer-XL,lincs_MoLFormer-XL-both-10pct_dose_gate,test_spearman,0.11499374687343673,0.11309424712356178,0.11691536393196597
+LINCS,dose_encoding,MoLFormer-XL + dose (gate),lincs_MoLFormer-XL-both-10pct_dose_gate,test_spearman,0.11499374687343673,0.11309424712356178,0.11691536393196597
+LINCS,embedding,MolGen-large,lincs_MolGen-large_dose_gate,test_spearman,0.11417633816908455,0.11245861680840422,0.11601137443721861
+LINCS,dose_encoding,MolGen-large + dose (gate),lincs_MolGen-large_dose_gate,test_spearman,0.11417633816908455,0.11245861680840422,0.11601137443721861
+LINCS,embedding,Morgan_1024,lincs_Morgan_1024_dose_gate,test_spearman,0.1199629814907454,0.11815537143571785,0.12178860055027514
+LINCS,dose_encoding,Morgan_1024 + dose (concat),lincs_Morgan_1024_dose_concat,test_spearman,0.114376,0.11270642989299406,0.11607504720849945
+LINCS,dose_encoding,Morgan_1024 + dose (gate),lincs_Morgan_1024_dose_gate,test_spearman,0.1199629814907454,0.11815537143571785,0.12178860055027514
+LINCS,dose_encoding,Morgan_1024 + dose (onehot),lincs_Morgan_1024_dose_onehot,test_spearman,0.114506,0.1128906813283232,0.11613456806607281
+LINCS,embedding,Morgan_2048,lincs_Morgan_2048_dose_gate,test_spearman,0.12106378189094548,0.1192777076038019,0.12292505002501251
+LINCS,dose_encoding,Morgan_2048 + dose (gate),lincs_Morgan_2048_dose_gate,test_spearman,0.12106378189094548,0.1192777076038019,0.12292505002501251
+LINCS,embedding,Morgan_512,lincs_Morgan_512_dose_gate,test_spearman,0.11443121560780388,0.11236218734367184,0.1165066408204102
+LINCS,dose_encoding,Morgan_512 + dose (gate),lincs_Morgan_512_dose_gate,test_spearman,0.11443121560780388,0.11236218734367184,0.1165066408204102
+LINCS,ref_cell,PC3,lincs_PC3,test_spearman,0.140908,0.13888731548430314,0.1431288606805424
+LINCS,embedding,UniMolv1-84M,lincs_unimolv1_84m_dose_gate,test_spearman,0.11068834417208603,0.10902981490745373,0.11256159329664833
+LINCS,dose_encoding,UniMolv1-84M + dose (gate),lincs_unimolv1_84m_dose_gate,test_spearman,0.11068834417208603,0.10902981490745373,0.11256159329664833
+LINCS,embedding,UniMolv2-1.1B,lincs_unimolv2_1.1B_dose_gate,test_spearman,0.11739794897448724,0.11555469609804901,0.11928097173586794
+LINCS,dose_encoding,UniMolv2-1.1B + dose (concat),lincs_unimolv2_1.1B_dose_concat,test_spearman,0.079833,0.07801064337078223,0.08170793675014783
+LINCS,dose_encoding,UniMolv2-1.1B + dose (gate),lincs_unimolv2_1.1B_dose_gate,test_spearman,0.11739794897448724,0.11555469609804901,0.11928097173586794
+LINCS,dose_encoding,UniMolv2-1.1B + dose (onehot),lincs_unimolv2_1.1B_dose_onehot,test_spearman,0.078039,0.07601464417189614,0.07991544910065425
+LINCS,embedding,UniMolv2-164M,lincs_unimolv2_164m_dose_gate,test_spearman,0.11509404702351175,0.11336316283141572,0.11699837418709355
+LINCS,dose_encoding,UniMolv2-164M + dose (gate),lincs_unimolv2_164m_dose_gate,test_spearman,0.11509404702351175,0.11336316283141572,0.11699837418709355
+LINCS,embedding,UniMolv2-310M,lincs_unimolv2_310m_dose_gate,test_spearman,0.1209087043521761,0.1190121435717859,0.12286318159079539
+LINCS,dose_encoding,UniMolv2-310M + dose (gate),lincs_unimolv2_310m_dose_gate,test_spearman,0.1209087043521761,0.1190121435717859,0.12286318159079539
+LINCS,embedding,UniMolv2-570M,lincs_unimolv2_570m_dose_gate,test_spearman,0.11580090045022512,0.11392686968484242,0.11783618059029516
+LINCS,dose_encoding,UniMolv2-570M + dose (gate),lincs_unimolv2_570m_dose_gate,test_spearman,0.11580090045022512,0.11392686968484242,0.11783618059029516
+LINCS,embedding,UniMolv2-84M,lincs_unimolv2_84m_dose_gate,test_spearman,0.11479989994997498,0.11288309154577289,0.11676175587793897
+LINCS,dose_encoding,UniMolv2-84M + dose (gate),lincs_unimolv2_84m_dose_gate,test_spearman,0.11479989994997498,0.11288309154577289,0.11676175587793897
+LINCS,ref_handling,average_ref,lincs_average_ref,test_spearman,0.182535,0.18019082666333167,0.18489165832916457
+LINCS,embedding,bert-base-smiles,lincs_bert-base-smiles_dose_gate,test_spearman,0.10699424712356179,0.10519611680840421,0.10887970860430216
+LINCS,dose_encoding,bert-base-smiles + dose (gate),lincs_bert-base-smiles_dose_gate,test_spearman,0.10699424712356179,0.10519611680840421,0.10887970860430216
+LINCS,holdout,cell-line holdout,lincs_cellline_holdout,test_spearman,0.130918,0.12901650101233203,0.1326669105466593
+LINCS,ablation,default,lincs_default_config,test_spearman,0.15304127063531767,0.15075677838919457,0.15555650950475236
+LINCS,ablation,delta_ref_only,lincs_delta_ref_only,test_spearman,0.109504,0.10724816783391695,0.11176256878439218
+LINCS,ablation,random_512,lincs_random_512_dose_gate,test_spearman,0.10477913956978491,0.10305422711355677,0.10661643946973488
+LINCS,dose_encoding,random_512 + dose (concat),lincs_random_512_dose_concat,test_spearman,0.100679,0.09919894329257826,0.10227272207068877
+LINCS,dose_encoding,random_512 + dose (gate),lincs_random_512_dose_gate,test_spearman,0.10477913956978491,0.10305422711355677,0.10661643946973488
+LINCS,dose_encoding,random_512 + dose (onehot),lincs_random_512_dose_onehot,test_spearman,0.09043,0.08876812520266275,0.09201580769450854
+LINCS,repro,repro_0.0,lincs_default_repro_0,test_spearman,0.137198,0.13482140445222612,0.13940447098549275
+LINCS,repro,repro_0.1,lincs_default_repro_0.1,test_spearman,0.123146,0.12069257128564283,0.12545812281140573
+LINCS,repro,repro_0.2,lincs_default_repro_0.2,test_spearman,0.1097,0.10735538394197099,0.11206450725362681
+LINCS,repro,repro_0.3,lincs_default_repro_0.3,test_spearman,0.093315,0.09098860680340172,0.0955247811405703
+LINCS,repro,repro_0.4,lincs_default_repro_0.4,test_spearman,0.085666,0.08325285142571286,0.088123911955978
+LINCS,repro,repro_0.5,lincs_default_repro_0.5,test_spearman,0.073048,0.07093246623311657,0.0752693784392196
+LINCS,ref_handling,resample_ref,lincs_resample_ref,test_spearman,0.159039,0.15697619434717358,0.16129348424212106
+Tahoe,ref_cell,A-172 (CVCL_0131),tahoe_CVCL_0131,test_cosine_sim,0.7967320084571838,0.7943360692674135,0.799181601647998
+Tahoe,ref_cell,COLO 205 (CVCL_0218),tahoe_CVCL_0218,test_cosine_sim,0.7852150201797485,0.7829273015257305,0.7875232738557021
+Tahoe,embedding,CheMeleon,tahoe_CheMeleon_dose_gate,test_cosine_sim,0.44689326638341703,0.44274713531608084,0.4508542873696408
+Tahoe,dose_encoding,CheMeleon + dose (concat),tahoe_CheMeleon_dose_concat,test_cosine_sim,0.43500301241874695,0.43081215398480754,0.43924694219132226
+Tahoe,dose_encoding,CheMeleon + dose (gate),tahoe_CheMeleon_dose_gate,test_cosine_sim,0.44689326638341703,0.44274713531608084,0.4508542873696408
+Tahoe,dose_encoding,CheMeleon + dose (onehot),tahoe_CheMeleon_dose_onehot,test_cosine_sim,0.43992099165916443,0.4358908201364748,0.4440897386378267
+Tahoe,embedding,ChemBERTa-100M-MLM,tahoe_ChemBERTa-100M-MLM_dose_gate,test_cosine_sim,0.44145616067979915,0.4373858632676709,0.4454040491824385
+Tahoe,dose_encoding,ChemBERTa-100M-MLM + dose (gate),tahoe_ChemBERTa-100M-MLM_dose_gate,test_cosine_sim,0.44145616067979915,0.4373858632676709,0.4454040491824385
+Tahoe,embedding,ChemBERTa-5M-MLM,tahoe_ChemBERTa-5M-MLM_dose_gate,test_cosine_sim,0.43433114458606925,0.42993691257885924,0.43804673619157974
+Tahoe,dose_encoding,ChemBERTa-5M-MLM + dose (gate),tahoe_ChemBERTa-5M-MLM_dose_gate,test_cosine_sim,0.43433114458606925,0.42993691257885924,0.43804673619157974
+Tahoe,embedding,ChemBERTa-5M-MTR,tahoe_ChemBERTa-5M-MTR_dose_gate,test_cosine_sim,0.446396292004635,0.44232232522209347,0.4503611432985709
+Tahoe,dose_encoding,ChemBERTa-5M-MTR + dose (gate),tahoe_ChemBERTa-5M-MTR_dose_gate,test_cosine_sim,0.446396292004635,0.44232232522209347,0.4503611432985709
+Tahoe,embedding,ChemBERTa-77M-MLM,tahoe_ChemBERTa-77M-MLM_dose_gate,test_cosine_sim,0.45034762456546934,0.44641425260718426,0.45419981975022533
+Tahoe,dose_encoding,ChemBERTa-77M-MLM + dose (gate),tahoe_ChemBERTa-77M-MLM_dose_gate,test_cosine_sim,0.45034762456546934,0.44641425260718426,0.45419981975022533
+Tahoe,embedding,MoLFormer-XL,tahoe_MoLFormer-XL-both-10pct_dose_gate,test_cosine_sim,0.44812282734646586,0.4441454229432213,0.4521816982103773
+Tahoe,dose_encoding,MoLFormer-XL + dose (gate),tahoe_MoLFormer-XL-both-10pct_dose_gate,test_cosine_sim,0.44812282734646586,0.4441454229432213,0.4521816982103773
+Tahoe,embedding,MolGen-large,tahoe_MolGen-large_dose_gate,test_cosine_sim,0.4374147032316209,0.4331555619930475,0.4415595468005665
+Tahoe,dose_encoding,MolGen-large + dose (gate),tahoe_MolGen-large_dose_gate,test_cosine_sim,0.4374147032316209,0.4331555619930475,0.4415595468005665
+Tahoe,embedding,Morgan_1024,tahoe_Morgan_1024_dose_gate,test_cosine_sim,0.4421578473026909,0.4375178318527102,0.4462499678125402
+Tahoe,dose_encoding,Morgan_1024 + dose (concat),tahoe_Morgan_1024_dose_concat,test_cosine_sim,0.4366700053215027,0.4325280674649157,0.44062572421784474
+Tahoe,dose_encoding,Morgan_1024 + dose (gate),tahoe_Morgan_1024_dose_gate,test_cosine_sim,0.4421578473026909,0.4375178318527102,0.4462499678125402
+Tahoe,dose_encoding,Morgan_1024 + dose (onehot),tahoe_Morgan_1024_dose_onehot,test_cosine_sim,0.44982999563217163,0.4458102871121411,0.45365160293549633
+Tahoe,embedding,Morgan_2048,tahoe_Morgan_2048_dose_gate,test_cosine_sim,0.44065147418565725,0.43634617612977983,0.4446663769795287
+Tahoe,dose_encoding,Morgan_2048 + dose (gate),tahoe_Morgan_2048_dose_gate,test_cosine_sim,0.44065147418565725,0.43634617612977983,0.4446663769795287
+Tahoe,embedding,Morgan_512,tahoe_Morgan_512_dose_gate,test_cosine_sim,0.4479799150251062,0.44356723960345046,0.451972930346337
+Tahoe,dose_encoding,Morgan_512 + dose (gate),tahoe_Morgan_512_dose_gate,test_cosine_sim,0.4479799150251062,0.44356723960345046,0.451972930346337
+Tahoe,ref_cell,PANC-1 (CVCL_0480),tahoe_CVCL_0480,test_cosine_sim,0.8098819851875305,0.807538045577443,0.8122178447276941
+Tahoe,embedding,UniMolv1-84M,tahoe_unimolv1_84m_dose_gate,test_cosine_sim,0.41909875112656114,0.4145790202137247,0.4235610917986352
+Tahoe,dose_encoding,UniMolv1-84M + dose (gate),tahoe_unimolv1_84m_dose_gate,test_cosine_sim,0.41909875112656114,0.4145790202137247,0.4235610917986352
+Tahoe,embedding,UniMolv2-1.1B,tahoe_unimolv2_1.1B_dose_gate,test_cosine_sim,0.4052130809836488,0.40068778164027297,0.4094200141624823
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (concat),tahoe_unimolv2_1.1B_dose_concat,test_cosine_sim,0.33333900570869446,0.3294849040813698,0.3372257306553367
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (gate),tahoe_unimolv2_1.1B_dose_gate,test_cosine_sim,0.4052130809836488,0.40068778164027297,0.4094200141624823
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (onehot),tahoe_unimolv2_1.1B_dose_onehot,test_cosine_sim,0.37498199939727783,0.37034086519891846,0.3796420754474057
+Tahoe,embedding,UniMolv2-164M,tahoe_unimolv2_164m_dose_gate,test_cosine_sim,0.431915797605253,0.4276996588129265,0.43604889275138403
+Tahoe,dose_encoding,UniMolv2-164M + dose (gate),tahoe_unimolv2_164m_dose_gate,test_cosine_sim,0.431915797605253,0.4276996588129265,0.43604889275138403
+Tahoe,embedding,UniMolv2-310M,tahoe_unimolv2_310m_dose_gate,test_cosine_sim,0.42195056006179993,0.4175511136861079,0.4261757113428608
+Tahoe,dose_encoding,UniMolv2-310M + dose (gate),tahoe_unimolv2_310m_dose_gate,test_cosine_sim,0.42195056006179993,0.4175511136861079,0.4261757113428608
+Tahoe,embedding,UniMolv2-570M,tahoe_unimolv2_570m_dose_gate,test_cosine_sim,0.4419145101068624,0.4375430346337067,0.4461404016994978
+Tahoe,dose_encoding,UniMolv2-570M + dose (gate),tahoe_unimolv2_570m_dose_gate,test_cosine_sim,0.4419145101068624,0.4375430346337067,0.4461404016994978
+Tahoe,embedding,UniMolv2-84M,tahoe_unimolv2_84m_dose_gate,test_cosine_sim,0.4304145744817819,0.42622682502896875,0.4347181987897515
+Tahoe,dose_encoding,UniMolv2-84M + dose (gate),tahoe_unimolv2_84m_dose_gate,test_cosine_sim,0.4304145744817819,0.42622682502896875,0.4347181987897515
+Tahoe,embedding,bert-base-smiles,tahoe_bert-base-smiles_dose_gate,test_cosine_sim,0.42715849105188614,0.42282853740182824,0.43164844856443924
+Tahoe,dose_encoding,bert-base-smiles + dose (gate),tahoe_bert-base-smiles_dose_gate,test_cosine_sim,0.42715849105188614,0.42282853740182824,0.43164844856443924
+Tahoe,holdout,cell-line holdout,tahoe_cellline_holdout,test_cosine_sim,0.6425729990005493,0.6394465858642802,0.6460069057853569
+Tahoe,ablation,default,tahoe_default_config,test_cosine_sim,0.7908124114844857,0.7883776554654306,0.7930398802626497
+Tahoe,ablation,delta_ref_only,tahoe_delta_ref_only,test_cosine_sim,0.6399589776992798,0.6373215205355993,0.6429254538431827
+Tahoe,ablation,landmark_genes,tahoe_default_landmark_genes,test_cosine_sim,0.7926934466331917,0.790188457576928,0.7949798828376464
+Tahoe,ablation,random_512,tahoe_random_512_dose_gate,test_cosine_sim,0.4381846272692159,0.43395223380970777,0.44209685206643495
+Tahoe,dose_encoding,random_512 + dose (concat),tahoe_random_512_dose_concat,test_cosine_sim,0.4169420003890991,0.4129130938586326,0.42101876528904336
+Tahoe,dose_encoding,random_512 + dose (gate),tahoe_random_512_dose_gate,test_cosine_sim,0.4381846272692159,0.43395223380970777,0.44209685206643495
+Tahoe,dose_encoding,random_512 + dose (onehot),tahoe_random_512_dose_onehot,test_cosine_sim,0.4165849983692169,0.4126701107248616,0.42079715462855666
+Tahoe,ref_cell,A-172 (CVCL_0131),tahoe_CVCL_0131,test_l2,5.204592227935791,5.143695216943478,5.263844148319815
+Tahoe,ref_cell,COLO 205 (CVCL_0218),tahoe_CVCL_0218,test_l2,5.266054153442383,5.2155444789242305,5.31888363072149
+Tahoe,embedding,CheMeleon,tahoe_CheMeleon_dose_gate,test_l2,7.844904081369898,7.777339255825929,7.915986288142141
+Tahoe,dose_encoding,CheMeleon + dose (concat),tahoe_CheMeleon_dose_concat,test_l2,7.921327114105225,7.850816724604095,7.992928286339642
+Tahoe,dose_encoding,CheMeleon + dose (gate),tahoe_CheMeleon_dose_gate,test_l2,7.844904081369898,7.777339255825929,7.915986288142141
+Tahoe,dose_encoding,CheMeleon + dose (onehot),tahoe_CheMeleon_dose_onehot,test_l2,7.88886022567749,7.82007544740569,7.960564632419209
+Tahoe,embedding,ChemBERTa-100M-MLM,tahoe_ChemBERTa-100M-MLM_dose_gate,test_l2,7.887490665636668,7.8185342152697315,7.957871121411098
+Tahoe,dose_encoding,ChemBERTa-100M-MLM + dose (gate),tahoe_ChemBERTa-100M-MLM_dose_gate,test_l2,7.887490665636668,7.8185342152697315,7.957871121411098
+Tahoe,embedding,ChemBERTa-5M-MLM,tahoe_ChemBERTa-5M-MLM_dose_gate,test_l2,7.935607055491181,7.8681917085103645,8.004735901892621
+Tahoe,dose_encoding,ChemBERTa-5M-MLM + dose (gate),tahoe_ChemBERTa-5M-MLM_dose_gate,test_l2,7.935607055491181,7.8681917085103645,8.004735901892621
+Tahoe,embedding,ChemBERTa-5M-MTR,tahoe_ChemBERTa-5M-MTR_dose_gate,test_l2,7.899017638727951,7.833686172267285,7.967299311188362
+Tahoe,dose_encoding,ChemBERTa-5M-MTR + dose (gate),tahoe_ChemBERTa-5M-MTR_dose_gate,test_l2,7.899017638727951,7.833686172267285,7.967299311188362
+Tahoe,embedding,ChemBERTa-77M-MLM,tahoe_ChemBERTa-77M-MLM_dose_gate,test_l2,7.845664992918759,7.780450012874985,7.911246234067208
+Tahoe,dose_encoding,ChemBERTa-77M-MLM + dose (gate),tahoe_ChemBERTa-77M-MLM_dose_gate,test_l2,7.845664992918759,7.780450012874985,7.911246234067208
+Tahoe,embedding,MoLFormer-XL,tahoe_MoLFormer-XL-both-10pct_dose_gate,test_l2,7.858587614265482,7.791904177932278,7.927112205484743
+Tahoe,dose_encoding,MoLFormer-XL + dose (gate),tahoe_MoLFormer-XL-both-10pct_dose_gate,test_l2,7.858587614265482,7.791904177932278,7.927112205484743
+Tahoe,embedding,MolGen-large,tahoe_MolGen-large_dose_gate,test_l2,7.903867645165444,7.838228402214496,7.967786114329857
+Tahoe,dose_encoding,MolGen-large + dose (gate),tahoe_MolGen-large_dose_gate,test_l2,7.903867645165444,7.838228402214496,7.967786114329857
+Tahoe,embedding,Morgan_1024,tahoe_Morgan_1024_dose_gate,test_l2,7.8773760782799025,7.808127301403372,7.9475522402472
+Tahoe,dose_encoding,Morgan_1024 + dose (concat),tahoe_Morgan_1024_dose_concat,test_l2,7.92437219619751,7.85318276039655,7.997334588644264
+Tahoe,dose_encoding,Morgan_1024 + dose (gate),tahoe_Morgan_1024_dose_gate,test_l2,7.8773760782799025,7.808127301403372,7.9475522402472
+Tahoe,dose_encoding,Morgan_1024 + dose (onehot),tahoe_Morgan_1024_dose_onehot,test_l2,7.836585998535156,7.767411548860564,7.909964175357281
+Tahoe,embedding,Morgan_2048,tahoe_Morgan_2048_dose_gate,test_l2,7.925197631002961,7.85556041586198,7.992157428865713
+Tahoe,dose_encoding,Morgan_2048 + dose (gate),tahoe_Morgan_2048_dose_gate,test_l2,7.925197631002961,7.85556041586198,7.992157428865713
+Tahoe,embedding,Morgan_512,tahoe_Morgan_512_dose_gate,test_l2,7.836104029869962,7.76755082399897,7.9073569267413415
+Tahoe,dose_encoding,Morgan_512 + dose (gate),tahoe_Morgan_512_dose_gate,test_l2,7.836104029869962,7.76755082399897,7.9073569267413415
+Tahoe,ref_cell,PANC-1 (CVCL_0480),tahoe_CVCL_0480,test_l2,5.050970077514648,4.990825447405691,5.110824771469035
+Tahoe,embedding,UniMolv1-84M,tahoe_unimolv1_84m_dose_gate,test_l2,8.073460795674006,8.005731556585555,8.143875305780869
+Tahoe,dose_encoding,UniMolv1-84M + dose (gate),tahoe_unimolv1_84m_dose_gate,test_l2,8.073460795674006,8.005731556585555,8.143875305780869
+Tahoe,embedding,UniMolv2-1.1B,tahoe_unimolv2_1.1B_dose_gate,test_l2,8.160302562121798,8.091452426934467,8.231000997811252
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (concat),tahoe_unimolv2_1.1B_dose_concat,test_l2,8.377156257629395,8.305518475601906,8.456682438521952
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (gate),tahoe_unimolv2_1.1B_dose_gate,test_l2,8.160302562121798,8.091452426934467,8.231000997811252
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (onehot),tahoe_unimolv2_1.1B_dose_onehot,test_l2,8.393695831298828,8.32030082399897,8.46887244109695
+Tahoe,embedding,UniMolv2-164M,tahoe_unimolv2_164m_dose_gate,test_l2,7.9999459250675935,7.931158812926484,8.06763998326252
+Tahoe,dose_encoding,UniMolv2-164M + dose (gate),tahoe_unimolv2_164m_dose_gate,test_l2,7.9999459250675935,7.931158812926484,8.06763998326252
+Tahoe,embedding,UniMolv2-310M,tahoe_unimolv2_310m_dose_gate,test_l2,7.98958928801339,7.918220258787177,8.060394553881808
+Tahoe,dose_encoding,UniMolv2-310M + dose (gate),tahoe_unimolv2_310m_dose_gate,test_l2,7.98958928801339,7.918220258787177,8.060394553881808
+Tahoe,embedding,UniMolv2-570M,tahoe_unimolv2_570m_dose_gate,test_l2,7.869003476245655,7.799467780352774,7.940313988670015
+Tahoe,dose_encoding,UniMolv2-570M + dose (gate),tahoe_unimolv2_570m_dose_gate,test_l2,7.869003476245655,7.799467780352774,7.940313988670015
+Tahoe,embedding,UniMolv2-84M,tahoe_unimolv2_84m_dose_gate,test_l2,8.020786661516672,7.952316788979013,8.090793453070685
+Tahoe,dose_encoding,UniMolv2-84M + dose (gate),tahoe_unimolv2_84m_dose_gate,test_l2,8.020786661516672,7.952316788979013,8.090793453070685
+Tahoe,embedding,bert-base-smiles,tahoe_bert-base-smiles_dose_gate,test_l2,7.992613621732973,7.925130423586971,8.062920786661518
+Tahoe,dose_encoding,bert-base-smiles + dose (gate),tahoe_bert-base-smiles_dose_gate,test_l2,7.992613621732973,7.925130423586971,8.062920786661518
+Tahoe,holdout,cell-line holdout,tahoe_cellline_holdout,test_l2,7.058465003967285,6.991110615883306,7.12911815587344
+Tahoe,ablation,default,tahoe_default_config,test_l2,5.29209475988155,5.2341430088837395,5.352024398094502
+Tahoe,ablation,delta_ref_only,tahoe_delta_ref_only,test_l2,6.6983442306518555,6.6334761812797725,6.770563859920176
+Tahoe,ablation,landmark_genes,tahoe_default_landmark_genes,test_l2,1.613548345564568,1.5956297476503156,1.6318365198918503
+Tahoe,ablation,random_512,tahoe_random_512_dose_gate,test_l2,7.889656237929702,7.819996040942449,7.959624147032317
+Tahoe,dose_encoding,random_512 + dose (concat),tahoe_random_512_dose_concat,test_l2,7.969974040985107,7.894954197244753,8.046579148963565
+Tahoe,dose_encoding,random_512 + dose (gate),tahoe_random_512_dose_gate,test_l2,7.889656237929702,7.819996040942449,7.959624147032317
+Tahoe,dose_encoding,random_512 + dose (onehot),tahoe_random_512_dose_onehot,test_l2,7.977582931518555,7.903665153856057,8.053789751512811
+Tahoe,ref_cell,A-172 (CVCL_0131),tahoe_CVCL_0131,test_pearson,0.7966269850730896,0.7942481331273334,0.7991093086133643
+Tahoe,ref_cell,COLO 205 (CVCL_0218),tahoe_CVCL_0218,test_pearson,0.7851020097732544,0.7827784781484355,0.7873865722782519
+Tahoe,embedding,CheMeleon,tahoe_CheMeleon_dose_gate,test_pearson,0.4471430410711987,0.4430254924681345,0.45111185142268573
+Tahoe,dose_encoding,CheMeleon + dose (concat),tahoe_CheMeleon_dose_concat,test_pearson,0.4352859854698181,0.43105948242564696,0.4395072421784473
+Tahoe,dose_encoding,CheMeleon + dose (gate),tahoe_CheMeleon_dose_gate,test_pearson,0.4471430410711987,0.4430254924681345,0.45111185142268573
+Tahoe,dose_encoding,CheMeleon + dose (onehot),tahoe_CheMeleon_dose_onehot,test_pearson,0.4401629865169525,0.436092989571263,0.44432432084459894
+Tahoe,embedding,ChemBERTa-100M-MLM,tahoe_ChemBERTa-100M-MLM_dose_gate,test_pearson,0.4416685979142526,0.4375626046092443,0.44560341830822714
+Tahoe,dose_encoding,ChemBERTa-100M-MLM + dose (gate),tahoe_ChemBERTa-100M-MLM_dose_gate,test_pearson,0.4416685979142526,0.4375626046092443,0.44560341830822714
+Tahoe,embedding,ChemBERTa-5M-MLM,tahoe_ChemBERTa-5M-MLM_dose_gate,test_pearson,0.4345860692674134,0.4302043903695121,0.438282831208961
+Tahoe,dose_encoding,ChemBERTa-5M-MLM + dose (gate),tahoe_ChemBERTa-5M-MLM_dose_gate,test_pearson,0.4345860692674134,0.4302043903695121,0.438282831208961
+Tahoe,embedding,ChemBERTa-5M-MTR,tahoe_ChemBERTa-5M-MTR_dose_gate,test_pearson,0.4468997038753702,0.4427833462083172,0.4508498776876529
+Tahoe,dose_encoding,ChemBERTa-5M-MTR + dose (gate),tahoe_ChemBERTa-5M-MTR_dose_gate,test_pearson,0.4468997038753702,0.4427833462083172,0.4508498776876529
+Tahoe,embedding,ChemBERTa-77M-MLM,tahoe_ChemBERTa-77M-MLM_dose_gate,test_pearson,0.4506051242435947,0.44664963950045067,0.4544592828633965
+Tahoe,dose_encoding,ChemBERTa-77M-MLM + dose (gate),tahoe_ChemBERTa-77M-MLM_dose_gate,test_pearson,0.4506051242435947,0.44664963950045067,0.4544592828633965
+Tahoe,embedding,MoLFormer-XL,tahoe_MoLFormer-XL-both-10pct_dose_gate,test_pearson,0.4484807518990601,0.44452645809192737,0.4525402665121669
+Tahoe,dose_encoding,MoLFormer-XL + dose (gate),tahoe_MoLFormer-XL-both-10pct_dose_gate,test_pearson,0.4484807518990601,0.44452645809192737,0.4525402665121669
+Tahoe,embedding,MolGen-large,tahoe_MolGen-large_dose_gate,test_pearson,0.4377932277584653,0.43354535213080986,0.4418834492081885
+Tahoe,dose_encoding,MolGen-large + dose (gate),tahoe_MolGen-large_dose_gate,test_pearson,0.4377932277584653,0.43354535213080986,0.4418834492081885
+Tahoe,embedding,Morgan_1024,tahoe_Morgan_1024_dose_gate,test_pearson,0.4424552594309257,0.43779802368997034,0.44649246813441484
+Tahoe,dose_encoding,Morgan_1024 + dose (concat),tahoe_Morgan_1024_dose_concat,test_pearson,0.4370169937610626,0.4329713209733488,0.4410166731041586
+Tahoe,dose_encoding,Morgan_1024 + dose (gate),tahoe_Morgan_1024_dose_gate,test_pearson,0.4424552594309257,0.43779802368997034,0.44649246813441484
+Tahoe,dose_encoding,Morgan_1024 + dose (onehot),tahoe_Morgan_1024_dose_onehot,test_pearson,0.45017099380493164,0.4462119544225569,0.45405893523883095
+Tahoe,embedding,Morgan_2048,tahoe_Morgan_2048_dose_gate,test_pearson,0.44088579889275137,0.4366081820522725,0.4448996395004506
+Tahoe,dose_encoding,Morgan_2048 + dose (gate),tahoe_Morgan_2048_dose_gate,test_pearson,0.44088579889275137,0.4366081820522725,0.4448996395004506
+Tahoe,embedding,Morgan_512,tahoe_Morgan_512_dose_gate,test_pearson,0.44825672717909104,0.44385232393459506,0.45218919788850265
+Tahoe,dose_encoding,Morgan_512 + dose (gate),tahoe_Morgan_512_dose_gate,test_pearson,0.44825672717909104,0.44385232393459506,0.45218919788850265
+Tahoe,ref_cell,PANC-1 (CVCL_0480),tahoe_CVCL_0480,test_pearson,0.8097950220108032,0.8074519763100296,0.8121381163898546
+Tahoe,embedding,UniMolv1-84M,tahoe_unimolv1_84m_dose_gate,test_pearson,0.4195017381228273,0.4149655916055105,0.42395010943736317
+Tahoe,dose_encoding,UniMolv1-84M + dose (gate),tahoe_unimolv1_84m_dose_gate,test_pearson,0.4195017381228273,0.4149655916055105,0.42395010943736317
+Tahoe,embedding,UniMolv2-1.1B,tahoe_unimolv2_1.1B_dose_gate,test_pearson,0.4057293678382902,0.40119631131711087,0.4099550984936269
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (concat),tahoe_unimolv2_1.1B_dose_concat,test_pearson,0.33366501331329346,0.32981460023174974,0.33761577829277717
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (gate),tahoe_unimolv2_1.1B_dose_gate,test_pearson,0.4057293678382902,0.40119631131711087,0.4099550984936269
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (onehot),tahoe_unimolv2_1.1B_dose_onehot,test_pearson,0.3754439949989319,0.3708289558388052,0.3801122054847431
+Tahoe,embedding,UniMolv2-164M,tahoe_unimolv2_164m_dose_gate,test_pearson,0.43216814728981584,0.42795777005278746,0.4362857924552595
+Tahoe,dose_encoding,UniMolv2-164M + dose (gate),tahoe_unimolv2_164m_dose_gate,test_pearson,0.43216814728981584,0.42795777005278746,0.4362857924552595
+Tahoe,embedding,UniMolv2-310M,tahoe_unimolv2_310m_dose_gate,test_pearson,0.4222106347367066,0.4177941933822583,0.426430764774044
+Tahoe,dose_encoding,UniMolv2-310M + dose (gate),tahoe_unimolv2_310m_dose_gate,test_pearson,0.4222106347367066,0.4177941933822583,0.426430764774044
+Tahoe,embedding,UniMolv2-570M,tahoe_unimolv2_570m_dose_gate,test_pearson,0.4422518346852066,0.43792481009398737,0.44647396034504955
+Tahoe,dose_encoding,UniMolv2-570M + dose (gate),tahoe_unimolv2_570m_dose_gate,test_pearson,0.4422518346852066,0.43792481009398737,0.44647396034504955
+Tahoe,embedding,UniMolv2-84M,tahoe_unimolv2_84m_dose_gate,test_pearson,0.4307106991116261,0.4265184434144457,0.4350042809321488
+Tahoe,dose_encoding,UniMolv2-84M + dose (gate),tahoe_unimolv2_84m_dose_gate,test_pearson,0.4307106991116261,0.4265184434144457,0.4350042809321488
+Tahoe,embedding,bert-base-smiles,tahoe_bert-base-smiles_dose_gate,test_pearson,0.4274584781769023,0.42309337582078027,0.4319546156817304
+Tahoe,dose_encoding,bert-base-smiles + dose (gate),tahoe_bert-base-smiles_dose_gate,test_pearson,0.4274584781769023,0.42309337582078027,0.4319546156817304
+Tahoe,holdout,cell-line holdout,tahoe_cellline_holdout,test_pearson,0.6424570083618164,0.6393403213304206,0.6458735289972518
+Tahoe,ablation,default,tahoe_default_config,test_pearson,0.7907055491180636,0.7883077764902794,0.7929535534955582
+Tahoe,ablation,delta_ref_only,tahoe_delta_ref_only,test_pearson,0.6398119926452637,0.6371840800823998,0.6427442384447021
+Tahoe,ablation,landmark_genes,tahoe_default_landmark_genes,test_pearson,0.7921629972962533,0.7896365713917857,0.7944692609759237
+Tahoe,ablation,random_512,tahoe_random_512_dose_gate,test_pearson,0.43851422685721647,0.4343056843053946,0.4424072679284151
+Tahoe,dose_encoding,random_512 + dose (concat),tahoe_random_512_dose_concat,test_pearson,0.4173260033130646,0.4133608214239733,0.42140044418694483
+Tahoe,dose_encoding,random_512 + dose (gate),tahoe_random_512_dose_gate,test_pearson,0.43851422685721647,0.4343056843053946,0.4424072679284151
+Tahoe,dose_encoding,random_512 + dose (onehot),tahoe_random_512_dose_onehot,test_pearson,0.4169360101222992,0.4129916312604609,0.421068816788979
+Tahoe,ref_cell,A-172 (CVCL_0131),tahoe_CVCL_0131,test_spearman,0.636679,0.6345766705291619,0.6390847495815629
+Tahoe,ref_cell,COLO 205 (CVCL_0218),tahoe_CVCL_0218,test_spearman,0.625091,0.6230753814326351,0.627229764675459
+Tahoe,embedding,CheMeleon,tahoe_CheMeleon_dose_gate,test_spearman,0.33333848332689586,0.33042345822067715,0.33617519634350457
+Tahoe,dose_encoding,CheMeleon + dose (concat),tahoe_CheMeleon_dose_concat,test_spearman,0.321889,0.31882184241019695,0.3248953585683018
+Tahoe,dose_encoding,CheMeleon + dose (gate),tahoe_CheMeleon_dose_gate,test_spearman,0.33333848332689586,0.33042345822067715,0.33617519634350457
+Tahoe,dose_encoding,CheMeleon + dose (onehot),tahoe_CheMeleon_dose_onehot,test_spearman,0.323385,0.32030735805330246,0.32641309385863265
+Tahoe,embedding,ChemBERTa-100M-MLM,tahoe_ChemBERTa-100M-MLM_dose_gate,test_spearman,0.32748551564310546,0.3244782734646582,0.33038673232908455
+Tahoe,dose_encoding,ChemBERTa-100M-MLM + dose (gate),tahoe_ChemBERTa-100M-MLM_dose_gate,test_spearman,0.32748551564310546,0.3244782734646582,0.33038673232908455
+Tahoe,embedding,ChemBERTa-5M-MLM,tahoe_ChemBERTa-5M-MLM_dose_gate,test_spearman,0.32273850907686363,0.3196315179606026,0.32551882966396295
+Tahoe,dose_encoding,ChemBERTa-5M-MLM + dose (gate),tahoe_ChemBERTa-5M-MLM_dose_gate,test_spearman,0.32273850907686363,0.3196315179606026,0.32551882966396295
+Tahoe,embedding,ChemBERTa-5M-MTR,tahoe_ChemBERTa-5M-MTR_dose_gate,test_spearman,0.3328775589030514,0.3298023689970388,0.3359469872537659
+Tahoe,dose_encoding,ChemBERTa-5M-MTR + dose (gate),tahoe_ChemBERTa-5M-MTR_dose_gate,test_spearman,0.3328775589030514,0.3298023689970388,0.3359469872537659
+Tahoe,embedding,ChemBERTa-77M-MLM,tahoe_ChemBERTa-77M-MLM_dose_gate,test_spearman,0.34133771082786146,0.33842120509849366,0.344179251963435
+Tahoe,dose_encoding,ChemBERTa-77M-MLM + dose (gate),tahoe_ChemBERTa-77M-MLM_dose_gate,test_spearman,0.34133771082786146,0.33842120509849366,0.344179251963435
+Tahoe,embedding,MoLFormer-XL,tahoe_MoLFormer-XL-both-10pct_dose_gate,test_spearman,0.33215784730269093,0.32915060512424354,0.3351837582078022
+Tahoe,dose_encoding,MoLFormer-XL + dose (gate),tahoe_MoLFormer-XL-both-10pct_dose_gate,test_spearman,0.33215784730269093,0.32915060512424354,0.3351837582078022
+Tahoe,embedding,MolGen-large,tahoe_MolGen-large_dose_gate,test_spearman,0.32448950688811645,0.3214177932277585,0.3274340478949401
+Tahoe,dose_encoding,MolGen-large + dose (gate),tahoe_MolGen-large_dose_gate,test_spearman,0.32448950688811645,0.3214177932277585,0.3274340478949401
+Tahoe,embedding,Morgan_1024,tahoe_Morgan_1024_dose_gate,test_spearman,0.3306038367452041,0.32735354705806613,0.33350386249517183
+Tahoe,dose_encoding,Morgan_1024 + dose (concat),tahoe_Morgan_1024_dose_concat,test_spearman,0.322136,0.3194033732457835,0.32498963563795547
+Tahoe,dose_encoding,Morgan_1024 + dose (gate),tahoe_Morgan_1024_dose_gate,test_spearman,0.3306038367452041,0.32735354705806613,0.33350386249517183
+Tahoe,dose_encoding,Morgan_1024 + dose (onehot),tahoe_Morgan_1024_dose_onehot,test_spearman,0.334802,0.3319755375305781,0.3376929638212952
+Tahoe,embedding,Morgan_2048,tahoe_Morgan_2048_dose_gate,test_spearman,0.33013261233423463,0.3269608278614652,0.3329168919788851
+Tahoe,dose_encoding,Morgan_2048 + dose (gate),tahoe_Morgan_2048_dose_gate,test_spearman,0.33013261233423463,0.3269608278614652,0.3329168919788851
+Tahoe,embedding,Morgan_512,tahoe_Morgan_512_dose_gate,test_spearman,0.33594438006952493,0.3327796446504442,0.3389278679026651
+Tahoe,dose_encoding,Morgan_512 + dose (gate),tahoe_Morgan_512_dose_gate,test_spearman,0.33594438006952493,0.3327796446504442,0.3389278679026651
+Tahoe,ref_cell,PANC-1 (CVCL_0480),tahoe_CVCL_0480,test_spearman,0.653673,0.6515212759109053,0.6557525749967814
+Tahoe,embedding,UniMolv1-84M,tahoe_unimolv1_84m_dose_gate,test_spearman,0.3092790009012489,0.3060236577829278,0.312427063216171
+Tahoe,dose_encoding,UniMolv1-84M + dose (gate),tahoe_unimolv1_84m_dose_gate,test_spearman,0.3092790009012489,0.3060236577829278,0.312427063216171
+Tahoe,embedding,UniMolv2-1.1B,tahoe_unimolv2_1.1B_dose_gate,test_spearman,0.2954177932277584,0.2921517638727951,0.29852803527745597
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (concat),tahoe_unimolv2_1.1B_dose_concat,test_spearman,0.239435,0.23652835715205356,0.24233442770696537
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (gate),tahoe_unimolv2_1.1B_dose_gate,test_spearman,0.2954177932277584,0.2921517638727951,0.29852803527745597
+Tahoe,dose_encoding,UniMolv2-1.1B + dose (onehot),tahoe_unimolv2_1.1B_dose_onehot,test_spearman,0.271824,0.2683952298184627,0.2753614973606283
+Tahoe,embedding,UniMolv2-164M,tahoe_unimolv2_164m_dose_gate,test_spearman,0.3223561220548474,0.3191642526071843,0.3251960216299729
+Tahoe,dose_encoding,UniMolv2-164M + dose (gate),tahoe_unimolv2_164m_dose_gate,test_spearman,0.3223561220548474,0.3191642526071843,0.3251960216299729
+Tahoe,embedding,UniMolv2-310M,tahoe_unimolv2_310m_dose_gate,test_spearman,0.3107094116132355,0.3075767992790009,0.3135655980430025
+Tahoe,dose_encoding,UniMolv2-310M + dose (gate),tahoe_unimolv2_310m_dose_gate,test_spearman,0.3107094116132355,0.3075767992790009,0.3135655980430025
+Tahoe,embedding,UniMolv2-570M,tahoe_unimolv2_570m_dose_gate,test_spearman,0.33187717265353417,0.3287361593923007,0.33503901120123597
+Tahoe,dose_encoding,UniMolv2-570M + dose (gate),tahoe_unimolv2_570m_dose_gate,test_spearman,0.33187717265353417,0.3287361593923007,0.33503901120123597
+Tahoe,embedding,UniMolv2-84M,tahoe_unimolv2_84m_dose_gate,test_spearman,0.32351487060641176,0.3204972640659199,0.3264223638470452
+Tahoe,dose_encoding,UniMolv2-84M + dose (gate),tahoe_unimolv2_84m_dose_gate,test_spearman,0.32351487060641176,0.3204972640659199,0.3264223638470452
+Tahoe,embedding,bert-base-smiles,tahoe_bert-base-smiles_dose_gate,test_spearman,0.31748551564310545,0.3143516801853998,0.3205641817947728
+Tahoe,dose_encoding,bert-base-smiles + dose (gate),tahoe_bert-base-smiles_dose_gate,test_spearman,0.31748551564310545,0.3143516801853998,0.3205641817947728
+Tahoe,holdout,cell-line holdout,tahoe_cellline_holdout,test_spearman,0.485191,0.482174459164259,0.48832379677260235
+Tahoe,ablation,default,tahoe_default_config,test_spearman,0.628236127204841,0.6259958156302305,0.6303450817561479
+Tahoe,ablation,delta_ref_only,tahoe_delta_ref_only,test_spearman,0.479116,0.4768479464400669,0.4817411162611047
+Tahoe,ablation,landmark_genes,tahoe_default_landmark_genes,test_spearman,0.7132367709540361,0.7107684756019055,0.7155285502768122
+Tahoe,ablation,random_512,tahoe_random_512_dose_gate,test_spearman,0.32609244238444707,0.32300160937298833,0.32889954293807133
+Tahoe,dose_encoding,random_512 + dose (concat),tahoe_random_512_dose_concat,test_spearman,0.29853,0.29574980687524144,0.30130516930603846
+Tahoe,dose_encoding,random_512 + dose (gate),tahoe_random_512_dose_gate,test_spearman,0.32609244238444707,0.32300160937298833,0.32889954293807133
+Tahoe,dose_encoding,random_512 + dose (onehot),tahoe_random_512_dose_onehot,test_spearman,0.29744,0.2945603192996009,0.30023957126303596

@@ -106,7 +106,8 @@ dataset requires a Hugging Face access token:
    export HF_TOKEN=<your-hugging-face-token>
    ```
 
-Then download the dataset with:
+Then, make sure the [Python environment](#python-environment) is active first
+(the script needs the `hf` CLI), and download the dataset with:
 
 ```bash
 ./scripts/setup/download_tahoe.sh <outdir>
@@ -116,32 +117,25 @@ Then download the dataset with:
 creates a `Tahoe-100M` subdirectory there and mirrors the full dataset repo
 into it.
 
-Make sure the [Python environment](#python-environment) is active first,
-since the script needs the `hf` CLI.
-
 ## Tahoe-100M build dependencies
 
 Reading Tahoe-100M parquet files from Julia efficiently requires building
 `libcxxwrap-julia`, Apache Arrow (C++), and the `ArrowWrap` CxxWrap module.
-Set these up with:
+Make sure the `biopert` conda env is active first (the script exits with an
+error otherwise) and that `cmake` and `wget` are already available on your
+`PATH`, then set these up with:
 
 ```bash
 conda activate biopert
 ./scripts/setup/setup_tahoe_deps.sh
 ```
 
-The script requires the `biopert` conda env to be active (it exits with an
-error otherwise), and assumes `cmake` and `wget` are already available on
-your `PATH`.
-
 ## LINCS Preprocessing
 
-Once the raw data is downloaded, extract and filter the landmark-gene expression
-profiles with:
-
-Make sure the [Python environment is configured for PythonCall](#python-calls-from-julia-pythoncall)
-first (`source scripts/setup/setup_python_env.sh`), since every `Biopert` script
-triggers Python module loading at startup.
+Once the raw data is downloaded, make sure the [Python environment is
+configured for PythonCall](#python-calls-from-julia-pythoncall) first
+(`source scripts/setup/setup_python_env.sh`), then extract and filter the
+landmark-gene expression profiles with:
 
 ```bash
 julia --project=julia scripts/preprocessing/preprocess_lincs.jl <lincs_dir> $BIOPERT_OUTDIR
@@ -156,15 +150,14 @@ as a `DataFrame` with columns `cell_line`, `sample`, `plate`, `drug`, `smiles`,
 ## Tahoe-100M Preprocessing
 
 Once the raw data is downloaded and the [Tahoe-100M build dependencies](#tahoe-100m-build-dependencies)
-are set up, build pseudobulk expression profiles with:
+are set up, make sure the [Python environment is configured for
+PythonCall](#python-calls-from-julia-pythoncall) first
+(`source scripts/setup/setup_python_env.sh`), then build pseudobulk expression
+profiles with:
 
 ```bash
 julia --project=julia scripts/preprocessing/preprocess_tahoe.jl <tahoe_dir> $BIOPERT_OUTDIR [--cell_thresh N] [--umi_thresh N] [--alpha N]
 ```
-
-Make sure the [Python environment is configured for PythonCall](#python-calls-from-julia-pythoncall)
-first (`source scripts/setup/setup_python_env.sh`), since every `Biopert` script
-triggers Python module loading at startup.
 
 - `<tahoe_dir>` is the `Tahoe-100M` directory produced by `download_tahoe.sh`.
 - `--cell_thresh` (default `50`) and `--umi_thresh` (default `35000`) set the
@@ -267,7 +260,7 @@ with columns `drug`, `smiles`, and `embedding` (also saved as a HuggingFace
 ### 4. Compute RDKit fingerprints
 
 Computes classic bit-vector fingerprints for each compound with RDKit: MACCS
-(166 bits) and, at 512/1024/2048 bits each, Morgan/ECFP6 (radius 3), RDKit,
+(166 bits) and, at 512/1024/2048 bits each, ECFP6 (Morgan, radius 3), RDKit,
 and AtomPair. Each family is saved as its own embedding.
 
 ```bash
@@ -280,7 +273,7 @@ python scripts/molec_embeds/generate_fingerprints.py \
 - `<dataset>` is `lincs` or `tahoe`.
 
 **Output:** one `$BIOPERT_OUTDIR/molec_embeds/<dataset>/<fingerprint>/embeds.parquet`
-per fingerprint family (`MACCS_166`, `Morgan_512`, `Morgan_1024`, `Morgan_2048`,
+per fingerprint family (`MACCS_166`, `ECFP6_512`, `ECFP6_1024`, `ECFP6_2048`,
 `RDKit_512`, `RDKit_1024`, `RDKit_2048`, `AtomPair_512`, `AtomPair_1024`,
 `AtomPair_2048`), with columns `drug`, `smiles`, and `embedding`.
 
@@ -319,21 +312,82 @@ scripts/molec_embeds/run_all_molec_embeds.sh $BIOPERT_OUTDIR <dataset>
 - Step 1 (extract compound SMILES) is a prerequisite and must be run
   separately first.
 
+## Predict target delta profiles
+
+Once a preprocessed dataset is available (see [LINCS Preprocessing](#lincs-preprocessing)
+or [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), make sure the
+[Python environment is configured for
+PythonCall](#python-calls-from-julia-pythoncall) first
+(`source scripts/setup/setup_python_env.sh`) — this script also logs to
+[Weights & Biases](https://wandb.ai) via the `wandb` Python package, so the
+active Python environment must have it installed and, unless `wandb_mode =
+"disabled"`, be logged in (`wandb login`) — then train a model to predict
+each target cell line's delta expression profile from a reference cell line's
+matched delta profile and/or the target cell line's average untreated
+profile, with:
+
+```bash
+julia --project=julia scripts/predict_drug_response/predict_target_delta_profiles.jl <config_file> <outdir> <dataset>
+```
+
+- `<outdir>` is `$BIOPERT_OUTDIR` (see [Output directory](#output-directory-biopert_outdir)).
+  Results are written under it (see below).
+- `<dataset>` is `"lincs"` or `"tahoe"`. Together with `<outdir>`, it resolves
+  the preprocessed `.jld2` file and, when `use_pca_cache` is set, `pca_dir`
+  from `configs/default_paths.toml`.
+- `<config_file>` is a TOML file (see
+  [`configs/tahoe_minimal_config.toml`](configs/tahoe_minimal_config.toml) for
+  a minimal example) with the following keys:
+  - `ref_cl` — the reference cell line symbol. Required.
+  - `wandb_mode` — `"online"`, `"offline"`, or `"disabled"`. Required.
+  - `hidden_layers` — array of hidden layer sizes for the MLP. Required.
+  - `batch_size`, `n_epochs`, `lr`, `weight_decay` — training hyperparameters. Required.
+  - `use_delta_ref` (default `true`) — whether to include the reference cell
+    line's delta profile as an input feature.
+  - `molec_embed_file` (default none) — path to a molecular-embedding
+    parquet file; if set, molecular embeddings are used as input.
+  - `dose_encoding` (default `"none"`) — `"none"`, `"concat"`, `"gate"`, or
+    `"onehot"`; requires `molec_embed_file` to be set.
+  - `n_pca_expr` (default none) — PCA-reduce the delta-ref and
+    untreated-target expression inputs to this many components. Both share
+    this one dimensionality (fit as two separate transforms, same target
+    size) — they can't currently be set independently (see the `TODO` above
+    this option's parsing in the script).
+  - `n_pca_molec` (default none) — PCA-reduce the molecular-embedding
+    inputs to this many components.
+  - `use_pca_cache` (default `false`) — if `true`, cache fitted PCA transforms
+    under `pca_dir` across runs (loading them back if already computed);
+    requires `pca_dir` to be set. If `false`, PCA is recomputed every run.
+  - `pca_dir` (default none) — directory to cache fitted PCA transforms in;
+    only used when `use_pca_cache` is `true`.
+  - `model_type` (default `"mlp"`) — `"mlp"`, `"lasso"`, `"ridge"`, or `"xgboost"`.
+  - Everything else (`seed`, `split_seed`, `average_ref`, `resample_ref`,
+    `landmark_genes_only`, `val_frac`/`test_frac`, pinned/cell-line-holdout
+    split paths, `repro_delta_inter_path`/`threshold`, `dropout_arr`,
+    `warmup_steps`, `loss_name`, `save_predictions`, ...) is optional; see the
+    top of `main` in the script for the full list and defaults.
+
+Results are written to `<outdir>/<jld2_basename>_<config_basename>_<timestamp>/`
+(e.g. `pseudobulks_alpha_10000_tahoe_minimal_config_2026-01-01_120000/`):
+- `best_model.jld2` — the checkpoint with the highest validation Spearman correlation.
+- `test_perfs_per_obs.csv` — per-observation test-set metrics.
+- `summary.toml` — hyperparameters and aggregate test-set metrics (Pearson,
+  Spearman, cosine similarity, L2, RMSE).
+
 ## Reproducibility statistics
 
 Once a preprocessed dataset is available (`filtered_lincs.jld2` from
 [LINCS Preprocessing](#lincs-preprocessing), or `pseudobulks_alpha_<alpha>.jld2`
-from [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), compute pairwise
+from [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), make sure the
+[Python environment is configured for
+PythonCall](#python-calls-from-julia-pythoncall) first
+(`source scripts/setup/setup_python_env.sh`), then compute pairwise
 reproducibility statistics (Pearson, Spearman) between condition-matched
 profiles with:
 
 ```bash
 julia --project=julia scripts/dataset_analysis/compute_repro_stats.jl $BIOPERT_OUTDIR <dataset> [--max_pairs N]
 ```
-
-Make sure the [Python environment is configured for PythonCall](#python-calls-from-julia-pythoncall)
-first (`source scripts/setup/setup_python_env.sh`), since every `Biopert` script
-triggers Python module loading at startup.
 
 - `<dataset>` is `lincs` or `tahoe`.
 - `--max_pairs` caps the number of profile pairs assessed per condition
@@ -354,7 +408,10 @@ e.g. `filtered_lincs` or `pseudobulks_alpha_10000`): `repro_untrt_intra.csv`,
 ## SAR table
 
 Once a preprocessed dataset is available (see [LINCS Preprocessing](#lincs-preprocessing)
-or [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), build a
+or [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), make sure the
+[Python environment is configured for
+PythonCall](#python-calls-from-julia-pythoncall) first
+(`source scripts/setup/setup_python_env.sh`), then build a
 structure-activity relationship (SAR) table — one row per compound pair,
 comparing chemical distance against biological (delta profile) similarity —
 with:
@@ -362,10 +419,6 @@ with:
 ```bash
 julia --project=julia scripts/dataset_analysis/build_sar_table.jl $BIOPERT_OUTDIR <dataset> [--max_pairs N] [--repro_criteria pearson|spearman] [--repro_threshold N]
 ```
-
-Make sure the [Python environment is configured for PythonCall](#python-calls-from-julia-pythoncall)
-first (`source scripts/setup/setup_python_env.sh`), since every `Biopert` script
-triggers Python module loading at startup.
 
 - `<dataset>` is `lincs` or `tahoe`. The table is written to
   `$BIOPERT_OUTDIR/sar/sar_<input_basename>.csv` (where `<input_basename>` is
@@ -383,60 +436,34 @@ triggers Python module loading at startup.
   `drug`, `dose`, `time`) whose minimum inter-plate `repro_criteria` is at
   least `repro_threshold` are included in the SAR table.
 
-## Predict target delta profiles
+## Delta-ref UMAP
 
 Once a preprocessed dataset is available (see [LINCS Preprocessing](#lincs-preprocessing)
-or [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), train a model to predict
-each target cell line's delta expression profile from a reference cell line's
-matched delta profile and/or the target cell line's average untreated profile,
-with:
+or [Tahoe-100M Preprocessing](#tahoe-100m-preprocessing)), make sure the
+[Python environment](#python-environment) is active (for `juliacall`) and a
+working `julia` executable is on `PATH` with
+[`julia/Project.toml`'s dependencies instantiated](#julia-package), then
+compute a UMAP of delta profiles (treated − matched plate DMSO mean) on the
+reference cell line with:
 
 ```bash
-julia --project=julia scripts/predict_drug_response/predict_target_delta_profiles.jl <config_file> <outdir> <dataset>
+conda activate biopert
+python scripts/dataset_analysis/delta_ref_umap.py <dataset> $BIOPERT_OUTDIR [--ref_cl CL] [--average] [--n_neighbors N] [--min_dist F] [--metric M] [--seed N]
 ```
 
-Make sure the [Python environment is configured for PythonCall](#python-calls-from-julia-pythoncall)
-first (`source scripts/setup/setup_python_env.sh`), since every `Biopert` script
-triggers Python module loading at startup. This script also logs to
-[Weights & Biases](https://wandb.ai) via the `wandb` Python package, so the
-active Python environment must have it installed and, unless `wandb_mode =
-"disabled"`, be logged in (`wandb login`).
-
-- `<outdir>` is `$BIOPERT_OUTDIR` (see [Output directory](#output-directory-biopert_outdir)).
-  Results are written under it (see below).
-- `<dataset>` is `"lincs"` or `"tahoe"`. Together with `<outdir>`, it resolves
-  the preprocessed `.jld2` file and, when `use_pca_cache` is set, `pca_dir`
-  from `configs/default_paths.toml`.
-- `<config_file>` is a TOML file (see
-  [`configs/tahoe_minimal_config.toml`](configs/tahoe_minimal_config.toml) for
-  a minimal example) with the following keys:
-  - `ref_cl` — the reference cell line symbol. Required.
-  - `wandb_mode` — `"online"`, `"offline"`, or `"disabled"`. Required.
-  - `hidden_layers` — array of hidden layer sizes for the MLP. Required.
-  - `batch_size`, `n_epochs`, `lr`, `weight_decay` — training hyperparameters. Required.
-  - `use_delta_ref` (default `true`) — whether to include the reference cell
-    line's delta profile as an input feature.
-  - `molec_embed_file` (default none) — path to a molecular-embedding
-    parquet file; if set, molecular embeddings are used as input.
-  - `dose_encoding` (default `"none"`) — `"none"`, `"concat"`, `"gate"`, or
-    `"onehot"`; requires `molec_embed_file` to be set.
-  - `n_pca_expr`, `n_pca_molec` (default none) — PCA-reduce the expression /
-    molecular-embedding inputs to this many components.
-  - `use_pca_cache` (default `false`) — if `true`, cache fitted PCA transforms
-    under `pca_dir` across runs (loading them back if already computed);
-    requires `pca_dir` to be set. If `false`, PCA is recomputed every run.
-  - `pca_dir` (default none) — directory to cache fitted PCA transforms in;
-    only used when `use_pca_cache` is `true`.
-  - `model_type` (default `"mlp"`) — `"mlp"`, `"lasso"`, `"ridge"`, or `"xgboost"`.
-  - Everything else (`seed`, `split_seed`, `average_ref`, `resample_ref`,
-    `landmark_genes_only`, `val_frac`/`test_frac`, pinned/cell-line-holdout
-    split paths, `repro_delta_inter_path`/`threshold`, `dropout_arr`,
-    `warmup_steps`, `loss_name`, `save_predictions`, ...) is optional; see the
-    top of `main` in the script for the full list and defaults.
-
-Results are written to `<outdir>/<jld2_basename>_<config_basename>_<timestamp>/`
-(e.g. `pseudobulks_alpha_10000_tahoe_minimal_config_2026-01-01_120000/`):
-- `best_model.jld2` — the checkpoint with the highest validation Spearman correlation.
-- `test_perfs_per_obs.csv` — per-observation test-set metrics.
-- `summary.toml` — hyperparameters and aggregate test-set metrics (Pearson,
-  Spearman, cosine similarity, L2, RMSE).
+- `<dataset>` is `lincs` or `tahoe`. The preprocessed `.jld2` is located via
+  `configs/default_paths.toml`, the same way every other script in this repo
+  resolves dataset paths.
+- The script reads the preprocessed JLD2 (a DataFrame with one row per
+  `(cell_line, sample)`) through an embedded Julia runtime (`juliacall`), since
+  JLD2 serializes DataFrames using Julia-specific encoding that plain HDF5
+  readers can't parse.
+- `--ref_cl` defaults to `A549` for LINCS and `CVCL_0023` for Tahoe.
+- `--average` averages replicates per `(drug, dose, time)` before fitting UMAP;
+  by default all replicates are kept separate.
+- `--n_neighbors`, `--min_dist`, `--metric`, and `--seed` control the UMAP fit
+  (defaults: `15`, `0.1`, `cosine`, `42`).
+- Outputs are written to
+  `$BIOPERT_OUTDIR/delta_ref_umap/<dataset>/<ref_cl>_<n_neighbors>_<min_dist>[_unaveraged]/`:
+  `umap_model.pkl` (fitted `umap.UMAP` object), `umap_embedding.npy` (2-D
+  coordinates), and `umap_uncolored.png` (scatter plot).

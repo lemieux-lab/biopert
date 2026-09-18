@@ -1,0 +1,33 @@
+\begin{longtable}{lrrrrrrrr}
+\caption{Best-by-validation-Spearman hyperparameters, Tahoe.} \label{tab:hp_tahoe} \\
+\toprule
+Configuration & LR & BSZ & Weight decay & Hidden layers & Max epochs & $n_\mathrm{PCA}^{\mathrm{expr}}$ & $n_\mathrm{PCA}^{\mathrm{molec}}$ & Epoch \\
+\midrule
+\endfirsthead
+\toprule
+Configuration & LR & BSZ & Weight decay & Hidden layers & Max epochs & $n_\mathrm{PCA}^{\mathrm{expr}}$ & $n_\mathrm{PCA}^{\mathrm{molec}}$ & Epoch \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+ECFP6-512 & 5.72e-05 & 256 & 0.1 & [512, 256, 512] & 200 & 256 & 32 & 170 \\
+ECFP6-1024 & 2.14e-05 & 128 & 0.0001 & [512, 256, 512] & 500 & 256 & 32 & 220 \\
+ECFP6-2048 & 7.91e-05 & 256 & 0.1 & [1024, 128, 1024] & 200 & 64 & 32 & 120 \\
+BioPert & 8.91e-04 & 256 & 0.001 & [1024, 128, 1024] & 200 & 128 & 128 & 190 \\
+BioPert (landmark) & 2.33e-04 & 256 & 0.1 & [1024, 1024] & 500 & 64 & 64 & 220 \\
+CheMeleon & 4.11e-06 & 128 & 0 & [512, 512, 512] & 500 & 32 & 32 & 400 \\
+ChemBERTa-100M-MLM & 1.13e-05 & 64 & 0.001 & [256, 512, 256] & 500 & 32 & 32 & 130 \\
+ChemBERTa-5M-MLM & 6.95e-06 & 32 & 0.001 & [256, 512, 256] & 500 & 256 & 32 & 190 \\
+ChemBERTa-5M-MTR & 1.18e-05 & 64 & 0.01 & [1024, 1024] & 200 & 1024 & 32 & 150 \\
+ChemBERTa-77M-MLM & 6.57e-06 & 32 & 0.1 & [1024, 128, 1024] & 500 & 1024 & 32 & 480 \\
+MoLFormer-XL & 1.10e-05 & 32 & 0.0001 & [1024, 1024] & 100 & 128 & 32 & 50 \\
+MolGen-large & 1.69e-05 & 128 & 0 & [1024, 1024] & 200 & 128 & 32 & 140 \\
+Random & 2.19e-05 & 256 & 0.0001 & [512, 512, 512] & 200 & 128 & 32 & 150 \\
+UniMolv1-84M & 1.62e-05 & 64 & 0.1 & [1024, 1024] & 200 & 256 & 32 & 90 \\
+UniMolv2-1.1B & 5.36e-06 & 64 & 0.01 & [512, 512, 512] & 100 & 128 & — & 100 \\
+UniMolv2-164M & 9.02e-04 & 128 & 0.1 & [1024, 1024] & 500 & 64 & — & 30 \\
+UniMolv2-310M & 1.47e-04 & 32 & 0.1 & [1024, 512, 256] & 200 & 128 & — & 10 \\
+UniMolv2-570M & 5.34e-03 & 256 & 0.1 & [512, 512, 512] & 100 & 32 & — & 40 \\
+UniMolv2-84M & 2.84e-05 & 32 & 0.01 & [1024, 1024] & 200 & 256 & — & 20 \\
+bert-base-smiles & 3.22e-05 & 64 & 0.01 & [256, 512, 256] & 100 & 64 & 32 & 70 \\
+\end{longtable}

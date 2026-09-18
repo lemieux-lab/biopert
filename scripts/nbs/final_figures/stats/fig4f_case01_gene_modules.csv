@@ -1,0 +1,49 @@
+gene,profile,signed_rank_score,module,gene_order
+DUSP6,prediction,-0.9688882999992274,ERK-output genes,0
+DUSP6,reference,-0.3422824699993426,ERK-output genes,0
+DUSP6,target,-0.9663840499990736,ERK-output genes,0
+ETV1,prediction,-0.8326880299993088,ERK-output genes,1
+ETV1,reference,-0.0311163329994118,ERK-output genes,1
+ETV1,target,-1.0353618999991712,ERK-output genes,1
+ETV4,prediction,-0.3801689399993093,ERK-output genes,2
+ETV4,reference,-0.1673815099994123,ERK-output genes,2
+ETV4,target,-0.3823312999991717,ERK-output genes,2
+ETV5,prediction,-0.5796312999993095,ERK-output genes,3
+ETV5,reference,-0.2588463999994124,ERK-output genes,3
+ETV5,target,-0.618227199999172,ERK-output genes,3
+SPRY2,prediction,-0.2381120900009374,ERK-output genes,4
+SPRY2,reference,-0.0421049260007976,ERK-output genes,4
+SPRY2,target,-0.3018121000011242,ERK-output genes,4
+SPRY4,prediction,-0.7446583500009377,ERK-output genes,5
+SPRY4,reference,-0.1469501600007978,ERK-output genes,5
+SPRY4,target,-0.8698607700011245,ERK-output genes,5
+SPRED1,prediction,-0.7979947000009345,ERK-output genes,6
+SPRED1,reference,-0.4020733800007952,ERK-output genes,6
+SPRED1,target,-1.020043100001121,ERK-output genes,6
+SPRED2,prediction,-0.8482016300009348,ERK-output genes,7
+SPRED2,reference,-0.4494523400007953,ERK-output genes,7
+SPRED2,target,-1.0127252000011209,ERK-output genes,7
+MITF,prediction,0.2860459700000064,Melanocytic / MITF–PGC-1α,8
+MITF,reference,0.0780959100000054,Melanocytic / MITF–PGC-1α,8
+MITF,target,0.5377371300000078,Melanocytic / MITF–PGC-1α,8
+DCT,prediction,0.7207414000008608,Melanocytic / MITF–PGC-1α,9
+DCT,reference,0.0014783507007324,Melanocytic / MITF–PGC-1α,9
+DCT,target,0.7246163000010323,Melanocytic / MITF–PGC-1α,9
+TYR,prediction,0.2384665299987629,Melanocytic / MITF–PGC-1α,10
+TYR,reference,0.0037123916989473,Melanocytic / MITF–PGC-1α,10
+TYR,target,0.2440897799985164,Melanocytic / MITF–PGC-1α,10
+MLANA,prediction,0.2619031400000042,Melanocytic / MITF–PGC-1α,11
+MLANA,reference,0.0182131500000036,Melanocytic / MITF–PGC-1α,11
+MLANA,target,0.1443428100000051,Melanocytic / MITF–PGC-1α,11
+TYRP1,prediction,0.0228450689987624,Melanocytic / MITF–PGC-1α,12
+TYRP1,reference,-1.0530487238866396e-12,Melanocytic / MITF–PGC-1α,12
+TYRP1,target,0.0632918849985159,Melanocytic / MITF–PGC-1α,12
+PPARGC1A,prediction,0.283118869999548,Melanocytic / MITF–PGC-1α,13
+PPARGC1A,reference,0.0582050599996154,Melanocytic / MITF–PGC-1α,13
+PPARGC1A,target,0.378304329999458,Melanocytic / MITF–PGC-1α,13
+GLUD1,prediction,1.2922901000005118,Melanocytic / MITF–PGC-1α,14
+GLUD1,reference,-0.0022918581995645,Melanocytic / MITF–PGC-1α,14
+GLUD1,target,1.4919289000006135,Melanocytic / MITF–PGC-1α,14
+IDH1,prediction,0.2145152000003434,Melanocytic / MITF–PGC-1α,15
+IDH1,reference,0.1001653100002922,Melanocytic / MITF–PGC-1α,15
+IDH1,target,0.3157320000004118,Melanocytic / MITF–PGC-1α,15
