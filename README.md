@@ -421,12 +421,23 @@ julia --project=julia scripts/dataset_analysis/build_sar_table.jl $BIOPERT_OUTDI
 ```
 
 - `<dataset>` is `lincs` or `tahoe`. The table is written to
-  `$BIOPERT_OUTDIR/sar/sar_<input_basename>.csv` (where `<input_basename>` is
-  the name of the dataset's preprocessed `.jld2` file without its extension).
+  `$BIOPERT_OUTDIR/sar/sar_<input_basename>_<repro_criteria>_<repro_threshold>[_max_pairs_<N>].csv`
+  (where `<input_basename>` is the name of the dataset's preprocessed `.jld2`
+  file without its extension, and the `_max_pairs_<N>` suffix is only added
+  when `--max_pairs` is set), e.g. `sar_filtered_lincs_pearson_0.7_max_pairs_200.csv`.
+  The file uses `;` as delimiter, since some SMILES contain commas.
+- Compounds are only paired within the same (`cell_line`, `dose`, `time`,
+  `plate`) group, so the two delta profiles of a pair always come from the
+  same cell line, dose, time and plate (each SMILES is kept once per group).
+  Pairs from all groups are pooled into a single table, so the same compound
+  pair can appear in several rows (one per cell line/dose/time/plate where both
+  were profiled).
 - If `$BIOPERT_OUTDIR/molec_embeds/<dataset>/` exists (see [Molecular
   embeddings](#molecular-embeddings)), one chemical-distance column is added
-  per molecular representation found there; otherwise embedding-based
-  distance columns are skipped.
+  per molecular representation found there (Tanimoto distance for binary
+  fingerprints, cosine distance for continuous embeddings); otherwise a single
+  `ecfp6_2048_dist` column (Tanimoto distance on RDKit ECFP6, 2048 bits) is
+  added instead.
 - `--max_pairs` caps the number of profile pairs assessed per condition when
   computing reproducibility; by default there is no cap. **For LINCS, we
   suggest setting `--max_pairs 200`** to keep runtime tractable, given how
