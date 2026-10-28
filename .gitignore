@@ -19,3 +19,6 @@ logs/
 .DS_Store
 *~
 .vscode/
+
+# Data archives
+supplementary_data.tar.gz
